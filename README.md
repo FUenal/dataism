@@ -1,5 +1,5 @@
 # Data Science for Psychology
 
-Source code for course website: Psyc 3400 Statistics @ Brooklyn College, taught by Matt Crump
+Source code for course website: Data Science for Psychology @ Cambridge University, taught by Fatih Uenal
 
-[https://crumplab.github.io/psyc3400/](https://crumplab.github.io/psyc3400/)
+[https://fuenal.github.io/dataism/](https://fuenal.github.io/dataism/)
