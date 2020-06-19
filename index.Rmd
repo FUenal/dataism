@@ -38,13 +38,13 @@ This website is written using R Markdown. The source code is adapted from Dr Mat
 
 <a href="https://crumplab.github.io/statistics/">
 ```{r statsTextbook, out.width=200, echo=F}
-knitr::include_graphics("images/TextbookCover.png")
+knitr::include_graphics("images/The Brain.png")
 ```
 </a>
 
 <a href="https://crumplab.github.io/statisticsLab/">
 ```{r statsLabManual, out.width=200, echo=F}
-knitr::include_graphics("images/LabmanualCover.png")
+knitr::include_graphics("images/The Brain.png")
 ```
 </a>
 
