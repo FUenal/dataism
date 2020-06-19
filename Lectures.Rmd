@@ -42,5 +42,5 @@ Resources:
 
 6.	Silge, J. & Robinson, D. (2017). Text Mining with R: A Tidy Approach. eBook available at https://www.tidytextmining.com/
 
-
+7.	Harrer, M., Cuijpers, P., Furukawa, T.A, & Ebert, D. D. (2019). Doing Meta-Analysis in R: A Hands-on Guide. eBook available at https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/. 
 
