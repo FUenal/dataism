@@ -15,7 +15,8 @@ Before you start browsing through the material, consder the following strategies
 
 2. If you are self-paced with limited free time, you can take a more relaxed pace by alternating weeks: in the first week in each pair, complete the DataCamp materials, and in the second week, complete the project.  
 
-Modules 1 – 6 are fundamental R programming.  Modules 7 – 9 are traditional social scientific statistical analyses and visualization. Modules 10 – 14 are new data science skills.
+Modules 1 – 6 are fundamental R programming.  Modules 7 – 9 are traditional social scientific statistical analyses and visualization. Modules 11 – 14 are new data science skills. Modules 15 - 16 are advanced statistical analyses.
+
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 #library(data.table)
@@ -26,6 +27,20 @@ Lectures[is.na(Lectures)]<- " "
 knitr::kable(Lectures)
 
 ```
+
+Resources:
+
+1.	Neth, H. (2020).  Data Science for Psychologists.  Social Psychology and Decision Sciences, University of Konstanz, Germany.  Textbook and R package ds4psy (version 0.2.1, May 6, 2020).  eBook available at https://bookdown.org/hneth/ds4psy/;  R package at https://CRAN.R-project.org/package=ds4psy
+
+2.	Navarro, D. (2019). Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6.1, June 19, 2019). Danielle Navarro (bookdown translation: Emily Kothe) eBook available at https://learningstatisticswithr.com/book/
+
+3.	Irizarry, R. (2019). Introduction to Data Science. Data Analysis and Prediction Algorithms with R. eBook available at https://rafalab.github.io/dsbook/
+
+4.	Wickham, H. & Grolemund, G. (2017). R for Data Science Import, Tidy, Transform, Visualize, and Model Data. eBook available at https://r4ds.had.co.nz/ 
+
+5.	Field, A., Miles, J., & Field, Z. (2012). Discovering Statistics Using R. London, UK: Sage Publications. 
+
+6.	Silge, J. & Robinson, D. (2017). Text Mining with R: A Tidy Approach. eBook available at https://www.tidytextmining.com/
 
 
 
