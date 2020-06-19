@@ -1,6 +1,6 @@
-name: "Psyc 3400"
+name: "The Dataist"
 navbar:
-  title: "Psyc 3400"
+  title: "The Dataist"
   left:
     - text: "Home"
       href: index.html

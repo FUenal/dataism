@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>Psyc 3400</title>
+<title>The Dataist</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -83,7 +83,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -232,6 +231,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -243,18 +243,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -279,7 +267,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Psyc 3400</a>
+      <a class="navbar-brand" href="index.html">The Dataist</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -313,7 +301,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Psyc 3400</h1>
+<h1 class="title toc-ignore">The Dataist</h1>
 
 </div>
 
@@ -330,10 +318,10 @@ $(document).ready(function () {
 </style>
 <div class="row" style="padding-top: 30px;">
 <div class="col-sm-6">
-<h1 id="psyc-3400-spring-2019"><strong>Psyc 3400 Spring 2019</strong></h1>
-<h3 id="statistical-methods-in-psychological-research" style="padding-top: 0px;"><em>Statistical Methods in Psychological Research</em></h3>
-<h4 id="matthew-crump">Matthew Crump</h4>
-<p>Last updated: 2019-05-06</p>
+<h1 id="data-science-for-psychology"><strong>Data Science for Psychology</strong></h1>
+<h3 id="statistical-methods-in-psychological-research-using-r" style="padding-top: 0px;"><em>Statistical Methods in Psychological Research Using R</em></h3>
+<h4 id="dr-fatih-uenal">Dr Fatih Uenal</h4>
+<p>Last updated: 2020-06-19</p>
 <p>All materials are totally <strong>free and open</strong>, including <a href="https://crumplab.github.io/statistics/">textbook</a>, and <a href="https://crumplab.github.io/statisticsLab/">lab manual</a>.</p>
 <h3 id="copyingadopting-these-materials">Copying/Adopting these materials</h3>
 <p>This website is written using R Markdown. The source code is here <a href="https://github.com/CrumpLab/psyc3400">https://github.com/CrumpLab/psyc3400</a>. For anyone interested in adopting these materials, the idea is you can fork the repos for the <a href="https://github.com/CrumpLab/psyc3400">website</a>, the <a href="https://github.com/CrumpLab/statistics">textbook</a>, and the <a href="https://github.com/CrumpLab/statisticsLab">lab manual</a>. Then edit as desired for your own purposes.</p>
@@ -361,6 +349,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
