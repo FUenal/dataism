@@ -44,7 +44,7 @@ knitr::include_graphics("images/The Brain.png")
 
 <a href="https://crumplab.github.io/statisticsLab/">
 ```{r statsLabManual, out.width=200, echo=F}
-knitr::include_graphics("images/The Brain.png")
+knitr::include_graphics("images/Rlogo.png")
 ```
 </a>
 
