@@ -23,12 +23,6 @@ output: html_document
 #### Dr Fatih Uenal
 Last updated: `r Sys.Date()`
 
-<a href="https://crumplab.github.io/statistics/">
-```{r statsTextbook, out.width=200, echo=F}
-knitr::include_graphics("images/The Brain.png")
-```
-</a>
-
 
 This page is designed to give you the nessecary resources to learn or teach R. It is designed for a social scientist audience, meaning you are trained as a psychologist, sociologist, political scientist, etc., and you want to augment your skills to run all your analyses in a powerful programming language while also expanding into more novel data science techniques such as Natural Language Programming, Machine Learning, Web Scraping and more.
 
@@ -42,6 +36,15 @@ All materials are totally **free and open**, including [textbook](https://crumpl
 ### Copying/Adopting these materials
 
 This website is written using R Markdown. The source code is adapted from Dr Matt Crump's awesome webpage here [Link](https://github.com/CrumpLab/psyc3400). For anyone interested in adopting these materials, the idea is you can fork the repos for the [website](https://github.com/CrumpLab/psyc3400), the [textbook](https://github.com/CrumpLab/statistics), and the [lab manual](https://github.com/CrumpLab/statisticsLab). Then edit as desired for your own purposes, as did we. 
+
+</div>
+<div class="col-sm-6">
+
+<a href="https://crumplab.github.io/statistics/">
+```{r statsTextbook, out.width=200, echo=F}
+knitr::include_graphics("images/The Brain.png")
+```
+</a>
 
 
 </div>
