@@ -3,21 +3,28 @@ title: "Resources"
 output: html_document
 ---
 
-### R and R-Studio
+### Installing R and R-Studio
 [R](http://www.r-project.org) is a free open-source programming language that can be used for statistical analysis, data-simulation, graphing, and lots of other stuff. Another free program is [R-studio](http://www.rstudio.com), that provides a nice graphic interface for R. Download R first, then download R-studio. Both can run on PCs, Macs or Linux. Students will be learning R in the stats labs using the course materials outlined in the [syllabus](https://fuenal.github.io/dataism/Syllabus.html).
 
 
-<a href="https://fuenal.github.io/dataism/Lectures.html">
-```{r statsTextbook, out.width=300, echo=F}
+</div>
+<div class="col-sm-6">
+
+<a href="https://www.r-project.org/">
+```{r download, out.width=300, echo=F}
 knitr::include_graphics("images/Rlogo.png")
 ```
 </a>
 
 
-The materials used on this website are carefully selected from various publicly available sources:
+- Installing R: Go to the [R website](http://www.r-project.org) and download the installer file. Once downloaded, open the installer file and follow the instructions.
+
+- Installing RStudio: Go to the [R studio website](http://www.rstudio.com), and follow the links to download RStudio. The version you want is the “RStudio Desktop”. Once the installer is downloaded, open it and follow the instructions.
+
 
 ### Resources
 
+The materials used on this website are carefully selected from various publicly available sources:
 
 1.	Neth, H. (2020).  Data Science for Psychologists.  Social Psychology and Decision Sciences, University of Konstanz, Germany.  Textbook and R package ds4psy (version 0.2.1, May 6, 2020).  eBook available at https://bookdown.org/hneth/ds4psy/;  R package at https://CRAN.R-project.org/package=ds4psy
 
