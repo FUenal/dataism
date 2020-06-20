@@ -101,54 +101,35 @@ Supplementary material will be posted on the course website. For example, check 
 Each **Thursday**, lessons will be assigned from datacamp.com. Some of these lessons will be complete DataCamp courses, and others will be specific modules of courses. This will all be managed by assigning content to your (free) DataCamp account. The amount
 of content assigned will vary between one and two courses of content. DataCamp considers a course to be roughly 4 hours of lessons, which includes practice time. Realistically, the time you need will depend upon how intuitive you find R to be. For students already familiar with other programming languages and those with previous R experience, “8 hours” of courses is realistically closer to 2 hours; for complete novices that also find the material difficult, 8 hours is a realistic estimate. It is strongly recommended that you stretch out DataCamp lessons across the assignment period, for example, allocating 1 hour each day between Thursday and Tuesday. You will gain the most by treating this like a foreign language immersion course by using R every day, including for your own research.
 
-</div>
-<div class="col-sm-6">
 
-<a href="https://crumplab.github.io/statistics/">
-```{r statsTextbook, out.width=200, echo=F}
-knitr::include_graphics("images/The Brain.png")
+<a href="https://fuenal.github.io/dataism/Lectures.html">
+```{r statsTextbook, out.width=350, echo=F}
+knitr::include_graphics("images/AssessmentDataCamp.png")
 ```
 </a>
 
+#### Weekly Assignments
 
-#### The Lab
+Each **Thursday**, the previous week’s assignment, which is designed to test how well you can apply that week’s DataCamp lessons in combination with any material introduced **Tuesday**, will be due by 6AM. In general, these assignments are designed to take less than 4 hours if you are on top of the DataCamp lessons, and the files you create should be submitted via **Blackboard**.
 
-There will be one two hour lab each week (1 hour 50 minutes). Every week you will be completing a structured set of activities that we have planned for you in the [lab manual](https://crumplab.github.io/statisticsLab/). This is where you will spend time learning how to use computer software, in particular R, and R-studio, to do statistics on real data. 
+
+<a href="https://fuenal.github.io/dataism/Lectures.html">
+```{r statsTextbook, out.width=250, echo=F}
+knitr::include_graphics("images/Assessment Weekly Assignments.png")
+```
+</a>
 
 ---
 
-### Grading (total of 100)
+#### Grading (total of 100)
 
-Your final grade combines your performance in the lab and lecture portions of the course. The percentage grade is determined from the following components.
+On **Thursday** of **Week 14**, a comprehensive project will be assigned integrating many of the skills learned over the previous 14 weeks.This will be due the last day of classes **this semester, Month Day, at 11:59PM**. This project will be designed to mimic a research project, involving obtaining and importing data, processing it in a variety of requested ways, and creating several of visualizations and output tables of the type that might be included in an APA-style paper. It will also include learning a new R package and using it correctly in your dataset, which assesses your ability to generalize lessons learned from course content.
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
-library(data.table)
-grading <- fread("Grading.csv")
-knitr::kable(grading)
-
+<a href="https://fuenal.github.io/dataism/Lectures.html">
+```{r statsTextbook, out.width=350, echo=F}
+knitr::include_graphics("images/Assessment Weekly Assignments.png")
 ```
-
-Percentage grades are converted to letter grades according to the following rubric.
-
-|Letter grade|Range|
-|:--|:--|
-|F	|0-59.99|
-|D-	|60-63.32|
-|D	|63.33-66.66|
-|D+	|66.67-69.99|
-|C-	|70-72.99|
-|C	|73-76.66|
-|C+	|76.67-79.99|
-|B-	|80-83.32|
-|B	|83.33-86.66|
-|B+	|86.67-89.99|
-|A-	|90-93.32|
-|A	|93.33-96.66|
-|A+	|96.67-100|
-
-The course allows for some flexibility in determining your final grade. If you perform better on the final exam than on the midterm, you may replace the midterm grade with your higher final grade (the reverse does not apply).  
-
-The instructor reserves the right to determine whether the final grade depends more heavily on a scale or a curve.
+</a>
 
 ---
 

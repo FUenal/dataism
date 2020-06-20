@@ -40,8 +40,8 @@ This website is written using R Markdown. The source code is adapted from Dr Mat
 </div>
 <div class="col-sm-6">
 
-<a href="https://crumplab.github.io/statistics/">
-```{r statsTextbook, out.width=200, echo=F}
+<a href="https://fuenal.github.io/dataism/Lectures.html">
+```{r statsTextbook, out.width=400, echo=F}
 knitr::include_graphics("images/The Brain.png")
 ```
 </a>
