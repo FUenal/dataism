@@ -94,13 +94,22 @@ Supplementary material will be posted on the course website. For example, check 
 
 ---
 
-### Course Structure:
+### Assessment and Evaluation:
 
-#### The Lecture
+#### DataCamp Lessons
 
-There will be two, 1 hour 15 minute, lectures each week. The lecture covers material that is available in the text book. The course schedule outlines chapters that **should be read prior to each lecture**. It is very important to read the textbook before you come to lecture. I've said it twice, now again. **Read the assigned parts of the textbook before each lecture**. Read it at home, read it on the bus, read it in a tree, read it at the library. Just read it.
+Each **Thursday**, lessons will be assigned from datacamp.com. Some of these lessons will be complete DataCamp courses, and others will be specific modules of courses. This will all be managed by assigning content to your (free) DataCamp account. The amount
+of content assigned will vary between one and two courses of content. DataCamp considers a course to be roughly 4 hours of lessons, which includes practice time. Realistically, the time you need will depend upon how intuitive you find R to be. For students already familiar with other programming languages and those with previous R experience, “8 hours” of courses is realistically closer to 2 hours; for complete novices that also find the material difficult, 8 hours is a realistic estimate. It is strongly recommended that you stretch out DataCamp lessons across the assignment period, for example, allocating 1 hour each day between Thursday and Tuesday. You will gain the most by treating this like a foreign language immersion course by using R every day, including for your own research.
 
-You will be tested on material from the lectures and textbook in two exams: a midterm, and a cumulative final exam.
+</div>
+<div class="col-sm-6">
+
+<a href="https://crumplab.github.io/statistics/">
+```{r statsTextbook, out.width=200, echo=F}
+knitr::include_graphics("images/The Brain.png")
+```
+</a>
+
 
 #### The Lab
 
@@ -242,23 +251,13 @@ Unless you have contacted your lab instructor regarding serious extenuating circ
 
 ### University’s policy on Academic Integrity
 
-The faculty and administration of Brooklyn College support an environment free from cheating and plagiarism. As a student, **you are personally responsible for being aware of what constitutes cheating, and plagiarism; and, for avoiding both**. You can view the complete text of the CUNY Academic Integrity Policy here:
-[http://www.brooklyn.cuny.edu/bc/policies](http://www.brooklyn.cuny.edu/bc/policies)
-**If a faculty member suspects a violation of academic integrity, and upon investigation, confirms that violation, or if the student admits the violation, the faculty member MUST report the violation**.
-
 ---
 
 ### Missing an Exam or class
 
-Make-up exams will be given only when there is a “good” reason for having missed an exam. For example, if a sudden illness causes you to miss an exam, then you should be prepared to provide me with a brief note signed by your physician. Contact me before an exam in the event that you anticipate missing one. In the event of an emergency, contact me as soon as possible. If you are missing a class for religious reasons refer to the state law regarding non-attendance because of religious beliefs (p. 64 in the Undergraduate Bulletin or p. 40 of the Graduate Bulletin).
-
-WARNING: This is not the kind of course for which you do not need to come to class, and read the textbook at the last minute and expect to do well on tests and papers. The material in this course builds in complexity across classes, and doing well in this course will require a constant moderate level of effort. If you join the course later or are unsure about anything please ask.
-
 ---
 
 ### Accessibility
-
-It is important to me that the course be accessible to all students. In order to receive disability-related academic accommodations students must first be registered with the Center for Student Disability Services. Students who have a documented disability or suspect they may have a disability are invited to set up an appointment with the Director of the Center for Student Disability Services, Ms. Valerie Stewart-Lovell at 718-951-5538. If you have already registered with the Center for Student Disability Services please provide me with the course accommodation form so we may discuss your specific accommodation. A guide and more information can be found here [http://catsweb.cuny.edu](http://catsweb.cuny.edu)
 
 ---
 
@@ -280,6 +279,4 @@ I will regularly use e-mail to send out announcements, changes in the syllabus, 
 
 #### General Help with Research and Writing
 
-The Library maintains a collection of links to sites that can assist you with proper citation format and paraphrasing and quoting other authors at [Research & Writing Help](https://library.brooklyn.cuny.edu/resources/?service=research-help).  The Learning Center has writing tutors available to help you with your writing [http://lc.brooklyn.cuny.edu/](http://lc.brooklyn.cuny.edu/).
 
-The best learning is done in conversation with others, whether they are people—classmates, teachers, friends—or texts—books, articles, essays, poems, films etc. It should not be a solitary process. However, the assignments that you hand in for this course must be done on your own, should represent your own thinking, and should be original work that you have done for this particular course. A good way to balance these two seemingly contradictory approaches (collaborative learning and original individually-produced work) without knowingly—or, even unwittingly—resorting to plagiarism or other forms of academic misconduct is to learn and meticulously observe the rules for citing the work of others (this could be the great point your roommate made that you used in your paper, it could be a well-turned phrase from an academic essay, or it could be anything in between). It is your responsibility to learn what constitutes plagiarism and the correct rules for citing sources—read the information on the following website carefully: [http://www.brooklyn.cuny.edu/bc/policies/](http://www.brooklyn.cuny.edu/bc/policies/). The bottom line is: passing off anyone’s words or ideas as your own for any reason whatsoever is plagiarism.
