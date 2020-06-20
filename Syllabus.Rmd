@@ -42,10 +42,6 @@ Website:  [https://fuenal.github.io/dataism/](https://fuenal.github.io/dataism/)
 
 ---
 
-### Catalog Description
-
-Basic descriptive and inferential statistics including the elements of experimental designs in social sciences research. Additional Data Science Techniques and advanced statistical analyses (optional)
-
 ### Course Objectives
 
 “Data science” is a catch-all term used to describe the practice of working with and analyzing messy data sources to draw meaningful conclusions using techniques developed by computer scientists and computational statisticians. The purpose of this course is to give students who are training as quantitative social scientists a broad introduction to this skillset via the statistical programming language, R. You will learn how to conduct many statistical analyses such as univariate statistics (e.g., ANOVA, correlation, regression) in R that you have already done in SPSS, Excel, or another such program. Additionally, we will build on this foundation to explore new skillsets uncommon in the social sciences, such as natural language processing, automated data curation, and machine learning. I have also included more advanced statistical analysis (SEM) as optional choice.
