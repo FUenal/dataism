@@ -31,7 +31,7 @@ I have provided resources and a step-by-step syllabus so that you can teach your
 Most of the materials provided here are designed for people with no previous programming experience but general familiarity with traditional social scientific methods.  This includes basic research design and fundamental statistics (the general linear model, i.e., ANOVA and regression).  Although I have compiled these materials from the perspective of social psychology (i.e., empirical psychology), the content can be easily applied to any social scientific field. 
 
 
-All materials are totally **free and open**, including [all reading materials](https://fuenal.github.io/dataism/Resources.html). However, for the DataCamp courses, you will need a subscription, if you are not enrolled in our University provided course.
+Most materials are**free and open**, including [all reading materials](https://fuenal.github.io/dataism/Resources.html). However, for the DataCamp courses, you will need a subscription, if you are not enrolled in our University course.
 
 ### Copying/Adopting these materials
 
