@@ -1,0 +1,41 @@
+---
+title: "About me"
+output: html_document
+---
+
+<style type="text/css">
+.title {
+  display: none;
+}
+
+#getting-started img {
+  margin-right: 10px;
+}
+
+</style>
+
+<div class="row" style="padding-top: 30px;">
+<div class="col-sm-6">
+
+# **Dr. Fatih Uenal**
+### *Postdoctoral Researcher* {style="padding-top: 0px;"}
+
+Last updated: `r Sys.Date()`
+
+
+Currently, I am working as a visiting postdoc at the [Cambridge Social Decision-Making Lab](https://www.sdmlab.psychol.cam.ac.uk/) at the University of Cambridge, UK.
+I am passionate about data-driven knowdledge production in general with a specific focus on phenomenon such as climate change, environmentalism, racism, sexism, and speciesism. I am analyzing these topics from social and evolutionary psychological  perspectives. 
+If you are interested in my research, please visit my academic [website](https://scholar.harvard.edu/fatih-uenal).
+
+</div>
+<div class="col-sm-6">
+
+<a href="https://scholar.harvard.edu/fatih-uenal">
+```{r statsTextbook, out.width=400, echo=F}
+knitr::include_graphics("images/The Brain.png")
+```
+</a>
+
+
+</div>
+</div>

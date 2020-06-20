@@ -10,4 +10,6 @@ navbar:
       href: Syllabus.html
     - text: "Resources"
       href: Resources.html
+    - text: "About me"
+      href: AboutMe.html
 output_dir: "docs"
