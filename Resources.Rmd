@@ -4,8 +4,15 @@ output: html_document
 ---
 
 ### R and R-Studio
+[R](http://www.r-project.org) is a free open-source programming language that can be used for statistical analysis, data-simulation, graphing, and lots of other stuff. Another free program is [R-studio](http://www.rstudio.com), that provides a nice graphic interface for R. Download R first, then download R-studio. Both can run on PCs, Macs or Linux. Students will be learning R in the stats labs using the course materials outlined in the [syllabus](https://fuenal.github.io/dataism/Syllabus.html).
 
-[R](http://www.r-project.org) is a free open-source programming language that can be used for statistical analysis, data-simulation, graphing, and lots of other stuff. Another free program is [R-studio](http://www.rstudio.com), that provides a nice graphic interface for R. Download R first, then download R-studio. Both can run on PCs, Macs or Linux. Students will be learning R in the stats labs using the lab manual [lab manual](https://crumplab.github.io/statisticsLab/).
+
+<a href="https://fuenal.github.io/dataism/Lectures.html">
+```{r statsTextbook, out.width=300, echo=F}
+knitr::include_graphics("images/Rlogo.png")
+```
+</a>
+
 
 The materials used on this website are carefully selected from various publicly available sources:
 
@@ -34,5 +41,4 @@ The materials used on this website are carefully selected from various publicly 
 4. Danielle Navarro recently made this website for introducing R, it's great, check it out (also made using this R markdown process): [http://compcogscisydney.org/psyr/](http://compcogscisydney.org/psyr/)
 5. Check out my slightly older programming book that also introduces R [https://crumplab.github.io/programmingforpsych/](https://crumplab.github.io/programmingforpsych/)
 6. Another solid and accessible resource for psyc stats using R [https://ademos.people.uic.edu/index.html](https://ademos.people.uic.edu/index.html).
-
 
