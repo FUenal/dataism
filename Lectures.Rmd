@@ -9,13 +9,13 @@ output:
     toc_depth: 3
 ---
 
-Before you start browsing through the material, consder the following strategies: There are two ways to progress through this material, depending upon how much time you have to devote to it each week.
+Before you start browsing through the material consider the following strategies: There are (at least) two ways to progress through this material, depending upon how much time you have to devote to it each week.
 
 1. If you are self-paced with at least 10 hours a week to devote to learning R, I’d recommend adopting the schedule below, which is designed for an intense but doable semester-long course, one module per week.  It is intended to take the average graduate student roughly 10 hours per week to complete all required tasks.  However, some number of students will find programming to be more challenging and may take up to 15 hours per week. Some will fly through the material in 5.
 
 2. If you are self-paced with limited free time, you can take a more relaxed pace by alternating weeks: in the first week in each pair, complete the DataCamp materials, and in the second week, complete the project.  
 
-Modules 1 – 7 are fundamental R programming.  Modules 8 – 11 are traditional social scientific statistical analyses and visualization. Modules 12 – 14 are new data science skills. Modules 15 - 16 are advanced statistical analyses. I will update the list of Modules in the near Future, so stay tuned.
+Modules 1 – 7 are fundamental R programming.  Modules 8 – 11 are traditional social scientific statistical analyses and visualization. Modules 12 – 15 are new data science skills. Module16 is a more advanced statistical analysss tecnique. I will update the list of Modules in the near future, so stay tuned for more.
 
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
