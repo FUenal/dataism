@@ -23,8 +23,7 @@ output: html_document
 Last updated: `r Sys.Date()`
 
 
-Currently, I am working as a visiting postdoc at the [Cambridge Social Decision-Making Lab](https://www.sdmlab.psychol.cam.ac.uk/) at the University of Cambridge, UK.
-I am passionate about data-driven knowdledge production in general with a specific focus on phenomenon such as climate change, environmentalism, racism, sexism, and speciesism. I am analyzing these topics from social and evolutionary psychological  perspectives. 
+Currently, I am working as a visiting postdoctoral researcher at the [Cambridge Social Decision-Making Lab](https://www.sdmlab.psychol.cam.ac.uk/) (University of Cambridge, UK). I am passionate about data-driven knowdledge production  with a specific focus on phenomena such as climate change, environmentalism, racism, sexism, and speciesism. I am analyzing these topics from social and evolutionary psychological perspectives. 
 If you are interested in my research, please visit my academic [website](https://scholar.harvard.edu/fatih-uenal).
 
 </div>
