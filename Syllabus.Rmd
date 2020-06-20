@@ -9,31 +9,19 @@ output:
     toc_depth: 4
 ---
 
-### Statistical Methods in Psychological Research (PSYC 3400)
+### Data Science for Social Sciences (Dataism 101)
 
 ### Instructor Info
 
 Lectures
 
-- M,W	11:00am-12:15pm 	RM: Whitehead 222
+- Time:	TBD 	Room: TBD
 
 Instructor
 
-- Dr. Matt Crump	4401B James Hall
+- Dr. Fatih Uenal	Old Cavendish Labarotory
 - Office hours:	by appointment
-- Office phone: 718-951-5000 x. 6068
-- mcrump@brooklyn.cuny.edu
-
----
-
-### Lecture and Lab Info
-
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
-library(data.table)
-intructors <- fread("Instructors.csv")
-knitr::kable(intructors)
-
-```
+- fu212@cam.ac.uk
 
 ---
 
@@ -50,45 +38,59 @@ knitr::kable(Lectures)
 ```
 
 
-
-Website:  [http://crumplab.github.io/psyc3400](http://crumplab.github.io/psyc3400)
+Website:  [https://fuenal.github.io/dataism/](https://fuenal.github.io/dataism/)
 
 ---
 
 ### Catalog Description
 
-2 hours lecture, 4 hours laboratory, 4 credits
-
-Basic descriptive and inferential statistics including the elements of experimental designs in psychological research. STEM variant course - Satisfies Pathways Required Core Math and Quantitative Reasoning requirement. 
+Basic descriptive and inferential statistics including the elements of experimental designs in social sciences research. Additional Data Science Techniques and advanced statistical analyses (optional)
 
 ### Course Objectives
 
-My goal is for you to learn:
+“Data science” is a catch-all term used to describe the practice of working with and analyzing messy data sources to draw meaningful conclusions using techniques developed by computer scientists and computational statisticians. The purpose of this course is to give students who are training as quantitative social scientists a broad introduction to this skillset via the statistical programming language, R. You will learn how to conduct many statistical analyses such as univariate statistics (e.g., ANOVA, correlation, regression) in R that you have already done in SPSS, Excel, or another such program. Additionally, we will build on this foundation to explore new skillsets uncommon in the social sciences, such as natural language processing, automated data curation, and machine learning. I have also included more advanced statistical analysis (SEM) as optional choice.
 
-1. How to answer research questions in Psychology with data
+At the end of this course you will be able to:
 
-2. The basics of research designs in psychology, and how they relate to data-analysis strategies
+1. To answer research questions in Social Sciences (e.g., Psychology) with data
 
-3. an intuitive, practical, and conceptual understanding of strategies for asking and answering questions with data
+2. Understand the basics of research designs in Social Sciences, and how they relate to data-analysis strategies
 
-4.	How to use R, a free and open-source statistics software program.
+3. Develop an intuitive, practical, and conceptual understanding of strategies for asking and answering questions with data
 
-NOTE: The schedule and procedures described in this syllabus are subject to change in the event of extenuating circumstances. You will always be notified of changes both in class AND by posts to the class website. Your enrollment in the course represents your acknowledgment and acceptance of the non-negotiable policies described in the syllabus.
+4. To use R, a free and open-source statistics software program.
+
+5. Develop a basic understanding of frequently used Data Science Techniques.
+
+6. Practice your newly acquired skills with interesting, interactive and fun porjects.
+
+NOTE: The schedule and procedures described in this syllabus are subject to change depending on specific needs and requirements. You will always be notified of changes on the homepage (see "last update"). 
 
 ---
 
-### Textbook (FREE)
+### Resources (freely available)
 
-The textbook for this course is ["Answering questions with Data"](https://crumplab.github.io/statistics/), it is FREE and available online as a web-book. 
+The reading materials for this course are selected from freely available and frequently used sources online as web-books. Each of these sources have their own strengths and merits. In curating this course, I have tried to create the best fit between reading material and online courses (Datacamp). I have also tried to present a balanced mix between Data Science and classical Social Science related Intstruction books. All materials linked in this course include further relevant material on a broad range of relevant topic and I encourage you to browse through them. Also, I encourage you to make use of the existing exercises within each of the here referenced resources: 
 
-The [lab manual](https://crumplab.github.io/statisticsLab/) for this course is also free, and is available online as a web-book.
+1.	Neth, H. (2020).  Data Science for Psychologists.  Social Psychology and Decision Sciences, University of Konstanz, Germany.  Textbook and R package ds4psy (version 0.2.1, May 6, 2020).  eBook available at https://bookdown.org/hneth/ds4psy/;  R package at https://CRAN.R-project.org/package=ds4psy
 
+2.	Navarro, D. (2019). Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6.1, June 19, 2019). Danielle Navarro (bookdown translation: Emily Kothe) eBook available at https://learningstatisticswithr.com/book/
+
+3.	Irizarry, R. (2019). Introduction to Data Science. Data Analysis and Prediction Algorithms with R. eBook available at https://rafalab.github.io/dsbook/
+
+4.	Wickham, H. & Grolemund, G. (2017). R for Data Science Import, Tidy, Transform, Visualize, and Model Data. eBook available at https://r4ds.had.co.nz/ 
+
+5.	Field, A., Miles, J., & Field, Z. (2012). Discovering Statistics Using R. London, UK: Sage Publications. 
+
+6.	Silge, J. & Robinson, D. (2017). Text Mining with R: A Tidy Approach. eBook available at https://www.tidytextmining.com/
+
+7.	Harrer, M., Cuijpers, P., Furukawa, T.A, & Ebert, D. D. (2019). Doing Meta-Analysis in R: A Hands-on Guide. eBook available at https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/. 
 
 ---
 
 ### Additional resources
 
-Supplementary material will be posted on the course website. For example, check out the [resources page](https://crumplab.github.io/psyc3400/Resources.html) on this website.
+Supplementary material will be posted on the course website. For example, check out the [resources page](https://fuenal.github.io/dataism/Resources.html) on this website.
 
 ---
 
