@@ -4,7 +4,7 @@ output: html_document
 ---
 
 ### Installing R and R-Studio
-[R](http://www.r-project.org) is a free open-source programming language that can be used for statistical analysis, data-simulation, data cisualization, and lots of other things, like building this website. Another free program is [R-studio](http://www.rstudio.com). It provides a nice graphic interface for R. Download R first, then download R-studio. Both are compatible with PCs, Macs, or Linux. For this course you will need to download both programs and follow the course materials outlined in the [syllabus](https://fuenal.github.io/dataism/Syllabus.html). 
+[R](http://www.r-project.org) is a free open-source programming language that can be used for statistical analysis, data-simulation, data visualization, and lots of other things, like building this website. Another free program is [R-studio](http://www.rstudio.com). It provides a nice graphic interface for R. Download R first, then download R-studio. Both are compatible with PCs, Macs, or Linux. For this course, you will need to download both programs and follow the course materials outlined in the [syllabus](https://fuenal.github.io/dataism/Syllabus.html). 
 
 
 </div>
@@ -19,7 +19,7 @@ knitr::include_graphics("images/Rlogo.png")
 
 - Installing R: Go to the [R website](http://www.r-project.org) and download the installer file. Once downloaded, open the installer file and follow the instructions.
 
-- Installing RStudio: Go to the [R studio website](http://www.rstudio.com), and follow the links to download RStudio. The version you want is the “RStudio Desktop”. Once the installer is downloaded, open it and follow the instructions.
+- Installing RStudio: Go to the [R studio website](http://www.rstudio.com), and follow the links to download RStudio. The version you want is the “RStudio Desktop”. Once the installer is downloaded, open it, and follow the instructions.
 
 
 ### Resources
@@ -43,7 +43,7 @@ The materials used on this website are carefully selected from various publicly 
 ### Additional R resources
 
 1. Google knows, ask Google.
-2. [Stackoverflow](https://stackoverflow.com) is awesome, pure and simple. Chances are high that someone else has had a similar question as you and usually you find that many people have answered your question already.
+2. [Stackoverflow](https://stackoverflow.com) is awesome, pure, and simple. Chances are high that someone else has had a similar question as you and usually you find that many people have answered your question already.
 3. Danielle Navarro wrote a [free Psych Stats textbook using R](https://compcogscisydney.org/learning-statistics-with-r/), it's worth checking out (some of our reading materials are based on her work)
 4. Another solid and accessible resource for Data Science and social science statistics using R [http://datascience.tntlab.org/](http://datascience.tntlab.org/). The approach taken in this course is an augmented version of the tnt-approach.
-5. One of my favourite websites is Erin Buchanan's fantastic [Statistics of Doom](https://statisticsofdoom.com/) repository. It contains a ton of great materials for R, SPSS, JASP covering all levels of statistical analysis with some hands-on youtube videos, r-codes, exercises and other materials to guide you through the Stats.
+5. One of my favorite websites is Erin Buchanan's fantastic [Statistics of Doom](https://statisticsofdoom.com/) repository. It contains a ton of great materials for R, SPSS, JASP covering all levels of statistical analysis with some hands-on youtube videos, r-codes, exercises, and other materials to guide you through the Stats.
