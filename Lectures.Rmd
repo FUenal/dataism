@@ -15,7 +15,7 @@ Before you start browsing through the material consider the following strategies
 
 2. If you are self-paced with limited free time, you can take a more relaxed pace by alternating weeks: in the first week in each pair, complete the DataCamp materials, and in the second week, complete the project.  
 
-My recommendation is to start with the textbook chapter in each module including the excersises provided in each chapter. Next, watch the associated video lectures under the respective link provided and complete each assessment associated with the lectures. After working through the textbook and video lectures, I suggest that you practice and solidify your new skills with the DataCamp courses and projects. These courses will significantly increase your learning curve since learning R is like learning a language and you will need a lot of practicing to master it!
+My recommendation is to start with the textbook chapter in each module including the exercises provided in each chapter. Next, watch the associated video lectures under the respective link provided and complete each assessment associated with the lectures. After working through the textbook and video lectures, I suggest that you put your new skills to the test with the DataCamp courses and projects. These courses will significantly increase your learning curve since learning R is very much like learning a new language and you will need a lot of practicing to master it!
 
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
