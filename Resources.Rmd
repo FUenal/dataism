@@ -24,21 +24,10 @@ knitr::include_graphics("images/Rlogo.png")
 
 ### Resources
 
-The materials used on this website are carefully selected from various publicly available sources:
+The reading and video materials used on this website are based on Prof Rafael Irizarry`s work which are publicly available:
 
-1.	Neth, H. (2020).  Data Science for Psychologists.  Social Psychology and Decision Sciences, University of Konstanz, Germany.  Textbook and R package ds4psy (version 0.2.1, May 6, 2020).  eBook available at https://bookdown.org/hneth/ds4psy/;  R package at https://CRAN.R-project.org/package=ds4psy
+Irizarry, R. (2019). Introduction to Data Science. Data Analysis and Prediction Algorithms with R. eBook available at https://rafalab.github.io/dsbook/
 
-2.	Navarro, D. (2019). Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6.1, June 19, 2019). Danielle Navarro (bookdown translation: Emily Kothe) eBook available at https://learningstatisticswithr.com/book/
-
-3.	Irizarry, R. (2019). Introduction to Data Science. Data Analysis and Prediction Algorithms with R. eBook available at https://rafalab.github.io/dsbook/
-
-4.	Wickham, H. & Grolemund, G. (2017). R for Data Science Import, Tidy, Transform, Visualize, and Model Data. eBook available at https://r4ds.had.co.nz/ 
-
-5.	Field, A., Miles, J., & Field, Z. (2012). Discovering Statistics Using R. London, UK: Sage Publications. Not available online currently. 
-
-6.	Silge, J. & Robinson, D. (2017). Text Mining with R: A Tidy Approach. eBook available at https://www.tidytextmining.com/
-
-7.	Harrer, M., Cuijpers, P., Furukawa, T.A, & Ebert, D. D. (2019). Doing Meta-Analysis in R: A Hands-on Guide. eBook available at https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/. 
 
 ### Additional R resources
 
@@ -47,3 +36,17 @@ The materials used on this website are carefully selected from various publicly 
 3. Danielle Navarro wrote a [free Psych Stats textbook using R](https://compcogscisydney.org/learning-statistics-with-r/), it's worth checking out (some of our reading materials are based on her work)
 4. Another solid and accessible resource for Data Science and social science statistics using R [http://datascience.tntlab.org/](http://datascience.tntlab.org/). The approach taken in this course is an augmented version of the tnt-approach.
 5. One of my favorite websites is Erin Buchanan's fantastic [Statistics of Doom](https://statisticsofdoom.com/) repository. It contains a ton of great materials for R, SPSS, JASP covering all levels of statistical analysis with some hands-on youtube videos, r-codes, exercises, and other materials to guide you through the Stats.
+
+### Further R resources for Psychologists
+
+1.	Neth, H. (2020).  Data Science for Psychologists.  Social Psychology and Decision Sciences, University of Konstanz, Germany.  Textbook and R package ds4psy (version 0.2.1, May 6, 2020).  eBook available at https://bookdown.org/hneth/ds4psy/;  R package at https://CRAN.R-project.org/package=ds4psy
+
+2.	Navarro, D. (2019). Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6.1, June 19, 2019). Danielle Navarro (bookdown translation: Emily Kothe) eBook available at https://learningstatisticswithr.com/book/
+
+3.	Wickham, H. & Grolemund, G. (2017). R for Data Science Import, Tidy, Transform, Visualize, and Model Data. eBook available at https://r4ds.had.co.nz/ 
+
+4.	Field, A., Miles, J., & Field, Z. (2012). Discovering Statistics Using R. London, UK: Sage Publications. Not available online currently. 
+
+5.	Silge, J. & Robinson, D. (2017). Text Mining with R: A Tidy Approach. eBook available at https://www.tidytextmining.com/
+
+6.	Harrer, M., Cuijpers, P., Furukawa, T.A, & Ebert, D. D. (2019). Doing Meta-Analysis in R: A Hands-on Guide. eBook available at https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/. 
