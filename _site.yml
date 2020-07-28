@@ -12,6 +12,4 @@ navbar:
       href: Resources.html
     - text: "About me"
       href: AboutMe.html
-    - text: "Datsci"
-      href: Datsci.html
 output_dir: "docs"
