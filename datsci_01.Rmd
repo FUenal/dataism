@@ -1,11 +1,17 @@
 ---
-title: "datsci: R Basics"
+title: "Datsci"
 author: "Rafael Irizarry & Fatih Uenal"
 output:
   learnr::tutorial:
     progressive: false
     theme: "united"
     css: ./css/datsci_style_future.css
+    html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 4
 runtime: shiny_prerendered
 description: "R Basics (introduction, installing and running R and R Studio, functions and objects, packages and functions, style, data types, tidyverse, importing data)."
 bibliography: discovr_01.bib
