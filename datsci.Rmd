@@ -19,7 +19,7 @@ knitr::include_graphics("images/The Brain.png")
 
 The `datsci` package contains resources for the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/) by Prof Rafael Irizarry and is based on the associated edX course *HarvardX Professional Certificate in Data Science*. These are tutorials written using [learnr](https://rstudio.github.io/learnr/). Once a tutorial is running it's similar to  reading a book but with places where you can practice the R code that you have just been taught. The `datsci` package is free and offered to support tutors and students who want to learn Data Science with R using the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/).
 
-## Installing `datsci`
+### Installing `datsci`
 
 To use `datsci` you first need to install R and R Studio and familiarise yourself with R, R Studio and good workflow practice. You can do this using [this interactive tutorial](https://rafalab.github.io/dsbook/getting-started.html). Once you have installed R and R Studio you can install `datsci`. The package is in development so you have to install it from github. To install the package execute R Studio:
 
@@ -37,11 +37,11 @@ If you are trying to install on a networked computer the install might fail (it'
 remotes::install_github("FUenal/datsci"), lib = "N:/Documents/R/win-library/3.5")
 ```
 
-## Interactive tutorials
+### Interactive tutorials
 
 I recommend working through [this tutorial](https://rafalab.github.io/dsbook/getting-started.html) on how to install, set up and work within R and R Studio before starting the interactive tutorials.
 
-### List of tutorials
+#### List of tutorials
 
 * **datsci_00**: Introduction to Data Science Course: Course structure, syllabus, grading, and workflow.
 * **datsci_01**: R Basics: Build a foundation in R and learn how to wrangle, analyze, and visualize data.
@@ -89,14 +89,14 @@ The name of each tutorial is in bold in the list above. Once the command to run 
 
 The tutorials are self-contained (you practice code in code boxes) so you don't need to use R Studio at the same time. However, to get the most from them I would recommend that you create an R Studio project and within that open (and save) a new RMarkdown file each time to work through a tutorial. Within that Markdown file, replicate parts of the code from the tutorial (in code chunks) and use Markdown to write notes about what you have done, and to reflect on things that you have struggled with, or note useful tips to help you remember things. Basically, write a learning journal. This workflow has the advantage of not just teaching you the code that you need to do certain things, but also provides practice in using R Studio itself.
 
-## Datasets
+### Datasets
 
 See the book or data descriptions for more details. This is a list of available datasets within the package. Raw CSV files are available from the book's website.
 
 * **HistData**: Galton’s data on the heights of parents and their children from his historic research on heredity. For details execute `?HistData`.
 * **murders**: Data that contains demographic infos across US States. For details execute `?murdes`.
 
-## Chapter code
+### Chapter code
 
 Although I recommend working through the interactive solutions, each book Chapter has online code and a downloadable R Markdown file available from [dsbook](https://github.com/datasciencelabs).
 
