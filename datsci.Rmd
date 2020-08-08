@@ -52,7 +52,6 @@ I recommend working through [this tutorial](https://rafalab.github.io/dsbook/get
 * **datsci_06**: Wrangling: Learn to process and convert raw data into formats needed for analysis.
 * **datsci_07**: Linear Regression: Learn how to use R to implement linear regression, one of the most common statistical modeling approaches in data science.
 * **datsci_08**: Machine Learning: Build a movie recommendation system and learn the science behind one of the most popular and successful data science techniques.
-* **datsci_09**: Capstone Project: Learn how to apply the knowledge base and skills learned throughout the series to real-world problems and hot to work independently on a data analysis project.
 
 
 ### Running a tutorial
