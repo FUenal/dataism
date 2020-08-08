@@ -1,4 +1,4 @@
-# Data Science for Psychology
+# Data Science for Social Scientists
 
 Source code for course website: Data Science for Psychology @ Cambridge University, taught by Fatih Uenal
 
