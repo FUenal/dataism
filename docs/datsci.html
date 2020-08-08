@@ -19,6 +19,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -248,6 +251,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -255,6 +321,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -310,6 +386,7 @@ $(document).ready(function () {
 <div id="introduction-to-data-science-with-r" class="section level2">
 <h2>Introduction to Data Science with R</h2>
 <p>The <code>datsci</code> package contains resources for the textbook <a href="https://rafalab.github.io/dsbook/">Introduction to Data Science</a> by Prof Rafael Irizarry and is based on the associated edX course <em>HarvardX Professional Certificate in Data Science</em>. These are tutorials written using <a href="https://rstudio.github.io/learnr/">learnr</a>. Once a tutorial is running it’s similar to reading a book but with places where you can practice the R code that you have just been taught. The <code>datsci</code> package is free and offered to support tutors and students who want to learn Data Science with R using the textbook <a href="https://rafalab.github.io/dsbook/">Introduction to Data Science</a>.</p>
+<hr />
 </div>
 <div id="installing-datsci" class="section level2">
 <h2>Installing <code>datsci</code></h2>
@@ -321,6 +398,7 @@ $(document).ready(function () {
 remotes::install_github(&quot;FUenal/datsci&quot;)</code></pre>
 <p>If you are trying to install on a networked computer the install might fail (it’s to do install.packages not liking UNC paths, which I’m not even going to pretend to understand). The solution is to specify the location of your R library at the point of install. Most networks will map network locations to a drive name (for example, at my own University, users accounts are on the ‘N’ drive). Find the location of your R library (e.g., <code>N:/Documents/R/win-library/3.5</code>), possibly executing <code>.libPaths()</code> to help you, and specify this location using the <code>lib</code> argument:</p>
 <pre><code>remotes::install_github(&quot;FUenal/datsci&quot;), lib = &quot;N:/Documents/R/win-library/3.5&quot;)</code></pre>
+<hr />
 </div>
 <div id="interactive-tutorials" class="section level2">
 <h2>Interactive tutorials</h2>
@@ -338,6 +416,7 @@ remotes::install_github(&quot;FUenal/datsci&quot;)</code></pre>
 <li><strong>datsci_07</strong>: Linear Regression: Learn how to use R to implement linear regression, one of the most common statistical modeling approaches in data science.</li>
 <li><strong>datsci_08</strong>: Machine Learning: Build a movie recommendation system and learn the science behind one of the most popular and successful data science techniques.</li>
 </ul>
+<hr />
 </div>
 <div id="running-a-tutorial" class="section level4">
 <h4>Running a tutorial</h4>
@@ -351,22 +430,20 @@ learnr::run_tutorial(&quot;name_of_tutorial&quot;, package = &quot;datsci&quot;)
 <p>and replace “name of tutorial” with the name of the tutorial you want to run. For example, to run tutorial 2 execute:</p>
 <pre><code>learnr::run_tutorial(&quot;datsci_02&quot;, package = &quot;datsci&quot;)</code></pre>
 <p>The name of each tutorial is in bold in the list above. Once the command to run the tutorial is executed it will spring to life in a web browser.</p>
+<hr />
 </div>
-<div id="suggested-workflow" class="section level4">
-<h4>Suggested workflow</h4>
+</div>
+<div id="suggested-workflow" class="section level2">
+<h2>Suggested workflow</h2>
 <p>The tutorials are self-contained (you practice code in code boxes) so you don’t need to use R Studio at the same time. However, to get the most from them I would recommend that you create an R Studio project and within that open (and save) a new RMarkdown file each time to work through a tutorial. Within that Markdown file, replicate parts of the code from the tutorial (in code chunks) and use Markdown to write notes about what you have done, and to reflect on things that you have struggled with, or note useful tips to help you remember things. Basically, write a learning journal. This workflow has the advantage of not just teaching you the code that you need to do certain things, but also provides practice in using R Studio itself.</p>
-</div>
-<div id="datasets" class="section level4">
-<h4>Datasets</h4>
+<hr />
+<div id="datasets" class="section level3">
+<h3>Datasets</h3>
 <p>See the book or data descriptions for more details. This is a list of available datasets within the package. Raw CSV files are available from the book’s website.</p>
 <ul>
 <li><strong>HistData</strong>: Galton’s data on the heights of parents and their children from his historic research on heredity. For details execute <code>?HistData</code>.</li>
 <li><strong>murders</strong>: Data that contains demographic infos across US States. For details execute <code>?murdes</code>.</li>
 </ul>
-</div>
-<div id="chapter-code" class="section level4">
-<h4>Chapter code</h4>
-<p>Although I recommend working through the interactive solutions, each book Chapter has online code and a downloadable R Markdown file available from <a href="https://github.com/datasciencelabs">dsbook</a>.</p>
 <hr />
 <blockquote>
 <p><strong>NOTES</strong>: This interactive tutorial contains materials from the textbook <a href="https://rafalab.github.io/dsbook/">Introduction to Data Science</a> by <a href="http://rafalab.github.io/">Prof Rafael Irizarry</a> and follows the outline of the associated edX course <em>HarvardX Professional Certificate in Data Science</em>. The textbook is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>. The content of this package will be slightly modified and thus deviate from the original textbook materials (datasets and excersises). This package is incomplete but under active development. Check back here for updates/new tutorials.</p>
@@ -377,6 +454,8 @@ learnr::run_tutorial(&quot;name_of_tutorial&quot;, package = &quot;datsci&quot;)
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -409,6 +488,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
