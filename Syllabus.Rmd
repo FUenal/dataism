@@ -9,7 +9,7 @@ output:
     toc_depth: 4
 ---
 
-### Data Science for Social Sciences (Dataism 101)
+### Introduction to Data Science (Dataism 101)
 
 ### Instructor Info
 
