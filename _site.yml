@@ -4,8 +4,6 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "datsci"
-      href: datsci.html
     - text: "Lectures"
       href: Lectures.html
     - text: "Syllabus"
