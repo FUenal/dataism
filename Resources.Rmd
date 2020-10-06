@@ -7,20 +7,24 @@ output: html_document
 [R](http://www.r-project.org) is a free open-source programming language that can be used for statistical analysis, data-simulation, data visualization, and lots of other things, like building this website. Another free program is [R-studio](http://www.rstudio.com). It provides a nice graphic interface for R. Download R first, then download R-studio. Both are compatible with PCs, Macs, or Linux. For this course, you will need to download both programs and follow the course materials outlined in the [syllabus](https://fuenal.github.io/dataism/Syllabus.html). 
 
 
-</div>
-<div class="col-sm-6">
 
-<a href="https://www.r-project.org/">
-```{r download, out.width=300, echo=F}
-knitr::include_graphics("images/Rlogo.png")
-```
-</a>
+<figure>
+<img src="./images/Rlogo.png" alt="R Studio" style="width:20%">
+</figure> 
 
 
 - Installing R: Go to the [R website](http://www.r-project.org) and download the installer file. Once downloaded, open the installer file and follow the instructions.
 
-- Installing RStudio: Go to the [R studio website](http://www.rstudio.com), and follow the links to download RStudio. The version you want is the “RStudio Desktop”. Once the installer is downloaded, open it, and follow the instructions.
+---
 
+<figure>
+<img src="./images/RStudio-Logo-Flat.png" alt="R Studio" style="width:400px">
+</figure> 
+  
+  
+- Installing RStudio: Go to the [R studio website](http://www.rstudio.com), and follow the links to download RStudio. The version you want is the “RStudio Desktop”. Once the installer is downloaded, open it, and follow the instructions. “RStudio and Shiny are trademarks of RStudio, PBC”
+
+---
 
 ### Resources
 
