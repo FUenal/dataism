@@ -147,13 +147,8 @@ See the book or data descriptions for more details. This is a list of available 
 
 * **HistData**: Galton’s data on the heights of parents and their children from his historic research on heredity. For details execute `?HistData`.
 
-* **murders**: Data that contains demographic infos across US States. For details execute `?murdes`.
+* **murders**: Data that contains demographic infos across US States. For details execute `?murders`.
 
----
-
-## Chapter code
-
-Although I recommend working through the interactive solutions, each book Chapter has online code and a downloadable RMarkdown file available from [dsbook](https://github.com/datasciencelabs).
 
 ---
 
