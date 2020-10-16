@@ -17,7 +17,7 @@ knitr::include_graphics("images/The Brain.png")
 
 
 ***
-> **NOTE**: This package is incomplete but under active development. Check back here for updates/new tutorials. 
+> **NOTE**: This package is incomplete but under active development. Check back here for updates/new tutorials. Loading the tutorials on your personal computer for the first time can take a few minutes.
 
 ***
 
@@ -131,6 +131,8 @@ learnr::run_tutorial("datsci_02", package = "datsci")
 ```
 
 The name of each tutorial is in bold in the list above. Once the command to run the tutorial is executed it will spring to life in a web browser.
+
+**Loading the tutorials on your personal computer for the first time can take a few minutes.**
 
 ---
 
