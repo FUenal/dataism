@@ -18,7 +18,7 @@ output: html_document
 <div class="col-sm-6">
 
 # **Introduction to Data Science**
-### *Social Scientific Research Methods Using R* {style="padding-top: 0px;"}
+### *Social & Behavioral Scientific Research Methods Using R* {style="padding-top: 0px;"}
 
 #### Dr Fatih Uenal
 Last updated: `r Sys.Date()`
