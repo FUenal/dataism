@@ -37,9 +37,12 @@ An application-oriented introduction to modern statistical modeling and inferenc
   - OpenIntro: Introductory Statistics with Randomization and Simulation (2014)
       Diez, Barr and Çetinkaya-Rundel, 1st edition
   - The textbook is free and open-source; the digital editions can be [downloaded for free](https://www.openintro.org/) and paperback copies can be purchased at the           bookstore or on Amazon for less than $10. The book is available in three formats:
-      [PDF](https://www.openintro.org/download.php?file=isrs1)
-      [tablet-friendly PDF](https://www.openintro.org/download.php?file=isrs1)
-      paperback edition from [Amazon](https://www.amazon.com/Introductory-Statistics-Randomization-Simulation-David/dp/1500576697)
+  
+      - [PDF](https://www.openintro.org/download.php?file=isrs1)
+      
+      - [tablet-friendly PDF](https://www.openintro.org/download.php?file=isrs1)
+      
+      - paperback edition from [Amazon](https://www.amazon.com/Introductory-Statistics-Randomization-Simulation-David/dp/1500576697)
 
 
 The textbook is not just a reference to use after the instructor has presented new material but a sourcebook to use at every stage of learning. When all students read the text before class, the nature of the class meeting changes to the benefit of everyone. You will have thought about the material, and you will arrive with your own questions. You’ll be ready to discuss what you understand, to clarify what you don’t understand, and to hear more on the topic. You need to read the book prior to class as well as review the material after we’ve discussed it in class.
