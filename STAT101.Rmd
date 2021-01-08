@@ -57,17 +57,17 @@ Class time will focus on activities to help understand concepts. You should also
 
 I provide students with a cheatsheet entitled [All the R you need for intro stat](https://github.com/FUenal/dataism/blob/master/all_the_R_you_need_tidy.Rmd), which gives them an overview of the most important code for the semester. Each week, I post RMarkdown documents on Canvas (also [hosted on GitHub](https://github.com/FUenal/dataism/blob/master/tidy/) for sharing), and accompanying videos on [the YouTube playlist for the class](https://www.youtube.com/playlist?list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX).
 
-- Describing data. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/01-STAT_220_DescribingDataPreLab_tidy.Rmd), [YouTube video](https://www.youtube.com/watch?v=YXWFYPk11GM)
+- Describing data. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/01-STAT_220_DescribingDataPreLab_tidy.Rmd), YouTube [video](https://www.youtube.com/watch?v=YXWFYPk11GM)
 - Categorical variables. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/02-STAT_220_CategoricalVariablesPreLab_tidy.Rmd), YouTube [video 1](https://www.youtube.com/watch?v=YXWFYPk11GM), [video 2](https://www.youtube.com/watch?v=YXWFYPk11GM)
 - Quantitative variables. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/03-STAT_220_QuantitativeVariablesPreLab_tidy.Rmd), YouTube [video 1](https://www.youtube.com/watch?v=YXWFYPk11GM), [video 2](https://www.youtube.com/watch?v=YXWFYPk11GM)
-- Correlation and regression. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/04-STAT_220_RegressionPreLab_tidy.Rmd), [YouTube video](https://www.youtube.com/watch?v=YXWFYPk11GM)
+- Correlation and regression. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/04-STAT_220_RegressionPreLab_tidy.Rmd), YouTube [video](https://www.youtube.com/watch?v=YXWFYPk11GM)
 - Bootstrap intervals. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/05-STAT_220_BootstrapPreLab-tidy.Rmd), YouTube [video 1](https://www.youtube.com/watch?v=YXWFYPk11GM), [video 2](https://www.youtube.com/watch?v=YXWFYPk11GM)
-- Randomization tests. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/06-STAT_220_RandomizationPreLab-tidy.Rmd), [YouTube video](https://www.youtube.com/watch?v=YXWFYPk11GM)
-- Inference for a single proportion. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/07-STAT_220_InferenceSingleProportionPreLab-tidy.Rmd), [YouTube video](https://www.youtube.com/watch?v=YXWFYPk11GM)
-- Inference for a single mean. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/08-STAT_220_InferenceSingleMeanPreLab-tidy.Rmd), [YouTube video](https://www.youtube.com/watch?v=YXWFYPk11GM)
+- Randomization tests. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/06-STAT_220_RandomizationPreLab-tidy.Rmd), YouTube [video](https://www.youtube.com/watch?v=YXWFYPk11GM)
+- Inference for a single proportion. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/07-STAT_220_InferenceSingleProportionPreLab-tidy.Rmd), YouTube [video](https://www.youtube.com/watch?v=YXWFYPk11GM)
+- Inference for a single mean. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/08-STAT_220_InferenceSingleMeanPreLab-tidy.Rmd), YouTube [video](https://www.youtube.com/watch?v=YXWFYPk11GM)
 - Inference for two samples. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/09-STAT_220_TwoSamplePreLab-tidy.Rmd), YouTube [video 1](https://www.youtube.com/watch?v=YXWFYPk11GM), [video 2](https://www.youtube.com/watch?v=YXWFYPk11GM)
 - ANOVA. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/10-STAT_220_ANOVAPreLab-tidy.Rmd), YouTube [video 1](https://www.youtube.com/watch?v=YXWFYPk11GM), [video 2](https://www.youtube.com/watch?v=YXWFYPk11GM)
-- Chi-square. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/11-STAT_220_ChiSquarePreLab-tidy.Rmd), [YouTube video](https://www.youtube.com/watch?v=YXWFYPk11GM)
+- Chi-square. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/11-STAT_220_ChiSquarePreLab-tidy.Rmd), YouTube [video](https://www.youtube.com/watch?v=YXWFYPk11GM)
 - Inference for Regression. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/12-STAT_220_RegressionInferencePreLab-tidy.Rmd). YouTube [video 1](https://www.youtube.com/watch?v=YXWFYPk11GM), [video 2](https://www.youtube.com/watch?v=YXWFYPk11GM), [video 3](https://www.youtube.com/watch?v=YXWFYPk11GM)
 
 
