@@ -20,7 +20,7 @@ output: html_document
 # **Introduction to Data Science**
 ### *Social & Behavioral Scientific Research Methods Using R* {style="padding-top: 0px;"}
 
-#### Dr. Fatih Uenal
+#### Dr Fatih Uenal
 Last updated: `r Sys.Date()`
 
 
