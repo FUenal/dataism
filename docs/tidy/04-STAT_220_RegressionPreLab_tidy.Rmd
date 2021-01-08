@@ -1,6 +1,6 @@
 ---
 title: 'Correlation and linear regression pre-lab: tidy'
-author: "Professor McNamara"
+author: "Dr. Fatih Uenal"
 output:
   html_document:
     toc: true

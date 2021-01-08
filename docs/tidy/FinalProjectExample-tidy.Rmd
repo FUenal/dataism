@@ -1,6 +1,6 @@
 ---
 title: "Self-employed People Work About the Same Number of Hours as Those Employed by Someone Else"
-author: "Amelia McNamara, University of St Thomas"
+author: "Dr. Fatih Uenal, University of Cambridge"
 output:
   pdf_document: default
   html_document: default
