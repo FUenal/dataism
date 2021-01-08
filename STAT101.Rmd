@@ -66,7 +66,7 @@ I provide students with a cheatsheet entitled [All the R you need for intro stat
 - Inference for a single proportion. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/07-STAT_220_InferenceSingleProportionPreLab-tidy.Rmd), [YouTube video](https://www.youtube.com/watch?v=YXWFYPk11GM)
 - Inference for a single mean. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/08-STAT_220_InferenceSingleMeanPreLab-tidy.Rmd), [YouTube video](https://www.youtube.com/watch?v=YXWFYPk11GM)
 - Inference for two samples. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/09-STAT_220_TwoSamplePreLab-tidy.Rmd), YouTube [video 1](https://www.youtube.com/watch?v=YXWFYPk11GM), [video 2](https://www.youtube.com/watch?v=YXWFYPk11GM)
-- ANOVA. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/10-STAT_220_ANOVAPreLab-tidy.Rmd), YouTube [video 1](https://www.youtube.com/watch?v=YXWFYPk11GM, [video 2](https://www.youtube.com/watch?v=YXWFYPk11GM)
+- ANOVA. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/10-STAT_220_ANOVAPreLab-tidy.Rmd), YouTube [video 1](https://www.youtube.com/watch?v=YXWFYPk11GM), [video 2](https://www.youtube.com/watch?v=YXWFYPk11GM)
 - Chi-square. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/11-STAT_220_ChiSquarePreLab-tidy.Rmd), [YouTube video](https://www.youtube.com/watch?v=YXWFYPk11GM)
 - Inference for Regression. [RMarkdown](https://github.com/FUenal/dataism/blob/master/tidy/12-STAT_220_RegressionInferencePreLab-tidy.Rmd). YouTube [video 1](https://www.youtube.com/watch?v=YXWFYPk11GM), [video 2](https://www.youtube.com/watch?v=YXWFYPk11GM), [video 3](https://www.youtube.com/watch?v=YXWFYPk11GM)
 
