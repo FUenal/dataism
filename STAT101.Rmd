@@ -50,11 +50,6 @@ Class time will focus on activities to help understand concepts. You should also
 
 ### Materials
 
-### formula syntax
-
-I provide students with a cheatsheet entitled [All the R you need for intro stat](https://github.com/AmeliaMN/STAT220-labs/blob/main/all_the_R_you_need_formula.Rmd), which gives them an overview of the most important code for the semester. Each week, I post RMarkdown documents on Canvas (also [hosted on GitHub](https://github.com/AmeliaMN/STAT220-labs/tree/main/formula) for sharing), and accompanying videos on [the YouTube playlist for the class](https://www.youtube.com/playlist?list=PLik6fAQnSI90bHK9fapPS-eZCUhgROh6S).
-
-
 ### tidy syntax
 
 I provide students with a cheatsheet entitled [All the R you need for intro stat](https://github.com/AmeliaMN/STAT220-labs/blob/main/all_the_R_you_need_tidy.Rmd), which gives them an overview of the most important code for the semester. Each week, I post RMarkdown documents on Canvas (also [hosted on GitHub](https://github.com/AmeliaMN/STAT220-labs/tree/main/tidy) for sharing), and accompanying videos on [the YouTube playlist for the class](https://www.youtube.com/playlist?list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX).
