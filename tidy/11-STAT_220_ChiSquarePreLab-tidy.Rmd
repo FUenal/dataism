@@ -1,6 +1,6 @@
 ---
 title: 'Inference for many proportions (Chi-square) - tidy'
-author: "Professor McNamara"
+author: "Dr. Fatih Uenal"
 output:
   html_document:
     toc: true
