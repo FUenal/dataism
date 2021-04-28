@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Dr. Fatih Uenal, Cambridge, UK" />
+
+
+<title>Climate Change AI</title>
+
+<script src="site_libs/jquery-3.5.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="site_libs/proj4js-2.3.15/proj4.js"></script>
+<link href="site_libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
+<script src="site_libs/highcharts-8.1.2/highcharts.js"></script>
+<script src="site_libs/highcharts-8.1.2/highcharts-3d.js"></script>
+<script src="site_libs/highcharts-8.1.2/highcharts-more.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/stock.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/map.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/annotations.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/data.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/drilldown.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/item-series.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/exporting.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/export-data.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/funnel.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/heatmap.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/treemap.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/sankey.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/organization.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/streamgraph.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/sunburst.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/vector.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/wordcloud.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/xrange.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/tilemap.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/venn.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/gantt.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/timeline.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/bullet.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/coloraxis.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/dumbbell.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/lollipop.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/series-label.js"></script>
+<script src="site_libs/highcharts-8.1.2/plugins/motion.js"></script>
+<script src="site_libs/highcharts-8.1.2/custom/reset.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/boost.js"></script>
+<script src="site_libs/highchart-binding-0.8.2/highchart.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+.sourceCode .row {
+  width: 100%;
+}
+.sourceCode {
+  overflow-x: auto;
+}
+.code-folding-btn {
+  margin-right: -30px;
+}
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">The Dataist</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="datsci.html">datsci</a>
+</li>
+<li>
+  <a href="Lectures.html">Lectures</a>
+</li>
+<li>
+  <a href="Syllabus.html">Syllabus</a>
+</li>
+<li>
+  <a href="ClimateAI.html">ClimateChangeAI</a>
+</li>
+<li>
+  <a href="Resources.html">Resources</a>
+</li>
+<li>
+  <a href="AboutMe.html">About me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Climate Change AI</h1>
+<h4 class="author">Dr. Fatih Uenal, Cambridge, UK</h4>
+<h4 class="date">4/27/2021</h4>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#overview">1. Overview</a></li>
+<li><a href="#introduction">2. Introduction</a></li>
+<li><a href="#data-download-preparation">3. Data Download &amp; Preparation</a><ul>
+<li><a href="#data-access">3.1 Data Access</a><ul>
+<li><a href="#data-access-route-1">Data Access Route 1</a></li>
+<li><a href="#data-access-route-2">Data Access Route 2</a></li>
+</ul></li>
+<li><a href="#download">3.2 Download</a></li>
+<li><a href="#preparation">3.3 Preparation</a></li>
+</ul></li>
+<li><a href="#exploratory-data-analysis-eda">4. Exploratory Data Analysis (EDA)</a><ul>
+<li><a href="#train---test-data-split">4.1. Train - Test Data Split</a></li>
+<li><a href="#frequencies-distributions">4.2. Frequencies &amp; Distributions</a></li>
+</ul></li>
+<li><a href="#methods-analysis">5. Methods &amp; Analysis</a><ul>
+<li><a href="#data-pre-processing">5.1 Data Pre-processing</a><ul>
+<li><a href="#missing-value-imputation">5.1.1 Missing Value Imputation</a></li>
+<li><a href="#normalization">5.1.2 Normalization</a></li>
+<li><a href="#feature-selection">5.1.3 Feature Selection</a><ul>
+<li><a href="#correlation-viz-1">Correlation Viz 1</a></li>
+<li><a href="#correlation-viz-2">Correlation Viz 2</a></li>
+<li><a href="#correlation-viz-3">Correlation Viz 3</a></li>
+</ul></li>
+<li><a href="#pre-processing-testdata">5.1.4 Pre-processing testData</a></li>
+</ul></li>
+<li><a href="#modeling">5.2 Modeling</a><ul>
+<li><a href="#model-overview">5.2.1 Model Overview</a><ul>
+<li><a href="#c5.0">C5.0</a></li>
+<li><a href="#c5.0-tuned">C5.0 Tuned</a></li>
+<li><a href="#knn">knn</a></li>
+<li><a href="#naivebayes">naiveBayes</a></li>
+<li><a href="#svm">SVM</a></li>
+<li><a href="#svm-tune">SVM Tune</a></li>
+<li><a href="#rpart">rpart</a></li>
+<li><a href="#ctree">ctree</a></li>
+<li><a href="#random-forest">Random Forest</a></li>
+<li><a href="#gbm">GBM</a></li>
+<li><a href="#adaboost">adaBOOST</a></li>
+<li><a href="#ensemble">Ensemble</a></li>
+</ul></li>
+<li><a href="#model-accuracy-comparison">5.2.2 Model Accuracy Comparison</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#results">6. Results</a></li>
+<li><a href="#conclusion">7. Conclusion</a><ul>
+<li><a href="#limitations-and-future-directions">Limitations and future directions</a></li>
+<li><a href="#session-info">Session Info</a></li>
+<li><a href="#benchmark-time-to-generate-pdf-from-rmd">Benchmark: time to generate Pdf from Rmd</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="overview" class="section level1">
+<h1>1. Overview</h1>
+<p>In the following, I am presenting the results of the second part of my <strong>HarvardX PH125.9x Data Science: Capstone Project</strong>. The goal of this full-stack data science project is to download, wrangle, explore, and analyze European Citizens’ perceptions of climate change using 10 different Machine Learning (ML) Algorithms (<em>KNN, naiveBayes, Random Forest, adaBOOST, SVM, Ensemble, ctree, GBM, C5.0, rpart</em>) based on data from the 8th round European Social Survey (2016). I will also employ hyperparameter tuning (e.g., <em>tuneGrid</em> and <em>tuneLength</em>) to improve the results. The response variable (outcome) in this project is “climate change worry”, i.e., whether or not individuals in more than 30 European countries are worried about climate change. The response to this variable will be binary (‘yes’ vs. ‘no’) and thus, this project deals with a classification problem.</p>
+<p>After a contextual introduction, I will start with detailing the process of how data download, selection, and cleaning was done. Then, after splitting the data into <em>train</em> and <em>test</em> sets, I will proceed with an Exploratory Data Analysis (EDA) in which I explore the train data set and visualize the initial data exploration to gain key insights for modeling. In the Methods &amp; Analysis Section, I will first do some feature engineering beyond the steps undertaken in the initial data selection process (i.e., missing value imputation, removing zero variance features, normalization of data). Afterwards, I will employ several ML algorithms and check to what extent each of the algorithms accurately classifies the response variable. The report thus consists of seven parts:</p>
+<p>After this <strong>Overview</strong> section, I will provide some contextual information on the data and classification problem of this project in the <strong>Introduction</strong> section.</p>
+<p>The following <strong>Data Download &amp; Preparation</strong> section describes how to download and prepare the data-sets. The data set containing over 500 columns most of which are irrelevant for this project. In this section I therefore also clean the data by removing many of the unnecessary columns such as ‘administrative’ columns from the data-set and describe how I arrived at the final, cleaned data set.</p>
+<p>The following section <strong>Exploratory Data Analysis (EDA)</strong> describes the performed exploratory data analysis and provides an overview of the data and first approaches to optimize it for the machine learning algorithms. Before I begin with the EDA, the <strong>trainData</strong>- and <strong>testData</strong> sets are generated.</p>
+<p>In the <strong>Methods and Analysis</strong> section, I will first perform some feature engineering using several pre-processing steps. After the pre-processing, I will run several ML Algorithms and employ hyperparameter tuning to some of them. Next, I will apply the same pre-processing steps on the <strong>testData</strong> set, and compare the accuracy of each trained model on the test set.</p>
+<p>In the <strong>Results</strong> section, I will briefly present the results of the model comparison on the test set and determine the best ML model using appropriate model evaluation metrics.</p>
+<p>The report ends with a <strong>Conclusion</strong> section presenting the main findings, and providing some insights into the limitations of the analysis as well as discussing possible future directions.</p>
+<hr />
+</div>
+<div id="introduction" class="section level1">
+<h1>2. Introduction</h1>
+<p>Reports on the impact of climate change on planetary health are distressing (e.g., IPCC, 2014). Yet, despite being one of the most important anthropogenic societal challenges of our time, public perceptions of and engagement with climate change reveals great variation in regard to acknowledging the urgency and severity of the issue. A growing body of results from an interdisciplinary field spanning psychology, sociology, economics, and communication has identified a wide array of individual predictors of climate change perceptions and attitudes. Nevertheless, practical research limitations—such as limited degrees of freedom using traditional statistics methods—has prevented researchers from directly comparing or meaningfully aggregating the predictive power of these predictors.</p>
+<p>In this project, I am going to make use of ML algorithms to overcome the shortcomings of previous studies using data from the 8th Round of the European Social Survey (2016). “The European Social Survey (ESS) is an academically driven cross-national survey that has been conducted across Europe since its establishment in 2001. Every two years, face-to-face interviews are conducted with newly selected, cross-sectional samples. The survey measures the attitudes, beliefs and behaviour patterns of diverse populations in more than thirty nations.” The 8th Round of the ESS contains climate change attitudes and a wide of predictor variable of interest. Using this data, I will employ several ML techniques to accurately predict whether or not individuals in this survey are either worried or not worried by climate change and identify which predictors (‘features’) are the most robust and important factors explaining differences in climate change worry.</p>
+<hr />
+</div>
+<div id="data-download-preparation" class="section level1">
+<h1>3. Data Download &amp; Preparation</h1>
+<div id="data-access" class="section level3 tabset">
+<h3>3.1 Data Access</h3>
+<div id="data-access-route-1" class="section level4">
+<h4>Data Access Route 1</h4>
+<p>The data set is publicly available following the below link:</p>
+<ul>
+<li><a href="https://www.europeansocialsurvey.org/data/download.html?r=8">European Social Survey 8 (2016)</a></li>
+</ul>
+</div>
+<div id="data-access-route-2" class="section level4">
+<h4>Data Access Route 2</h4>
+<p>Alternatively to downloading from the above the link, one can also use the ‘essurvey’ package. A description on this package and its’ usage is available in the below link:</p>
+<ul>
+<li><a href="https://www.r-bloggers.com/2014/03/analyze-the-european-social-survey-ess-with-r/">‘essurvey’</a></li>
+</ul>
+</div>
+</div>
+<div id="download" class="section level3">
+<h3>3.2 Download</h3>
+<p>For this project, I used the second method, and downloaded the data using the ‘essurvey’. Please note that you will need to first set an account with ESS and than use your email address to be able to download the data if you choose to use the ‘essurvey’. The code to download the data via the ‘essurvey’ package is in the accompanying R script. However, due to privacy concerns, I am not using this method in this project. Instead, the data is available in my github repository. Executing the current file should automatically download the data from my github. If that does not work, please download the data from github directly and load it locally (code provided in R script and rmd file but commented #).</p>
+<p><em>PLEASE NOTE: The code is included in the RMD file but explicitly tuned off (echo=FALSE)</em>.</p>
+</div>
+<div id="preparation" class="section level3">
+<h3>3.3 Preparation</h3>
+<p>As mentioned in the <strong>Overview</strong> section, the raw data set contains many variables which are irrelevant to this project. As visible below, the raw data set contains 534 columns each representing one variable corresponding to a question asked in the survey or an administrative question and 44387 rows, each corresponding to one surveyed person.</p>
+<p><img src="ClimateChangeAI_files/figure-html/data-peak-1-1.png" width="1152" /></p>
+<p>It is also visible that the raw data set contains many missing values as well as different types of variable (e.g., integer, character, etc.). It is clear at this point that data selection and cleaning will require studying the survey documentation prior to anything else. The Survey documentation is very detailed and thorough and can be accessed following this link:</p>
+<ul>
+<li><a href="https://www.europeansocialsurvey.org/docs/round8/survey/ESS8_data_protocol_e01_4.pdf">ESS 8 Study Documentation</a></li>
+</ul>
+<p>Having studied the data documentation, I decided to remove many columns from the data-set. I explain my choices below:</p>
+<ul>
+<li><p>Since I am interested in analyzing “climate worry” across countries and not for each country individually, the country specific variables are of no relevance for my goal. So I am going to remove the country specific variables all together.</p></li>
+<li><p>For similar reasons as above, I also don’t need the sampling stratification weights and population weights and will remove those from the data set as well.</p></li>
+<li><p>The data set also contains a number of so-called ‘administrative variables’ such as interview time and date etc which are not relevant for my goals and will thus be removed.</p></li>
+<li><p>The survey documentation also list several binary type variables which indicate no relevance to this projects main objective and I will thus remove those as well.</p></li>
+<li><p>Lastly, the survey contains many missing values which are coded in many different ways. For example, missing values refer to invalid answers (e.g. refusal, don’t know, missing) which are encoded with numbers 66, 77, 99 for some features, and with 6, 7, 8, 9 for the other features. Generally, there are a lot of different ways of how the question encoding was designed. This may be the result of many different groups of people working on this survey. I will make use of the ‘esssurvey’ function to automatically label all invalid answers into NaN values. See documentation of this package in the link provided above.</p></li>
+</ul>
+<p><strong>PLEASE NOTE: Due to resource constraints, I will only work with a small subset of the whole data set. Specifically, I will randomly sample 4400 rows (10% of the original data set) for this project. Using the entire data set would result in extremely long run times for some of the more complex ML algorithms such as ‘AdaBoost’ and ‘Ensemble’</strong>.</p>
+<p>Given the large amount of specific cleaning tasks, I manually went through the documentation, retrieved all the information needed for the cleaning and removed all irrelevant variables and saved the cleaned data set as ‘ess8_subsample.csv’.</p>
+<p><img src="ClimateChangeAI_files/figure-html/data-peak-2-1.png" width="1152" /></p>
+<p>As visible below, the cleaned data set now contain fewer missing values but still a high number of columns (120). There are still are large number of missing values present: 69509.</p>
+<p>Before proceeding to the next section, I will thus further process the data by identifying features with missing values above 50% and so-called zero-variance features and remove them. As shown below, several features contain more than 50% missing values. I am going to drop these from the data set following general recommendation on dealing with missing values. Note that an alternative way to deal with missing values would be to impute them using mean/median/mode imputation techniques. However, for the purpose of this project it is sufficient to simply remove them.</p>
+<pre><code>##   variable missing missingness
+## 1 clmthgt1    4296       97.64
+## 2  ub50unp    3408       77.45
+## 3  ub20unp    3388       77.00
+## 4  ub50pay    3386       76.95
+## 5  ub50edu    3382       76.86
+## 6  ub20edu    3368       76.55</code></pre>
+<p>Checking again for missing values, we can now see that we have less missing values overall (22351) and that the remaining features all have missing values below 50%</p>
+<p><img src="ClimateChangeAI_files/figure-html/data-peak-4-1.png" width="1152" /></p>
+<pre><code>##   variable missing missingness
+## 1  netustm    1409       32.02
+## 2  eudcnbf    1285       29.20
+## 3  eusclbf    1206       27.41
+## 4   lkuemp    1016       23.09
+## 5  uemplwk     734       16.68
+## 6 hinctnta     709       16.11</code></pre>
+<p>Checking zero-variance features indicates that non of the remaining features show zero variance and thus I don’t have remove any feature based on this criterion.</p>
+<pre><code>## character(0)</code></pre>
+<p>Moreover, I will check for missing values in the main variable of interest for this project, the outcome variable ‘wrclmch’ (Worry Climate Change). As shown below, the response variable contains` missing values.</p>
+<pre><code>## [1] 166</code></pre>
+<p>Dropping these will not result in a significantly smaller data set so I will drop all rows containing missing values for the response variable as well.</p>
+<p>Next, I will transform the response variable from an ordinary scale type (1: Not Worried to 5: Very Worried) to a binary scale type, to allow for a classification approach. The ‘wrclmch’ response variable will thus be categorized in ‘Not Worried’ vs. ‘Worried’ from here on after. Alternatively, I could have continued to use the outcome as ordinal variable and use regression ML techniques. However, for the sake of simplicity in interpreting the results, it seems more pertinent, to approach the response variable as a binary entity.</p>
+<p>As shown below, the response variable is now coded as a binary variable.</p>
+<pre><code>## 
+## Not_worried     Worried 
+##        1106        3128</code></pre>
+<p>Similarly, I will also factorize and re-label the gender feature in order to improve the visualization in the coming sections.</p>
+<pre><code>## 
+##   Male Female 
+##   1983   2251</code></pre>
+<p>As final steps, I will remove the ‘idno’ column because it is not necessary for my analytic purpose.</p>
+<p>This data cleaning process is a good example in that it shows that real world data can be quite messy and require some effort to bring into shape such that it is ready for Machine Learning approaches. Also, the example here shows that it is important to use any given information on the data. In this case, the study documentation was very helpful in determining how to best clean the data. Many other real world data sets will not have the luxury of meticulous data documentation and I might count myself lucky in this regard.</p>
+<p>After having cleaned the raw data set as described above, I proceed to the next stage of this project: <strong>Exploratory Data Analysis</strong>.</p>
+<hr />
+</div>
+</div>
+<div id="exploratory-data-analysis-eda" class="section level1">
+<h1>4. Exploratory Data Analysis (EDA)</h1>
+<div id="train---test-data-split" class="section level2">
+<h2>4.1. Train - Test Data Split</h2>
+<p>Before I start with the EDA, I am going to first split the data into <strong>trainData</strong>- and <strong>testData</strong> sets.</p>
+<ul>
+<li><p><strong>trainData</strong> - a subset (60%) to work with and to develop the models, and</p></li>
+<li><p><strong>testData</strong> - a subset (40%) to test the final models</p></li>
+</ul>
+<p>This is an important step to accomplish prior to EDA since using the entire data set for EDA purposes would obfuscate our train-test set-up by basing our initial understanding of the data on both the <strong>trainData</strong>- and <strong>testData</strong> sets. However, following good Data Science practice requires us to avoid making any decisions based on the test set to avoid so-called data leakage and increase the robustness and generalizability of the results.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Split data</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="co"># Validation set will be 40% of data</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="kw">set.seed</span>(<span class="dv">123</span>, <span class="dt">sample.kind=</span><span class="st">&quot;Rounding&quot;</span>) <span class="co"># if using R 3.5 or earlier, use `set.seed(1)`</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>test_index &lt;-<span class="st"> </span><span class="kw">createDataPartition</span>(<span class="dt">y =</span> df<span class="op">$</span>wrclmch, <span class="dt">times =</span> <span class="dv">1</span>, <span class="dt">p =</span> <span class="fl">0.4</span>, <span class="dt">list =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb7-5"><a href="#cb7-5"></a>trainData &lt;-<span class="st"> </span>df[<span class="op">-</span>test_index,]</span>
+<span id="cb7-6"><a href="#cb7-6"></a>testData &lt;-<span class="st"> </span>df[test_index,]</span></code></pre></div>
+</div>
+<div id="frequencies-distributions" class="section level2">
+<h2>4.2. Frequencies &amp; Distributions</h2>
+<p>After cleaning and partitioning the data, I proceed to taking a quick glance at the distribution and frequencies of the data. As shown below, some variables show skewed distributions.</p>
+<table>
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">df</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">2539</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">124</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">character</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">factor</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="left">numeric</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">empty</th>
+<th align="right">n_unique</th>
+<th align="right">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">cntry</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">23</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">ordered</th>
+<th align="right">n_unique</th>
+<th align="left">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">gndr</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">FALSE</td>
+<td align="right">2</td>
+<td align="left">Fem: 1348, Mal: 1191</td>
+</tr>
+<tr class="even">
+<td align="left">wrclmch</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">FALSE</td>
+<td align="right">2</td>
+<td align="left">Wor: 1876, Not: 663</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">nwspol</td>
+<td align="right">25</td>
+<td align="right">0.99</td>
+<td align="right">82.20</td>
+<td align="right">127.67</td>
+<td align="right">0</td>
+<td align="right">30</td>
+<td align="right">60</td>
+<td align="right">90</td>
+<td align="right">1211</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">netustm</td>
+<td align="right">801</td>
+<td align="right">0.68</td>
+<td align="right">203.59</td>
+<td align="right">182.62</td>
+<td align="right">0</td>
+<td align="right">60</td>
+<td align="right">120</td>
+<td align="right">270</td>
+<td align="right">1440</td>
+<td align="left">▇▂▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">agea</td>
+<td align="right">10</td>
+<td align="right">1.00</td>
+<td align="right">49.25</td>
+<td align="right">18.65</td>
+<td align="right">15</td>
+<td align="right">34</td>
+<td align="right">50</td>
+<td align="right">63</td>
+<td align="right">97</td>
+<td align="left">▆▆▇▅▁</td>
+</tr>
+</tbody>
+</table>
+<p>First, let’s find out how our response variable is distributed across both the <strong>trainData</strong>- and the <strong>testData</strong>-sets. In other words, let’s see how many respondents indicated that they were worried about climate change vs. not worried. The distribution does not indicate a severely high class imbalance and we see that our sample contains more worried than not-worried responses.</p>
+<p><strong>trainData</strong></p>
+<pre><code>## 
+## Not_worried     Worried 
+##         663        1876</code></pre>
+<p><strong>testData</strong></p>
+<pre><code>## 
+## Not_worried     Worried 
+##         443        1252</code></pre>
+<p>Next, we’ll continue to analyze the distribution of our outcome variable in the <strong>trainData</strong> set. Let’s visualize the distribution of climate change worry first.</p>
+<p><img src="ClimateChangeAI_files/figure-html/eda-3-1.png" width="1152" /></p>
+<p>Next, let’s have a look at how our response variable varies across countries. As we can see, there is some variation in ‘being worried or not by climate change’ depending on which country respondents are from with most countries having higher scores of ‘worried’ responses.</p>
+<p><img src="ClimateChangeAI_files/figure-html/eda-4-1.png" width="1152" /></p>
+<p>It is reasonable to assume that respondents might also differ in their degree of worry depending on their political leaning. Previous studies have shown that individual more on the right side of the political spectrum tend to see climate change as less of a threat with some even denying that climate change actually happens or is man-made. Let’s visualize our response variable across the political spectrum next and find out. The political orientation was measured from 1 (Left) to 10 (Right).</p>
+<p><img src="ClimateChangeAI_files/figure-html/eda-5-1.png" width="1152" /></p>
+<p>Similarly to political orientation, previous studies haven shown that women tend to perceive climate change and environmental problems more worrying on average compared to men. Let’s see how climate change worry is distributed across genders next. It appears that climate change worry varies somewhat across genders.</p>
+<p><img src="ClimateChangeAI_files/figure-html/eda-6-1.png" width="1152" /></p>
+<p>As seen above, ‘climate change worry’ varies across different features. We only looked at three features, however, there are more than 120 features in total which we want to explore in more detail. Thus, I will choose another way to gaining insights into the importance of specific features in classifying whether respondents indicated that they were worried vs. not worried by climate change. In the next section, I will first apply some pre-processing steps after which I will consider Feature Selection based on strength of association with the response variable.</p>
+<hr />
+</div>
+</div>
+<div id="methods-analysis" class="section level1">
+<h1>5. Methods &amp; Analysis</h1>
+<div id="data-pre-processing" class="section level2">
+<h2>5.1 Data Pre-processing</h2>
+<p>Before starting with the pre-processing of the data, I will also remove the ‘country’ feature, as I am mostly interested in classifying responses across countries.</p>
+<p>I will also relocate the position of the response variable ‘wrclmch’ to the very beginning of the data frame for convenience sake.</p>
+<p>I will also store my response variable and my feature separately for later usage.</p>
+<div id="missing-value-imputation" class="section level3">
+<h3>5.1.1 Missing Value Imputation</h3>
+<p>In the previous sections, we have seen that the data set contains missing values, as I have only removed feature that had more than 50% missing values. For the modeling section, the first thing to implement is to deal with the remaining missing values. There are several approaches to <a href="https://scientistcafe.com/ids/missing-values.html">dealing with missing values</a>. There are many important considerations to make, before starting to handle missing values, such as understanding whether the missing data is missing randomly or whether there is some pattern to the missingness and so on. A sophisticated approach to dealing with missing data is to predict the missing values based on values of the rest of the available variables as predictors. One popular approach that achieves this type of imputation is the k-Nearest Neighbors algorithm. However, the k-Nearest Neighbors algorithm comes at high computational cost and I will not implement it here due to resource constrains. Another common practice is to simply replace missing values with the the mean/median/mode of the column. For continuous features, it is a common practice to replace the missing values with the mean of the column. For categorical features, replace the missing values with the the mode, the most frequently occurring value is commonly practised. Therefore, for the continuous variables, I will use the preProcess function ‘medianImpute’ to impute missing values. I am choosing ‘median impute’ over ‘mean impute’, because the EDA also indicated that the data is not normally distributed in many cases and show high skewness. In case of skewed data, median imputation is generally recommended.</p>
+<p>The caret package offers a convenient preProcess function that handles missing values. Importantly, the same preprocessing we apply to the trainData also needs to be applied to the testData later on.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co">## Impute Missing Values with medianImpute Method</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="co"># Create the median imputation model on the training data</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>preProcess_missingdata_model &lt;-<span class="st"> </span><span class="kw">preProcess</span>(trainData, <span class="dt">method =</span> <span class="st">&quot;medianImpute&quot;</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a>preProcess_missingdata_model</span></code></pre></div>
+<pre><code>## Created from 552 samples and 123 variables
+## 
+## Pre-processing:
+##   - ignored (2)
+##   - median imputation (121)</code></pre>
+<p>As shown below, after imputation of missing values, the data contains no more missing values.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Use the imputation model to predict the values of missing data points</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>trainData &lt;-<span class="st"> </span><span class="kw">predict</span>(preProcess_missingdata_model, <span class="dt">newdata =</span> trainData)</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># Check for NaNs</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="kw">anyNA</span>(trainData)</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+<div id="normalization" class="section level3">
+<h3>5.1.2 Normalization</h3>
+<p>As was shown in the previous sections, the data set contains features with differing scale units and ranges. A common practice in such cases is to normalize data before modeling. The caret package offers an easy way within the preProcess function to apply normalization of data sets, which I am applying next. Below we can see the first 10 columns of the data set indicating that the data has been successfully normalized.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">## Normalize data</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>preProcess_range_model &lt;-<span class="st"> </span><span class="kw">preProcess</span>(trainData, <span class="dt">method=</span><span class="st">&#39;range&#39;</span>)</span>
+<span id="cb14-3"><a href="#cb14-3"></a>trainData &lt;-<span class="st"> </span><span class="kw">predict</span>(preProcess_range_model, <span class="dt">newdata =</span> trainData)</span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="co"># Append the Y variable</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>trainData<span class="op">$</span>wrclmch &lt;-<span class="st"> </span>y</span>
+<span id="cb14-7"><a href="#cb14-7"></a></span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="co"># Show first 10 columns of normalized data</span></span>
+<span id="cb14-9"><a href="#cb14-9"></a><span class="kw">apply</span>(trainData[, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dv">2</span>, <span class="dt">FUN=</span><span class="cf">function</span>(x){<span class="kw">c</span>(<span class="st">&#39;min&#39;</span>=<span class="kw">min</span>(x), <span class="st">&#39;max&#39;</span>=<span class="kw">max</span>(x))})</span></code></pre></div>
+<pre><code>##     wrclmch       gndr     nwspol         netustm       agea         eduyrs 
+## min &quot;Not_worried&quot; &quot;Female&quot; &quot;0.0000000000&quot; &quot;0.000000000&quot; &quot;0.00000000&quot; &quot;0.000&quot;
+## max &quot;Worried&quot;     &quot;Male&quot;   &quot;1.0000000000&quot; &quot;1.000000000&quot; &quot;1.00000000&quot; &quot;1.000&quot;
+##     netusoft ppltrst pplfair pplhlp
+## min &quot;0.00&quot;   &quot;0.0&quot;   &quot;0.0&quot;   &quot;0.0&quot; 
+## max &quot;1.00&quot;   &quot;1.0&quot;   &quot;1.0&quot;   &quot;1.0&quot;</code></pre>
+</div>
+<div id="feature-selection" class="section level3 tabset">
+<h3>5.1.3 Feature Selection</h3>
+<p>After having split the data in <strong>trainData</strong>- and <strong>testData</strong> sets, imputing missing values, and normalization of data, a sensible next step is to reduce the dimensionality of the data. With over 120 features, the data space is still very large even after removing many columns at the very beginning. However, many of these remaining features are probably not at all or not strongly associated with our response variable (i.e., an individuals’ perception of climate change as either worrying or not worrying). Moreover, too many features can cause problems such as requiring increased computational power leading to extremely long run-times on standard PCs (such as mine) as well as decreasing efficiency by including variables that have zero or very little predictive power.</p>
+<p>To mitigate these issues, different approaches can be taken which allow to reduce the number of overall features. This process is also referred to as ‘Feature Selection’. Common ways of feature selection include Principal Components Analysis (PCA), using built-in methods of feature selection such as ‘recursive feature elimination (rfe)’, determining feature importance from decision trees or coefficients from Lasso-regularized linear regression to name a few. These approaches require running additional models prior to the main analysis.</p>
+<p>A more convenient and less computationally expensive approach would be to only select features which are highly correlated with the response variable and exclude the remaining features from further analysis. I will take the latter approach due to time and resource constrains and select the 20 highest correlated features. The limitation of this approach however will be to sacrifice complexity in terms of not accounting for interaction terms between features. In other words, I might remove feature which individually are not highly correlated with the response variable but might indicate higher correlation values in interaction with other features.</p>
+<p>Below are the 20 feature which are most highly correlated with the response variable.</p>
+<pre><code>##     variables      corr pvalue
+## 64    wrdpimp  0.254707      1
+## 65     wrtcfl  0.195127      1
+## 121    impenv  0.185867      1
+## 63    wrenexp  0.174498      1
+## 69    sbsrnen  0.172207      1
+## 105   ipeqopt  0.163486      1
+## 60     elgsun  0.158191      1
+## 68    inctxff  0.149993      1
+## 61    elgwind  0.149677      1
+## 114   iphlppl  0.148040      1
+## 32   hmsfmlsh -0.136460      1
+## 49    atcherp  0.135646      1
+## 110   ipudrst  0.129837      1
+## 66    lklmten  0.128574      1
+## 33    hmsacld  0.125461      1
+## 36    imdfetn  0.125344      1
+## 39    imueclt  0.119649      1
+## 120   iplylfr  0.118697      1
+## 31    freehms  0.118618      1
+## 37    impcntr  0.114369      1</code></pre>
+<p>Let’s now visualize correlations between our the top 10 selected features and our response variable. The plots below are in line with the correlation analysis we computed further above.</p>
+<div id="correlation-viz-1" class="section level4">
+<h4>Correlation Viz 1</h4>
+<p><img src="ClimateChangeAI_files/figure-html/correlation-1-1.png" width="1152" /></p>
+</div>
+<div id="correlation-viz-2" class="section level4">
+<h4>Correlation Viz 2</h4>
+<p><img src="ClimateChangeAI_files/figure-html/correlation-2-1.png" width="1152" /></p>
+</div>
+<div id="correlation-viz-3" class="section level4">
+<h4>Correlation Viz 3</h4>
+<p><img src="ClimateChangeAI_files/figure-html/correlation-3-1.png" width="1152" /></p>
+<hr />
+</div>
+</div>
+<div id="pre-processing-testdata" class="section level3">
+<h3>5.1.4 Pre-processing testData</h3>
+<p>As I have applied the above pre-processing steps on the <strong>trainData</strong>-set alone, I will need to apply the same steps on the <strong>testData</strong>-set as well. Following the same steps undertaken with the <strong>trainData</strong>, I will</p>
+<ul>
+<li>remove the ‘country’ feature,</li>
+<li>relocate the response variable to the very beginning,</li>
+<li>store my response variable and my feature separately for later usage,</li>
+<li>impute the missing values,</li>
+<li>normalize the data, and</li>
+<li>finally, select the same 20 variables as in the <strong>trainData</strong> set.</li>
+</ul>
+<pre><code>## &#39;data.frame&#39;:    1695 obs. of  21 variables:
+##  $ wrdpimp : num  0.25 0 0.75 0.5 0.75 0.25 0.5 0 0.25 0 ...
+##  $ wrtcfl  : num  0.5 0.5 0.25 0.5 0.5 0.25 0.25 0.25 0 0.25 ...
+##  $ impenv  : num  0.4 0.8 1 0.2 1 0.6 0.4 0.8 0.8 0.8 ...
+##  $ wrenexp : num  0.5 0.75 0.5 0.25 0.75 0.25 0.75 0 0.25 0 ...
+##  $ sbsrnen : num  0.75 0.25 0.5 0.5 0.75 1 0.75 0.75 0.25 0.75 ...
+##  $ ipeqopt : num  0.6 0.8 0.2 0.6 0.8 0.8 0.8 0.2 1 1 ...
+##  $ elgsun  : num  0.75 0.5 1 0.5 1 0.5 0.5 0.75 1 1 ...
+##  $ inctxff : num  0 0.25 0.25 0.5 0.25 1 0.75 0.25 0.25 0.75 ...
+##  $ elgwind : num  0.5 0.5 1 0.75 1 0.75 0.5 0.75 0.75 1 ...
+##  $ iphlppl : num  0.6 1 0.8 0.2 0.8 0.8 0.8 0.6 0.8 0.8 ...
+##  $ hmsfmlsh: num  1 0 0.25 0.25 1 0.25 0.75 0.75 0 0.25 ...
+##  $ atcherp : num  0.5 0.6 0.3 0.3 0 0.8 0.7 0.9 0.2 0.7 ...
+##  $ ipudrst : num  0.6 0.8 0.2 0.6 1 0.8 0.2 0.6 0.4 0.8 ...
+##  $ lklmten : num  0.2 0.4 0.3 0.6 0.5 0.7 0.6 0.1 0.5 0.1 ...
+##  $ hmsacld : num  0 0.75 0.5 0.5 0 0.25 0.25 0.25 1 0.75 ...
+##  $ imdfetn : num  0.667 0.667 0 0 0.333 ...
+##  $ imueclt : num  0.7 0.5 0.5 0.3 0.1 0.8 0.5 0.7 0.1 1 ...
+##  $ iplylfr : num  0.8 1 0.8 0.4 1 0.8 0.8 0.4 1 0.8 ...
+##  $ freehms : num  0.25 0.75 0.75 0.5 0 1 0.5 0.75 0.75 1 ...
+##  $ impcntr : num  0.667 0.667 0 0 0.667 ...
+##  $ wrclmch : Factor w/ 2 levels &quot;Not_worried&quot;,..: 1 2 2 2 2 2 2 1 1 1 ...</code></pre>
+<hr />
+</div>
+</div>
+<div id="modeling" class="section level2">
+<h2>5.2 Modeling</h2>
+<p>As I mentioned in the beginning, I will employ a number of Machine Learning Algorithms and compare the results of them to determine the best algorithm. I am taking this broader approach since the underlying motivation of this project is more training and showcasing of skills, rather than employing a model which will inform real-world decision making. I will employ 10 algorithms in total. These algorithms are quite commonly used and represent some of the most up to date and powerful algorithms available on the market. Below is a list of all ML algorithms tested in this project:</p>
+<div id="model-overview" class="section level3 tabset">
+<h3>5.2.1 Model Overview</h3>
+<ul>
+<li><p>C5.0</p></li>
+<li><p>KNN</p></li>
+<li><p>SVM</p></li>
+<li><p>naiveBayes</p></li>
+<li><p>rpart</p></li>
+<li><p>ctree</p></li>
+<li><p>Random Forest</p></li>
+<li><p>adaBOOST</p></li>
+<li><p>GBM</p></li>
+<li><p>Ensemble</p></li>
+</ul>
+<div id="c5.0" class="section level4">
+<h4>C5.0</h4>
+<p>As a first ML algorithm, I will compute a C5.0 Decision Tree Algorithm. More information on this model can be found under the link below:</p>
+<ul>
+<li><a href="https://rpubs.com/cyobero/C50">C5.0</a></li>
+</ul>
+<p>In the first run, I will run a model without parameter tuning.</p>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##              Reference
+## Prediction    Not_worried Worried
+##   Not_worried         164     177
+##   Worried             279    1075
+##                                          
+##                Accuracy : 0.731          
+##                  95% CI : (0.7092, 0.752)
+##     No Information Rate : 0.7386         
+##     P-Value [Acc &gt; NIR] : 0.7728         
+##                                          
+##                   Kappa : 0.2472         
+##                                          
+##  Mcnemar&#39;s Test P-Value : 2.248e-06      
+##                                          
+##             Sensitivity : 0.37020        
+##             Specificity : 0.85863        
+##          Pos Pred Value : 0.48094        
+##          Neg Pred Value : 0.79394        
+##              Prevalence : 0.26136        
+##          Detection Rate : 0.09676        
+##    Detection Prevalence : 0.20118        
+##       Balanced Accuracy : 0.61441        
+##                                          
+##        &#39;Positive&#39; Class : Not_worried    
+## </code></pre>
+<p>As shown above, the C5.0 model yielded an accuracy score of 0.7309735.</p>
+<hr />
+</div>
+<div id="c5.0-tuned" class="section level4">
+<h4>C5.0 Tuned</h4>
+<p>Let’s now see if we can improve the accuracy by testing different hypertuning parameter values. The plot below shows the optimal number of trials for the best accuracy score and we will subsequently run a model with this value.</p>
+<div id="htmlwidget-0b71cc1f8f3420c0e55f" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0b71cc1f8f3420c0e55f">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":"Accuracy With Varying Trials (C5.0)"},"yAxis":{"title":{"text":"Accuracy"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":false},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"group":"group","data":[{"t":1,"cnt":0.730973451327434,"x":1,"y":0.730973451327434},{"t":2,"cnt":0.730973451327434,"x":2,"y":0.730973451327434},{"t":3,"cnt":0.732153392330383,"x":3,"y":0.732153392330383},{"t":4,"cnt":0.762241887905605,"x":4,"y":0.762241887905605},{"t":5,"cnt":0.755752212389381,"x":5,"y":0.755752212389381},{"t":6,"cnt":0.758702064896755,"x":6,"y":0.758702064896755},{"t":7,"cnt":0.761061946902655,"x":7,"y":0.761061946902655},{"t":8,"cnt":0.75929203539823,"x":8,"y":0.75929203539823},{"t":9,"cnt":0.769911504424779,"x":9,"y":0.769911504424779},{"t":10,"cnt":0.766371681415929,"x":10,"y":0.766371681415929},{"t":11,"cnt":0.761061946902655,"x":11,"y":0.761061946902655},{"t":12,"cnt":0.76283185840708,"x":12,"y":0.76283185840708},{"t":13,"cnt":0.755162241887906,"x":13,"y":0.755162241887906},{"t":14,"cnt":0.769321533923304,"x":14,"y":0.769321533923304},{"t":15,"cnt":0.757522123893805,"x":15,"y":0.757522123893805},{"t":16,"cnt":0.757522123893805,"x":16,"y":0.757522123893805},{"t":17,"cnt":0.757522123893805,"x":17,"y":0.757522123893805},{"t":18,"cnt":0.757522123893805,"x":18,"y":0.757522123893805},{"t":19,"cnt":0.757522123893805,"x":19,"y":0.757522123893805},{"t":20,"cnt":0.757522123893805,"x":20,"y":0.757522123893805},{"t":21,"cnt":0.757522123893805,"x":21,"y":0.757522123893805},{"t":22,"cnt":0.757522123893805,"x":22,"y":0.757522123893805},{"t":23,"cnt":0.757522123893805,"x":23,"y":0.757522123893805},{"t":24,"cnt":0.757522123893805,"x":24,"y":0.757522123893805},{"t":25,"cnt":0.757522123893805,"x":25,"y":0.757522123893805},{"t":26,"cnt":0.757522123893805,"x":26,"y":0.757522123893805},{"t":27,"cnt":0.757522123893805,"x":27,"y":0.757522123893805},{"t":28,"cnt":0.757522123893805,"x":28,"y":0.757522123893805},{"t":29,"cnt":0.757522123893805,"x":29,"y":0.757522123893805},{"t":30,"cnt":0.757522123893805,"x":30,"y":0.757522123893805},{"t":31,"cnt":0.757522123893805,"x":31,"y":0.757522123893805},{"t":32,"cnt":0.757522123893805,"x":32,"y":0.757522123893805},{"t":33,"cnt":0.757522123893805,"x":33,"y":0.757522123893805},{"t":34,"cnt":0.757522123893805,"x":34,"y":0.757522123893805},{"t":35,"cnt":0.757522123893805,"x":35,"y":0.757522123893805},{"t":36,"cnt":0.757522123893805,"x":36,"y":0.757522123893805},{"t":37,"cnt":0.757522123893805,"x":37,"y":0.757522123893805},{"t":38,"cnt":0.757522123893805,"x":38,"y":0.757522123893805},{"t":39,"cnt":0.757522123893805,"x":39,"y":0.757522123893805},{"t":40,"cnt":0.757522123893805,"x":40,"y":0.757522123893805},{"t":41,"cnt":0.757522123893805,"x":41,"y":0.757522123893805},{"t":42,"cnt":0.757522123893805,"x":42,"y":0.757522123893805},{"t":43,"cnt":0.757522123893805,"x":43,"y":0.757522123893805},{"t":44,"cnt":0.757522123893805,"x":44,"y":0.757522123893805},{"t":45,"cnt":0.757522123893805,"x":45,"y":0.757522123893805},{"t":46,"cnt":0.757522123893805,"x":46,"y":0.757522123893805},{"t":47,"cnt":0.757522123893805,"x":47,"y":0.757522123893805},{"t":48,"cnt":0.757522123893805,"x":48,"y":0.757522123893805},{"t":49,"cnt":0.757522123893805,"x":49,"y":0.757522123893805},{"t":50,"cnt":0.757522123893805,"x":50,"y":0.757522123893805}],"type":"line"}],"xAxis":{"type":"linear","title":{"text":"Number of Trials"}},"subtitle":{"text":"Optimal number of trials is 9 (accuracy : 0.769911504424779 ) in C5.0"}},"theme":{"colors":["#0266C8","#F90101","#F2B50F","#00933B"],"chart":{"style":{"fontFamily":"Roboto","color":"#444444"}},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#C0C0C0","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)"},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":"Roboto","debug":false},"evals":[],"jsHooks":[]}</script>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##              Reference
+## Prediction    Not_worried Worried
+##   Not_worried         118      65
+##   Worried             325    1187
+##                                           
+##                Accuracy : 0.7699          
+##                  95% CI : (0.7491, 0.7898)
+##     No Information Rate : 0.7386          
+##     P-Value [Acc &gt; NIR] : 0.001656        
+##                                           
+##                   Kappa : 0.2646          
+##                                           
+##  Mcnemar&#39;s Test P-Value : &lt; 2.2e-16       
+##                                           
+##             Sensitivity : 0.26637         
+##             Specificity : 0.94808         
+##          Pos Pred Value : 0.64481         
+##          Neg Pred Value : 0.78505         
+##              Prevalence : 0.26136         
+##          Detection Rate : 0.06962         
+##    Detection Prevalence : 0.10796         
+##       Balanced Accuracy : 0.60722         
+##                                           
+##        &#39;Positive&#39; Class : Not_worried     
+## </code></pre>
+<p>As shown above, a model with optimized parameters (9 Trials) yielded a slightly better accuracy score of 0.7699115 compared to the previous model in which I did not apply hyperparameter tuning.</p>
+<hr />
+</div>
+<div id="knn" class="section level4">
+<h4>knn</h4>
+<p>Next, I will compute a K-Nearest Neighbors (KNN) model. More information on this model can be found under the link below:</p>
+<ul>
+<li><a href="https://rafalab.github.io/dsbook/examples-of-algorithms.html#k-nearest-neighbors">KNN</a></li>
+</ul>
+<p>As in the model before, I will evaluate the accuracy by testing different hypertuning parameter values. The plot below shows the optimal number of <code>k</code> yielding the best accuracy score. Thus, I will subsequently run a model with this value specification.</p>
+<div id="htmlwidget-aa186246d072cfcfcb70" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aa186246d072cfcfcb70">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":"Accuracy With Varying K (KNN)"},"yAxis":{"title":{"text":"Accuracy"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":false},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"group":"group","data":[{"k":1,"cnt":0.68259587020649,"x":1,"y":0.68259587020649},{"k":2,"cnt":0.68377581120944,"x":2,"y":0.68377581120944},{"k":3,"cnt":0.723893805309734,"x":3,"y":0.723893805309734},{"k":4,"cnt":0.727433628318584,"x":4,"y":0.727433628318584},{"k":5,"cnt":0.738643067846608,"x":5,"y":0.738643067846608},{"k":6,"cnt":0.733923303834808,"x":6,"y":0.733923303834808},{"k":7,"cnt":0.741592920353982,"x":7,"y":0.741592920353982},{"k":8,"cnt":0.738053097345133,"x":8,"y":0.738053097345133},{"k":9,"cnt":0.746312684365782,"x":9,"y":0.746312684365782},{"k":10,"cnt":0.739823008849558,"x":10,"y":0.739823008849558},{"k":11,"cnt":0.753982300884956,"x":11,"y":0.753982300884956},{"k":12,"cnt":0.747492625368732,"x":12,"y":0.747492625368732},{"k":13,"cnt":0.751622418879056,"x":13,"y":0.751622418879056},{"k":14,"cnt":0.752212389380531,"x":14,"y":0.752212389380531},{"k":15,"cnt":0.755162241887906,"x":15,"y":0.755162241887906},{"k":16,"cnt":0.754572271386431,"x":16,"y":0.754572271386431},{"k":17,"cnt":0.755752212389381,"x":17,"y":0.755752212389381},{"k":18,"cnt":0.755752212389381,"x":18,"y":0.755752212389381},{"k":19,"cnt":0.75811209439528,"x":19,"y":0.75811209439528},{"k":20,"cnt":0.757522123893805,"x":20,"y":0.757522123893805},{"k":21,"cnt":0.755162241887906,"x":21,"y":0.755162241887906},{"k":22,"cnt":0.755162241887906,"x":22,"y":0.755162241887906},{"k":23,"cnt":0.752802359882006,"x":23,"y":0.752802359882006},{"k":24,"cnt":0.754572271386431,"x":24,"y":0.754572271386431},{"k":25,"cnt":0.757522123893805,"x":25,"y":0.757522123893805},{"k":26,"cnt":0.753982300884956,"x":26,"y":0.753982300884956},{"k":27,"cnt":0.757522123893805,"x":27,"y":0.757522123893805},{"k":28,"cnt":0.758702064896755,"x":28,"y":0.758702064896755},{"k":29,"cnt":0.756342182890855,"x":29,"y":0.756342182890855},{"k":30,"cnt":0.755162241887906,"x":30,"y":0.755162241887906}],"type":"line"}],"xAxis":{"type":"linear","title":{"text":"Number of Neighbors(k)"}},"subtitle":{"text":"Optimal number of k is 28 (accuracy : 0.758702064896755 ) in KNN"}},"theme":{"colors":["#0266C8","#F90101","#F2B50F","#00933B"],"chart":{"style":{"fontFamily":"Roboto","color":"#444444"}},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#C0C0C0","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)"},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":"Roboto","debug":false},"evals":[],"jsHooks":[]}</script>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##              Reference
+## Prediction    Not_worried Worried
+##   Not_worried          56      24
+##   Worried             387    1228
+##                                           
+##                Accuracy : 0.7575          
+##                  95% CI : (0.7364, 0.7778)
+##     No Information Rate : 0.7386          
+##     P-Value [Acc &gt; NIR] : 0.04            
+##                                           
+##                   Kappa : 0.1459          
+##                                           
+##  Mcnemar&#39;s Test P-Value : &lt;2e-16          
+##                                           
+##             Sensitivity : 0.12641         
+##             Specificity : 0.98083         
+##          Pos Pred Value : 0.70000         
+##          Neg Pred Value : 0.76037         
+##              Prevalence : 0.26136         
+##          Detection Rate : 0.03304         
+##    Detection Prevalence : 0.04720         
+##       Balanced Accuracy : 0.55362         
+##                                           
+##        &#39;Positive&#39; Class : Not_worried     
+## </code></pre>
+<p>As shown above, a model with optimized number of (28 <code>k</code>) yielded an accuracy score of 0.7587021 which we determined above as best score between 1 to 30 <code>k</code> values.</p>
+<hr />
+</div>
+<div id="naivebayes" class="section level4">
+<h4>naiveBayes</h4>
+<p>The next ML algorithm I will compute is a Naive Bayes model. More information on this model can be found under the link below:</p>
+<ul>
+<li><a href="https://rafalab.github.io/dsbook/examples-of-algorithms.html#naive-bayes">Naive Bayes</a></li>
+</ul>
+<p>I will run a model re-iterating over 1 to 30 in ‘laplace’ values.</p>
+<div id="htmlwidget-c1a1b5007938619c5a1c" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c1a1b5007938619c5a1c">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":"Accuracy With Varying Laplace (naiveBayes)"},"yAxis":{"title":{"text":"Accuracy"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":false},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"group":"group","data":[{"l":1,"cnt":0.729793510324484,"x":1,"y":0.729793510324484},{"l":2,"cnt":0.729793510324484,"x":2,"y":0.729793510324484},{"l":3,"cnt":0.729793510324484,"x":3,"y":0.729793510324484},{"l":4,"cnt":0.729793510324484,"x":4,"y":0.729793510324484},{"l":5,"cnt":0.729793510324484,"x":5,"y":0.729793510324484},{"l":6,"cnt":0.729793510324484,"x":6,"y":0.729793510324484},{"l":7,"cnt":0.729793510324484,"x":7,"y":0.729793510324484},{"l":8,"cnt":0.729793510324484,"x":8,"y":0.729793510324484},{"l":9,"cnt":0.729793510324484,"x":9,"y":0.729793510324484},{"l":10,"cnt":0.729793510324484,"x":10,"y":0.729793510324484},{"l":11,"cnt":0.729793510324484,"x":11,"y":0.729793510324484},{"l":12,"cnt":0.729793510324484,"x":12,"y":0.729793510324484},{"l":13,"cnt":0.729793510324484,"x":13,"y":0.729793510324484},{"l":14,"cnt":0.729793510324484,"x":14,"y":0.729793510324484},{"l":15,"cnt":0.729793510324484,"x":15,"y":0.729793510324484},{"l":16,"cnt":0.729793510324484,"x":16,"y":0.729793510324484},{"l":17,"cnt":0.729793510324484,"x":17,"y":0.729793510324484},{"l":18,"cnt":0.729793510324484,"x":18,"y":0.729793510324484},{"l":19,"cnt":0.729793510324484,"x":19,"y":0.729793510324484},{"l":20,"cnt":0.729793510324484,"x":20,"y":0.729793510324484},{"l":21,"cnt":0.729793510324484,"x":21,"y":0.729793510324484},{"l":22,"cnt":0.729793510324484,"x":22,"y":0.729793510324484},{"l":23,"cnt":0.729793510324484,"x":23,"y":0.729793510324484},{"l":24,"cnt":0.729793510324484,"x":24,"y":0.729793510324484},{"l":25,"cnt":0.729793510324484,"x":25,"y":0.729793510324484},{"l":26,"cnt":0.729793510324484,"x":26,"y":0.729793510324484},{"l":27,"cnt":0.729793510324484,"x":27,"y":0.729793510324484},{"l":28,"cnt":0.729793510324484,"x":28,"y":0.729793510324484},{"l":29,"cnt":0.729793510324484,"x":29,"y":0.729793510324484},{"l":30,"cnt":0.729793510324484,"x":30,"y":0.729793510324484}],"type":"line"}],"xAxis":{"type":"linear","title":{"text":"Number of Laplace"}},"subtitle":{"text":"Optimal number of laplace is 1 (accuracy : 0.729793510324484 ) in naiveBayes"}},"theme":{"colors":["#0266C8","#F90101","#F2B50F","#00933B"],"chart":{"style":{"fontFamily":"Roboto","color":"#444444"}},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#C0C0C0","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)"},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":"Roboto","debug":false},"evals":[],"jsHooks":[]}</script>
+<p>As visible in the plot above, varying the ‘laplace’ values does not improve (nor diminish) the prediction of the model. Thus, I will run a naiveBayes model without specific ‘laplace’ specification.</p>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##              Reference
+## Prediction    Not_worried Worried
+##   Not_worried         215     230
+##   Worried             228    1022
+##                                          
+##                Accuracy : 0.7298         
+##                  95% CI : (0.708, 0.7508)
+##     No Information Rate : 0.7386         
+##     P-Value [Acc &gt; NIR] : 0.8046         
+##                                          
+##                   Kappa : 0.3012         
+##                                          
+##  Mcnemar&#39;s Test P-Value : 0.9627         
+##                                          
+##             Sensitivity : 0.4853         
+##             Specificity : 0.8163         
+##          Pos Pred Value : 0.4831         
+##          Neg Pred Value : 0.8176         
+##              Prevalence : 0.2614         
+##          Detection Rate : 0.1268         
+##    Detection Prevalence : 0.2625         
+##       Balanced Accuracy : 0.6508         
+##                                          
+##        &#39;Positive&#39; Class : Not_worried    
+## </code></pre>
+<p>The results of this model are shown in the confusion matrix above. The model yielded an accuracy score of 0.7297935</p>
+<hr />
+</div>
+<div id="svm" class="section level4">
+<h4>SVM</h4>
+<p>Next, I will compute a Support Vector Machine (SVM) model. More information on this model can be found under the link below:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Support-vector_machine">SVM</a></li>
+</ul>
+<p>Let’s first try a model without hyperparameter tuning.</p>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##              Reference
+## Prediction    Not_worried Worried
+##   Not_worried          99      57
+##   Worried             344    1195
+##                                           
+##                Accuracy : 0.7634          
+##                  95% CI : (0.7424, 0.7835)
+##     No Information Rate : 0.7386          
+##     P-Value [Acc &gt; NIR] : 0.01033         
+##                                           
+##                   Kappa : 0.2251          
+##                                           
+##  Mcnemar&#39;s Test P-Value : &lt; 2e-16         
+##                                           
+##             Sensitivity : 0.22348         
+##             Specificity : 0.95447         
+##          Pos Pred Value : 0.63462         
+##          Neg Pred Value : 0.77648         
+##              Prevalence : 0.26136         
+##          Detection Rate : 0.05841         
+##    Detection Prevalence : 0.09204         
+##       Balanced Accuracy : 0.58897         
+##                                           
+##        &#39;Positive&#39; Class : Not_worried     
+## </code></pre>
+<p>The confusion matrix visible above indicates an accuracy score of 0.7634218. Let’s see if we can improve upon this score by fine tuning some hyperparameters. Specifically, we are going to grid search over a range of different <code>gamma</code> and <code>cost</code> values.</p>
+<hr />
+</div>
+<div id="svm-tune" class="section level4">
+<h4>SVM Tune</h4>
+<div id="htmlwidget-3eab6ac91a6ffce4e22c" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3eab6ac91a6ffce4e22c">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":"Accuracy With Varying Parameters (SVM)"},"yAxis":{"title":{"text":"Accuracy"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":false},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"group":"group","data":[{"p":1,"cnt":0.738643067846608,"x":1,"y":0.738643067846608},{"p":2,"cnt":0.738643067846608,"x":2,"y":0.738643067846608},{"p":3,"cnt":0.738643067846608,"x":3,"y":0.738643067846608},{"p":4,"cnt":0.738643067846608,"x":4,"y":0.738643067846608},{"p":5,"cnt":0.738643067846608,"x":5,"y":0.738643067846608},{"p":6,"cnt":0.738643067846608,"x":6,"y":0.738643067846608},{"p":7,"cnt":0.755752212389381,"x":7,"y":0.755752212389381},{"p":8,"cnt":0.764601769911504,"x":8,"y":0.764601769911504},{"p":9,"cnt":0.76401179941003,"x":9,"y":0.76401179941003},{"p":10,"cnt":0.758702064896755,"x":10,"y":0.758702064896755},{"p":11,"cnt":0.75811209439528,"x":11,"y":0.75811209439528},{"p":12,"cnt":0.754572271386431,"x":12,"y":0.754572271386431},{"p":13,"cnt":0.768141592920354,"x":13,"y":0.768141592920354},{"p":14,"cnt":0.761061946902655,"x":14,"y":0.761061946902655},{"p":15,"cnt":0.75929203539823,"x":15,"y":0.75929203539823},{"p":16,"cnt":0.755162241887906,"x":16,"y":0.755162241887906},{"p":17,"cnt":0.755752212389381,"x":17,"y":0.755752212389381},{"p":18,"cnt":0.757522123893805,"x":18,"y":0.757522123893805},{"p":19,"cnt":0.766371681415929,"x":19,"y":0.766371681415929},{"p":20,"cnt":0.76047197640118,"x":20,"y":0.76047197640118},{"p":21,"cnt":0.755752212389381,"x":21,"y":0.755752212389381},{"p":22,"cnt":0.755162241887906,"x":22,"y":0.755162241887906},{"p":23,"cnt":0.758702064896755,"x":23,"y":0.758702064896755},{"p":24,"cnt":0.748082595870207,"x":24,"y":0.748082595870207},{"p":25,"cnt":0.764601769911504,"x":25,"y":0.764601769911504},{"p":26,"cnt":0.757522123893805,"x":26,"y":0.757522123893805},{"p":27,"cnt":0.756342182890855,"x":27,"y":0.756342182890855},{"p":28,"cnt":0.75693215339233,"x":28,"y":0.75693215339233},{"p":29,"cnt":0.749852507374631,"x":29,"y":0.749852507374631},{"p":30,"cnt":0.737463126843658,"x":30,"y":0.737463126843658},{"p":31,"cnt":0.761061946902655,"x":31,"y":0.761061946902655},{"p":32,"cnt":0.75929203539823,"x":32,"y":0.75929203539823},{"p":33,"cnt":0.757522123893805,"x":33,"y":0.757522123893805},{"p":34,"cnt":0.753392330383481,"x":34,"y":0.753392330383481},{"p":35,"cnt":0.740412979351032,"x":35,"y":0.740412979351032},{"p":36,"cnt":0.730383480825959,"x":36,"y":0.730383480825959},{"p":37,"cnt":0.76283185840708,"x":37,"y":0.76283185840708},{"p":38,"cnt":0.759882005899705,"x":38,"y":0.759882005899705},{"p":39,"cnt":0.759882005899705,"x":39,"y":0.759882005899705},{"p":40,"cnt":0.746902654867257,"x":40,"y":0.746902654867257},{"p":41,"cnt":0.735693215339233,"x":41,"y":0.735693215339233},{"p":42,"cnt":0.725073746312684,"x":42,"y":0.725073746312684},{"p":43,"cnt":0.76283185840708,"x":43,"y":0.76283185840708},{"p":44,"cnt":0.761061946902655,"x":44,"y":0.761061946902655},{"p":45,"cnt":0.75811209439528,"x":45,"y":0.75811209439528},{"p":46,"cnt":0.741592920353982,"x":46,"y":0.741592920353982},{"p":47,"cnt":0.732743362831858,"x":47,"y":0.732743362831858},{"p":48,"cnt":0.721533923303835,"x":48,"y":0.721533923303835},{"p":49,"cnt":0.76165191740413,"x":49,"y":0.76165191740413},{"p":50,"cnt":0.763421828908555,"x":50,"y":0.763421828908555},{"p":51,"cnt":0.753392330383481,"x":51,"y":0.753392330383481},{"p":52,"cnt":0.740412979351032,"x":52,"y":0.740412979351032},{"p":53,"cnt":0.732743362831858,"x":53,"y":0.732743362831858},{"p":54,"cnt":0.717994100294985,"x":54,"y":0.717994100294985},{"p":55,"cnt":0.763421828908555,"x":55,"y":0.763421828908555},{"p":56,"cnt":0.765191740412979,"x":56,"y":0.765191740412979},{"p":57,"cnt":0.752212389380531,"x":57,"y":0.752212389380531},{"p":58,"cnt":0.739233038348083,"x":58,"y":0.739233038348083},{"p":59,"cnt":0.730973451327434,"x":59,"y":0.730973451327434},{"p":60,"cnt":0.712684365781711,"x":60,"y":0.712684365781711},{"p":61,"cnt":0.763421828908555,"x":61,"y":0.763421828908555},{"p":62,"cnt":0.765781710914454,"x":62,"y":0.765781710914454},{"p":63,"cnt":0.745722713864307,"x":63,"y":0.745722713864307},{"p":64,"cnt":0.736873156342183,"x":64,"y":0.736873156342183},{"p":65,"cnt":0.727433628318584,"x":65,"y":0.727433628318584},{"p":66,"cnt":0.712684365781711,"x":66,"y":0.712684365781711},{"p":67,"cnt":0.764601769911504,"x":67,"y":0.764601769911504},{"p":68,"cnt":0.76283185840708,"x":68,"y":0.76283185840708},{"p":69,"cnt":0.743362831858407,"x":69,"y":0.743362831858407},{"p":70,"cnt":0.732153392330383,"x":70,"y":0.732153392330383},{"p":71,"cnt":0.72094395280236,"x":71,"y":0.72094395280236},{"p":72,"cnt":0.707964601769911,"x":72,"y":0.707964601769911},{"p":73,"cnt":0.763421828908555,"x":73,"y":0.763421828908555},{"p":74,"cnt":0.759882005899705,"x":74,"y":0.759882005899705},{"p":75,"cnt":0.745722713864307,"x":75,"y":0.745722713864307},{"p":76,"cnt":0.732743362831858,"x":76,"y":0.732743362831858},{"p":77,"cnt":0.721533923303835,"x":77,"y":0.721533923303835},{"p":78,"cnt":0.702654867256637,"x":78,"y":0.702654867256637},{"p":79,"cnt":0.763421828908555,"x":79,"y":0.763421828908555},{"p":80,"cnt":0.758702064896755,"x":80,"y":0.758702064896755},{"p":81,"cnt":0.746902654867257,"x":81,"y":0.746902654867257},{"p":82,"cnt":0.730973451327434,"x":82,"y":0.730973451327434},{"p":83,"cnt":0.71622418879056,"x":83,"y":0.71622418879056},{"p":84,"cnt":0.699705014749262,"x":84,"y":0.699705014749262},{"p":85,"cnt":0.761061946902655,"x":85,"y":0.761061946902655},{"p":86,"cnt":0.757522123893805,"x":86,"y":0.757522123893805},{"p":87,"cnt":0.743362831858407,"x":87,"y":0.743362831858407},{"p":88,"cnt":0.731563421828909,"x":88,"y":0.731563421828909},{"p":89,"cnt":0.713274336283186,"x":89,"y":0.713274336283186},{"p":90,"cnt":0.699705014749262,"x":90,"y":0.699705014749262},{"p":91,"cnt":0.758702064896755,"x":91,"y":0.758702064896755},{"p":92,"cnt":0.754572271386431,"x":92,"y":0.754572271386431},{"p":93,"cnt":0.742182890855457,"x":93,"y":0.742182890855457},{"p":94,"cnt":0.727433628318584,"x":94,"y":0.727433628318584},{"p":95,"cnt":0.710324483775811,"x":95,"y":0.710324483775811},{"p":96,"cnt":0.701474926253687,"x":96,"y":0.701474926253687},{"p":97,"cnt":0.75811209439528,"x":97,"y":0.75811209439528},{"p":98,"cnt":0.751622418879056,"x":98,"y":0.751622418879056},{"p":99,"cnt":0.737463126843658,"x":99,"y":0.737463126843658},{"p":100,"cnt":0.723893805309734,"x":100,"y":0.723893805309734},{"p":101,"cnt":0.714454277286136,"x":101,"y":0.714454277286136},{"p":102,"cnt":0.703834808259587,"x":102,"y":0.703834808259587},{"p":103,"cnt":0.757522123893805,"x":103,"y":0.757522123893805},{"p":104,"cnt":0.755752212389381,"x":104,"y":0.755752212389381},{"p":105,"cnt":0.738053097345133,"x":105,"y":0.738053097345133},{"p":106,"cnt":0.725663716814159,"x":106,"y":0.725663716814159},{"p":107,"cnt":0.713274336283186,"x":107,"y":0.713274336283186},{"p":108,"cnt":0.704424778761062,"x":108,"y":0.704424778761062},{"p":109,"cnt":0.757522123893805,"x":109,"y":0.757522123893805},{"p":110,"cnt":0.753392330383481,"x":110,"y":0.753392330383481},{"p":111,"cnt":0.739823008849558,"x":111,"y":0.739823008849558},{"p":112,"cnt":0.724483775811209,"x":112,"y":0.724483775811209},{"p":113,"cnt":0.706784660766962,"x":113,"y":0.706784660766962},{"p":114,"cnt":0.705014749262537,"x":114,"y":0.705014749262537},{"p":115,"cnt":0.76047197640118,"x":115,"y":0.76047197640118},{"p":116,"cnt":0.752212389380531,"x":116,"y":0.752212389380531},{"p":117,"cnt":0.735693215339233,"x":117,"y":0.735693215339233},{"p":118,"cnt":0.719174041297935,"x":118,"y":0.719174041297935},{"p":119,"cnt":0.710324483775811,"x":119,"y":0.710324483775811},{"p":120,"cnt":0.706194690265487,"x":120,"y":0.706194690265487},{"p":121,"cnt":0.75929203539823,"x":121,"y":0.75929203539823},{"p":122,"cnt":0.751032448377581,"x":122,"y":0.751032448377581},{"p":123,"cnt":0.736873156342183,"x":123,"y":0.736873156342183},{"p":124,"cnt":0.71858407079646,"x":124,"y":0.71858407079646},{"p":125,"cnt":0.709144542772861,"x":125,"y":0.709144542772861},{"p":126,"cnt":0.707964601769911,"x":126,"y":0.707964601769911}],"type":"line"}],"xAxis":{"type":"linear","title":{"text":"Number of Parameters"}},"subtitle":{"text":"Optimal number of parameter is 13 (accuracy : 0.768141592920354 ) in SVM"}},"theme":{"colors":["#0266C8","#F90101","#F2B50F","#00933B"],"chart":{"style":{"fontFamily":"Roboto","color":"#444444"}},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#C0C0C0","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)"},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":"Roboto","debug":false},"evals":[],"jsHooks":[]}</script>
+<p>As shown in the plot above, the optimal number of parameters seems to be 13 yielding an accuracy score of 0.7681416. We will use this value for our optimized model.</p>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##              Reference
+## Prediction    Not_worried Worried
+##   Not_worried          74      24
+##   Worried             369    1228
+##                                          
+##                Accuracy : 0.7681         
+##                  95% CI : (0.7473, 0.788)
+##     No Information Rate : 0.7386         
+##     P-Value [Acc &gt; NIR] : 0.00283        
+##                                          
+##                   Kappa : 0.1976         
+##                                          
+##  Mcnemar&#39;s Test P-Value : &lt; 2e-16        
+##                                          
+##             Sensitivity : 0.16704        
+##             Specificity : 0.98083        
+##          Pos Pred Value : 0.75510        
+##          Neg Pred Value : 0.76894        
+##              Prevalence : 0.26136        
+##          Detection Rate : 0.04366        
+##    Detection Prevalence : 0.05782        
+##       Balanced Accuracy : 0.57394        
+##                                          
+##        &#39;Positive&#39; Class : Not_worried    
+## </code></pre>
+<p>The confusion matrix above summarizes the results for the optimized SVM model. The accuracy score of the tuned model (0.7681416) is slightly better than the non-tuned model (0.7634218).</p>
+<hr />
+</div>
+<div id="rpart" class="section level4">
+<h4>rpart</h4>
+<p>Next, I will compute a Recursive Partitioning (rpart) model. More information on this model can be found under the link below:</p>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/rpart/vignettes/longintro.pdf">rpart</a></li>
+</ul>
+<p>For the rpart model, I will use 5-fold cross validation with the caret packages’ in-built <code>trainControl</code> function. As hyperparameter tuning specifications, I will use the built-in function of the <code>caret</code> package by specifying the <code>tuneLength</code> argument to 2. The ‘tuneLength’ parameter tells the algorithm to try different default values for the main parameters, in our case 2. I will use both the <code>tuneLength</code> and the <code>trainControl</code> functions for the following models as well.</p>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##              Reference
+## Prediction    Not_worried Worried
+##   Not_worried          72      66
+##   Worried             371    1186
+##                                           
+##                Accuracy : 0.7422          
+##                  95% CI : (0.7207, 0.7629)
+##     No Information Rate : 0.7386          
+##     P-Value [Acc &gt; NIR] : 0.3821          
+##                                           
+##                   Kappa : 0.1412          
+##                                           
+##  Mcnemar&#39;s Test P-Value : &lt;2e-16          
+##                                           
+##             Sensitivity : 0.16253         
+##             Specificity : 0.94728         
+##          Pos Pred Value : 0.52174         
+##          Neg Pred Value : 0.76172         
+##              Prevalence : 0.26136         
+##          Detection Rate : 0.04248         
+##    Detection Prevalence : 0.08142         
+##       Balanced Accuracy : 0.55491         
+##                                           
+##        &#39;Positive&#39; Class : Not_worried     
+## </code></pre>
+<p>The <code>rpart</code> model confusion matrix is shown above.</p>
+<hr />
+</div>
+<div id="ctree" class="section level4">
+<h4>ctree</h4>
+<p>Next, I will compute a conditional inference trees (CTree) model. More information on this model can be found under the link below:</p>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/partykit/vignettes/ctree.pdf">ctree</a></li>
+</ul>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##              Reference
+## Prediction    Not_worried Worried
+##   Not_worried         112     124
+##   Worried             331    1128
+##                                           
+##                Accuracy : 0.7316          
+##                  95% CI : (0.7098, 0.7525)
+##     No Information Rate : 0.7386          
+##     P-Value [Acc &gt; NIR] : 0.7559          
+##                                           
+##                   Kappa : 0.1811          
+##                                           
+##  Mcnemar&#39;s Test P-Value : &lt;2e-16          
+##                                           
+##             Sensitivity : 0.25282         
+##             Specificity : 0.90096         
+##          Pos Pred Value : 0.47458         
+##          Neg Pred Value : 0.77313         
+##              Prevalence : 0.26136         
+##          Detection Rate : 0.06608         
+##    Detection Prevalence : 0.13923         
+##       Balanced Accuracy : 0.57689         
+##                                           
+##        &#39;Positive&#39; Class : Not_worried     
+## </code></pre>
+<p>Using again 5-fold cross-validation and setting <code>tuneLength</code> argument to 2, the <code>ctree</code> model yielded the above results.</p>
+<hr />
+</div>
+<div id="random-forest" class="section level4">
+<h4>Random Forest</h4>
+<p>Next, I will compute a popular and widely used Random Forest model. More information on this model can be found under the link below:</p>
+<ul>
+<li><a href="https://rafalab.github.io/dsbook/examples-of-algorithms.html#random-forests">Random Forest</a></li>
+</ul>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##              Reference
+## Prediction    Not_worried Worried
+##   Not_worried         102      54
+##   Worried             341    1198
+##                                           
+##                Accuracy : 0.767           
+##                  95% CI : (0.7461, 0.7869)
+##     No Information Rate : 0.7386          
+##     P-Value [Acc &gt; NIR] : 0.003983        
+##                                           
+##                   Kappa : 0.2367          
+##                                           
+##  Mcnemar&#39;s Test P-Value : &lt; 2.2e-16       
+##                                           
+##             Sensitivity : 0.23025         
+##             Specificity : 0.95687         
+##          Pos Pred Value : 0.65385         
+##          Neg Pred Value : 0.77843         
+##              Prevalence : 0.26136         
+##          Detection Rate : 0.06018         
+##    Detection Prevalence : 0.09204         
+##       Balanced Accuracy : 0.59356         
+##                                           
+##        &#39;Positive&#39; Class : Not_worried     
+## </code></pre>
+<p>The results for the <code>Random Forest Model</code> are shown above.</p>
+<hr />
+</div>
+<div id="gbm" class="section level4">
+<h4>GBM</h4>
+<p>Next, I will compute a Gradient boosting (GBM) model. More information on this model can be found under the link below:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Gradient_boosting">GBM</a></li>
+</ul>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##              Reference
+## Prediction    Not_worried Worried
+##   Not_worried         118      87
+##   Worried             325    1165
+##                                           
+##                Accuracy : 0.7569          
+##                  95% CI : (0.7358, 0.7772)
+##     No Information Rate : 0.7386          
+##     P-Value [Acc &gt; NIR] : 0.04508         
+##                                           
+##                   Kappa : 0.2382          
+##                                           
+##  Mcnemar&#39;s Test P-Value : &lt; 2e-16         
+##                                           
+##             Sensitivity : 0.26637         
+##             Specificity : 0.93051         
+##          Pos Pred Value : 0.57561         
+##          Neg Pred Value : 0.78188         
+##              Prevalence : 0.26136         
+##          Detection Rate : 0.06962         
+##    Detection Prevalence : 0.12094         
+##       Balanced Accuracy : 0.59844         
+##                                           
+##        &#39;Positive&#39; Class : Not_worried     
+## </code></pre>
+<p>The results for the <code>GBM</code> model are shown above.</p>
+<hr />
+</div>
+<div id="adaboost" class="section level4">
+<h4>adaBOOST</h4>
+<p>Next, I will compute a Adaptive Boosting (adaBOOST) which is a statistical classification meta-algorithm model. More information on this model can be found under the link below:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/AdaBoost">adaBoost</a></li>
+</ul>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##              Reference
+## Prediction    Not_worried Worried
+##   Not_worried         140     111
+##   Worried             303    1141
+##                                          
+##                Accuracy : 0.7558         
+##                  95% CI : (0.7346, 0.776)
+##     No Information Rate : 0.7386         
+##     P-Value [Acc &gt; NIR] : 0.05679        
+##                                          
+##                   Kappa : 0.2644         
+##                                          
+##  Mcnemar&#39;s Test P-Value : &lt; 2e-16        
+##                                          
+##             Sensitivity : 0.3160         
+##             Specificity : 0.9113         
+##          Pos Pred Value : 0.5578         
+##          Neg Pred Value : 0.7902         
+##              Prevalence : 0.2614         
+##          Detection Rate : 0.0826         
+##    Detection Prevalence : 0.1481         
+##       Balanced Accuracy : 0.6137         
+##                                          
+##        &#39;Positive&#39; Class : Not_worried    
+## </code></pre>
+<p>The results for the <code>AdaBoost</code> model are shown above.</p>
+<hr />
+</div>
+<div id="ensemble" class="section level4">
+<h4>Ensemble</h4>
+<p>In the final step, I will Ensemble the predictions of all <code>models</code> that I have run so far to form a new combined prediction based on <code>glm</code>. More information on this model can be found under the links below:</p>
+<ul>
+<li><p><a href="https://en.wikipedia.org/wiki/Ensemble_learning">Ensemble</a></p></li>
+<li><p><a href="https://machinelearningmastery.com/machine-learning-ensembles-with-r/">GLM for Ensemble</a></p></li>
+</ul>
+<p>Up until here, I have run several ML algorithms individually. However, the <code>caretEnsemble</code> package also allows us to run all the different ML models in one call using the <code>caretEnsemble::caretList()</code> function instead of the <code>caret::train()</code> function. This is what I am going to employ next. As a first step for the Ensemble model, I will start defining the cross-validation method and the desired summary statistics using the <code>trainControl</code> function. Then I am going to create a vector which contains the names of the all the algorithms I want to run. These are going to be the same ones as I have employed before and therefore, when I run the Ensemble model in the next step, I will be able ascertain whether the Ensemble model yields a better accuracy score compared to the individual models.</p>
+<p>The plots above show the accuracy and Kappa results for all models in the Ensemble individually.</p>
+<p><img src="ClimateChangeAI_files/figure-html/caret-ensemble-plot-1.png" width="1152" /></p>
+<p>The next step is then to combine the predictions of all our models to form a final prediction using a Generalized Linear Model algorithm (GLM). Below, the results for the Ensemble GLM model are shown.</p>
+<pre><code>## A glm ensemble of 9 base models: knn, naive_bayes, C5.0, rpart, ctree, rf, gbm, adaboost, svmRadial
+## 
+## Ensemble results:
+## Generalized Linear Model 
+## 
+## 5078 samples
+##    9 predictor
+##    2 classes: &#39;Not_worried&#39;, &#39;Worried&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold, repeated 2 times) 
+## Summary of sample sizes: 4061, 4063, 4062, 4063, 4063, 4062, ... 
+## Resampling results:
+## 
+##   Accuracy   Kappa    
+##   0.7775691  0.3213617</code></pre>
+<hr />
+</div>
+</div>
+<div id="model-accuracy-comparison" class="section level3">
+<h3>5.2.2 Model Accuracy Comparison</h3>
+<p>Let’s now take a closer look at the accuracy scores of all the models that I have run by visualizing the accuracy scores side-by-side.</p>
+<p><img src="ClimateChangeAI_files/figure-html/model-accuracies-1.png" width="1152" /></p>
+<p>As shown in the plots above, the individual model which achieved the best accuracy score used on the test set has a accuracy score of 0.7699115.</p>
+<hr />
+</div>
+</div>
+</div>
+<div id="results" class="section level1">
+<h1>6. Results</h1>
+<p>Looking at the results of the algorithms individually, the plot below depicts the performance of the models in terms of accuracy:</p>
+<p><img src="ClimateChangeAI_files/figure-html/model_comparison-1.png" width="1152" /></p>
+<p>The best accuracy score(-s) used on the test set achieved an accuracy of:</p>
+<pre><code>##   imp_c50 
+## 0.7699115</code></pre>
+<p>In contrast, using an Ensemble model yielded an accuracy as shown below.</p>
+<pre><code>## A glm ensemble of 9 base models: knn, naive_bayes, C5.0, rpart, ctree, rf, gbm, adaboost, svmRadial
+## 
+## Ensemble results:
+## Generalized Linear Model 
+## 
+## 5078 samples
+##    9 predictor
+##    2 classes: &#39;Not_worried&#39;, &#39;Worried&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold, repeated 2 times) 
+## Summary of sample sizes: 4061, 4063, 4062, 4063, 4063, 4062, ... 
+## Resampling results:
+## 
+##   Accuracy   Kappa    
+##   0.7775691  0.3213617</code></pre>
+<p>As a final step, let`s now take a closer look at the specific variables which were most important in the prediction of on of the models. The plot below shows the most important features in the classification of our response variable.</p>
+<p><img src="ClimateChangeAI_files/figure-html/varImp-1.png" width="1152" /></p>
+<hr />
+</div>
+<div id="conclusion" class="section level1">
+<h1>7. Conclusion</h1>
+<p>Here, I reported the results of the second part of my <strong>HarvardX PH125.9x Data Science: Capstone Project</strong>. The goal of this full-stack data science project was to download, wrangle, explore, and analyze European Citizens’ perceptions of climate change using 10 different Machine Learning (ML) Algorithms (<em>KNN, naiveBayes, Random Forest, adaBOOST, SVM, Ensemble, ctree, GBM, C5.0, rpart</em>) while also employing hyperparameter tuning (e.g., <em>tuneGrid</em> and <em>tuneLength</em>) to some of the models to improve the results.</p>
+<p>The data for this project came from the 8th round <a href="https://www.europeansocialsurvey.org/data/download.html?r=8">European Social Survey (2016)</a>, a publicly available academic data set. The response variable (outcome) in this project was “climate change worry”, i.e., whether or not individuals in more than 30 European countries are worried about climate change. The response to this variable was binary (‘yes’ vs. ‘no’) and thus, this project dealt with a classification problem</p>
+<p>After a contextual introduction into the topic of climate change perceptions, I explained how the data download, selection, and cleaning was done. Then, after splitting the data into <em>train</em> and <em>test</em> sets, I proceeded with an Exploratory Data Analysis (EDA) in which I explored the train data set and visualized the initial data exploration gaining some insights for modeling. In the Methods &amp; Analysis Section, I employed some feature engineering beyond the steps undertaken in the initial data selection process (i.e., missing value imputation, removing zero variance features, normalization of data). Afterwards, I employed several ML algorithms and checked to what extent each of the algorithms accurately classifies the response variable.</p>
+<p>Out of the 10 individual ML algorithms tested, the best results was (were) achieved by</p>
+<pre><code>##   imp_c50 
+## 0.7699115</code></pre>
+<div id="limitations-and-future-directions" class="section level2">
+<h2>Limitations and future directions</h2>
+<p>While the final accuracy score is quite high and satisfactory by comparison to different academic papers dealing with similar issues, several other methods and techniques could be considered to further improve the results. First, as I mentioned further above, I chose to reduce the complexity of the data set by selecting the 20 most strongly correlated features. The reason for this approach was purely resource centred and alternative approaches which are computationally more expensive such as Principal Components Analysis or coefficients from Lasso-regularized linear regression could be employed to further improve the feature selection approach. Moreover, for most of the models, I chose to employ the built-in hyperparameter tuning functionality of the <code>caret</code> package. This is not a wrong approach, however, it is less flexible and a manual tuning of hyperparameters by searching over specific parameters might even further improve the accuracy of the models. Furthermore, I chose accuracy as my main evaluation metric. However, besides accuracy, I also could have focused on Sensitivity, Specificity, ROC as further evaluation metrics. As was shown above, the models yielded considerably different results for these metrics. Depending on the classification problem, considering Sensitivity and Specificity might be more important than overall Accuracy (e.g., Cancer detection, Plane Malfunction, etc.). Lastly, I have only used a randomly picked subset of the entire data set. The results could be more reliable if the entire data set should be used. However, given the relatively large size of the data set, one should keep in mind though that some of the ML algorithms used here would require high computational processing power and as such, a regular laptop, such as the one I used in my project requires would require several hours to process the models, without sufficient computing power.</p>
+<p>Overall, the project was fun and interesting to accomplish and I hope that my results and approach will be useful for others in their own learning journeys. The topic of climate change is an urgent and important matter. I hope that by using cutting edge and powerful ML techniques, I was able to contribute to research in this area. Please note, that some of the materials presented here are also in preparation for submission to an academic, peer-reviewed journal.</p>
+<p>If you are interested in finding out more about the data used in this project, the data set is publicly available following the below link:</p>
+<ul>
+<li><a href="https://www.europeansocialsurvey.org/data/download.html?r=8">European Social Survey 8 (2016)</a></li>
+</ul>
+<p><strong>In closing, I would like to thank Prof Rafael Irizarry and his team at Harvard University, as well as the edX team for this very rewarding and comprehensive learning experience!</strong></p>
+</div>
+<div id="session-info" class="section level2">
+<h2>Session Info</h2>
+<pre><code>## R version 4.0.2 (2020-06-22)
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+## Running under: macOS  10.16
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+## 
+## Random number generation:
+##  RNG:     Mersenne-Twister 
+##  Normal:  Inversion 
+##  Sample:  Rounding 
+##  
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] grid      stats     graphics  grDevices utils     datasets  methods  
+## [8] base     
+## 
+## other attached packages:
+##  [1] highcharter_0.8.2          RANN_2.6.1                
+##  [3] mlbench_2.1-3              ipred_0.9-11              
+##  [5] Metrics_0.1.4              fastmatch_1.1-0           
+##  [7] PerformanceAnalytics_2.0.4 xts_0.12.1                
+##  [9] zoo_1.8-9                  GGally_2.1.1              
+## [11] caretEnsemble_2.0.1        caret_6.0-86              
+## [13] lattice_0.20-41            partykit_1.2-13           
+## [15] mvtnorm_1.1-1              libcoin_1.0-8             
+## [17] rpart.plot_3.0.9           rpart_4.1-15              
+## [19] randomForest_4.6-14        e1071_1.7-6               
+## [21] class_7.3-18               C50_0.1.3.1               
+## [23] skimr_2.1.3                haven_2.4.0               
+## [25] forcats_0.5.1              stringr_1.4.0             
+## [27] dplyr_1.0.5                purrr_0.3.4               
+## [29] tidyr_1.1.3                tibble_3.1.1              
+## [31] ggplot2_3.3.3              tidyverse_1.3.1           
+## [33] curl_4.3                   readr_1.4.0               
+## [35] essurvey_1.0.7             pacman_0.5.1              
+## [37] lares_4.9.13               devtools_2.4.0            
+## [39] usethis_2.0.1             
+## 
+## loaded via a namespace (and not attached):
+##   [1] readxl_1.3.1         backports_1.2.1      igraph_1.2.6        
+##   [4] plyr_1.8.6           repr_1.1.3           splines_4.0.2       
+##   [7] TH.data_1.0-10       digest_0.6.27        foreach_1.5.1       
+##  [10] h2o_3.32.0.1         htmltools_0.5.1.1    fansi_0.4.2         
+##  [13] magrittr_2.0.1       memoise_2.0.0        openxlsx_4.2.3      
+##  [16] remotes_2.3.0        recipes_0.1.16       modelr_0.1.8        
+##  [19] gower_0.2.2          matrixStats_0.58.0   sandwich_3.0-0      
+##  [22] prettyunits_1.1.1    strucchange_1.5-2    colorspace_2.0-0    
+##  [25] rvest_1.0.0          xfun_0.22            callr_3.6.0         
+##  [28] crayon_1.4.1         RCurl_1.98-1.3       jsonlite_1.7.2      
+##  [31] survival_3.2-10      iterators_1.0.13     glue_1.4.2          
+##  [34] gtable_0.3.0         kernlab_0.9-29       pkgbuild_1.2.0      
+##  [37] quantmod_0.4.18      scales_1.1.1         DBI_1.1.1           
+##  [40] Rcpp_1.0.6           Cubist_0.2.3         proxy_0.4-25        
+##  [43] Formula_1.2-4        stats4_4.0.2         lava_1.6.9          
+##  [46] prodlim_2019.11.13   htmlwidgets_1.5.3    httr_1.4.2          
+##  [49] RColorBrewer_1.1-2   modeltools_0.2-23    ellipsis_0.3.1      
+##  [52] farver_2.1.0         pkgconfig_2.0.3      reshape_0.8.8       
+##  [55] nnet_7.3-15          sass_0.3.1           dbplyr_2.1.1        
+##  [58] utf8_1.2.1           labeling_0.4.2       tidyselect_1.1.0    
+##  [61] rlang_0.4.10         reshape2_1.4.4       munsell_0.5.0       
+##  [64] cellranger_1.1.0     tools_4.0.2          cachem_1.0.4        
+##  [67] cli_2.4.0            party_1.3-7          generics_0.1.0      
+##  [70] broom_0.7.6          evaluate_0.14        fastmap_1.1.0       
+##  [73] yaml_2.2.1           ModelMetrics_1.2.2.2 processx_3.5.1      
+##  [76] knitr_1.32           fs_1.5.0             zip_2.1.1           
+##  [79] coin_1.4-1           pbapply_1.4-3        nlme_3.1-152        
+##  [82] xml2_1.3.2           compiler_4.0.2       rstudioapi_0.13     
+##  [85] testthat_3.0.2       reprex_2.0.0         bslib_0.2.4         
+##  [88] stringi_1.5.3        naivebayes_0.9.7     highr_0.9           
+##  [91] ps_1.6.0             desc_1.3.0           Matrix_1.3-2        
+##  [94] gbm_2.1.8            vctrs_0.3.7          pillar_1.6.0        
+##  [97] lifecycle_1.0.0      jquerylib_0.1.3      data.table_1.14.0   
+## [100] bitops_1.0-6         patchwork_1.1.1      R6_2.5.0            
+## [103] gridExtra_2.3        fastAdaboost_1.0.0   sessioninfo_1.1.1   
+## [106] codetools_0.2-18     MASS_7.3-53.1        assertthat_0.2.1    
+## [109] pkgload_1.2.1        rprojroot_2.0.2      withr_2.4.2         
+## [112] multcomp_1.4-16      rlist_0.4.6.1        mgcv_1.8-34         
+## [115] parallel_4.0.2       hms_1.0.0            quadprog_1.5-8      
+## [118] timeDate_3043.102    rmarkdown_2.7        inum_1.0-4          
+## [121] TTR_0.24.2           pROC_1.17.0.1        lubridate_1.7.10    
+## [124] base64enc_0.1-3</code></pre>
+</div>
+<div id="benchmark-time-to-generate-pdf-from-rmd" class="section level2">
+<h2>Benchmark: time to generate Pdf from Rmd</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Machine</th>
+<th align="right">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MacBook Pro 8GB</td>
+<td align="right">25’41</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
