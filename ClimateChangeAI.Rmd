@@ -1,5 +1,5 @@
 ---
-title: 'Climate Change AI'
+title: 'ClimateChangeAI'
 author: "Dr. Fatih Uenal, Cambridge, UK"
 date: "4/27/2021"
 output: 
