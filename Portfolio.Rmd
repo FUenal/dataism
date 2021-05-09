@@ -1,6 +1,13 @@
 ---
 title: "Portfolio"
-output: html_document
+output:
+    html_document:
+    toc: yes
+    toc_float: true
+    collapsed: false
+    toc_depth: 3
+    theme: lumen
+    highlight: tango
 ---
 
 ### Installing R and R-Studio
@@ -19,7 +26,6 @@ embed_youtube("aCP8X7Pnh4o", width = NULL,
   allowfullscreen = TRUE) %>% 
   use_align(align = "center")
 ```
-
 
 
 

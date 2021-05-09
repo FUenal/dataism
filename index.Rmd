@@ -1,6 +1,12 @@
 ---
 title: "The Dataist"
-output: html_document
+output: 
+ html_document:
+    toc: true
+    number_sections: false
+    toc_depth: 4
+    theme: lumen
+    highlight: tango
 ---
 
 <style type="text/css">

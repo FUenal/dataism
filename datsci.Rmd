@@ -7,6 +7,8 @@ output:
     collapsed: false
     number_sections: false
     toc_depth: 4
+    theme: lumen
+    highlight: tango
 ---
 
 <a href="https://fuenal.github.io/dataism/Lectures.html">

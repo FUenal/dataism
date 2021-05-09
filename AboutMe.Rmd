@@ -1,6 +1,12 @@
 ---
 title: "About me"
-output: html_document
+output:    
+  html_document:
+    toc: yes
+    collapsed: false
+    toc_depth: 3
+    theme: lumen
+    highlight: tango
 ---
 
 <style type="text/css">

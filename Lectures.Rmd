@@ -7,6 +7,8 @@ output:
     collapsed: false
     number_sections: false
     toc_depth: 3
+    theme: lumen
+    highlight: tango
 ---
 
 Before you start browsing through the material consider the following strategies: There are (at least) two ways to progress through this material, depending upon how much time you have to devote to it each week.
