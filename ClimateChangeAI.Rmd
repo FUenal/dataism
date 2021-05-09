@@ -695,7 +695,7 @@ Let's now visualize correlations between our the top 10 selected features and ou
 
 #### Correlation Viz 1
 
-```{r correlation-1, warning=FALSE, message=FALSE, echo=FALSE}
+```{r correlation-1, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 library(ggplot2)
 library(GGally)
 
@@ -708,7 +708,7 @@ ggpairs(trainData[,c(2:11,1)], aes(color=wrclmch, alpha=0.75), lower=list(contin
 
 #### Correlation Viz 2
 
-```{r correlation-2, warning=FALSE, message=FALSE, echo=FALSE}
+```{r correlation-2, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 ggcorr(trainData[,c(2:11)], name = "corr", label = TRUE)+
         theme(legend.position="none")+
         labs(title="Climate Worry Mean")+
@@ -719,7 +719,7 @@ ggcorr(trainData[,c(2:11)], name = "corr", label = TRUE)+
 
 #### Correlation Viz 3
 
-```{r correlation-3, warning=FALSE, message=FALSE, echo=FALSE}
+```{r correlation-3, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 library(PerformanceAnalytics)
 chart.Correlation(trainData[,c(2:11)],histogram=TRUE, col="grey10", pch=1, main="Climate Worry Mean")
 ```
@@ -818,7 +818,7 @@ As a first ML algorithm, I will compute a K-Nearest Neighbors (KNN) model. More 
  
 I will evaluate the accuracy by testing different hyper-tuning parameter values. The plot below shows the optimal number of `k` yielding the best accuracy score. Thus, I will subsequently run a model with this value specification.
  
-```{r knn, warning=FALSE, message=FALSE, echo=FALSE}
+```{r knn, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # ## KNN - Tune 
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
@@ -848,7 +848,7 @@ viz_5
 ```
 
 
-```{r knn1, warning=FALSE, message=FALSE, echo=FALSE}
+```{r knn1, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # ## Apply optimal K to show best predict performance in KNN
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
@@ -875,7 +875,7 @@ Next,, I will compute a C5.0 Decision Tree Algorithm. More information on this m
  
 In the first run, I will run a model without parameter tuning. 
  
-```{r c50, warning=FALSE, message=FALSE, echo=FALSE}
+```{r c50, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # ## C5.0 
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
@@ -901,7 +901,7 @@ As shown above, the C5.0 model yielded an accuracy score of `r cm_c50$overall[1]
 
 Let's now see if we can improve the accuracy by testing different hypertuning parameter values. The plot below shows the optimal number of trials for the best accuracy score and we will subsequently run a model with this value. 
 
-```{r c50-tune, warning=FALSE, message=FALSE, echo=FALSE}
+```{r c50-tune, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # ## C5.0 Tune 
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
@@ -933,7 +933,7 @@ viz_4
 ```
 
 
-```{r c50-tuned, warning=FALSE, message=FALSE, echo=FALSE}
+```{r c50-tuned, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # ### Apply optimal trials to show best predict performance in C5.0
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
@@ -961,7 +961,7 @@ The next ML algorithm I will compute is a Naive Bayes model. More information on
  
 I will run a model re-iterating over 1 to 30 in ‘laplace’ values. 
 
-```{r naivebayes, warning=FALSE, message=FALSE, echo=FALSE}
+```{r naivebayes, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # library(e1071)
 # 
 # # Set the seed for reproducibility
@@ -994,7 +994,7 @@ viz_6
 
 As visible in the plot above, varying the  ‘laplace’ values does not improve (nor diminish) the prediction of the model. Thus, I will run a naiveBayes model without specific ‘laplace’ specification. 
 
-```{r naivebayes1, warning=FALSE, message=FALSE, echo=FALSE}
+```{r naivebayes1, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # # naiveBayes without laplace
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
@@ -1023,7 +1023,7 @@ Next, I will compute a Support Vector Machine (SVM) model. More information on t
  
 Let's first try a model without hyperparameter tuning.
 
-```{r svm, warning=FALSE, message=FALSE, echo=FALSE}
+```{r svm, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
 # 
@@ -1043,7 +1043,7 @@ The confusion matrix visible above indicates an accuracy score of `r cm_svm$over
 
 
 #### SVM Tune 
-```{r svm-tune, warning=FALSE, message=FALSE, echo=FALSE}
+```{r svm-tune, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
 # 
@@ -1081,7 +1081,7 @@ viz_7
 
 As shown in the plot above, the optimal number of parameters seems to be `r opt_p$p` yielding an accuracy score of `r opt_p$cnt`. We will use this value for our optimized model. 
 
-```{r svm-tune1, warning=FALSE, message=FALSE, echo=FALSE}
+```{r svm-tune1, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
 # 
@@ -1111,7 +1111,7 @@ Next, I will compute a Recursive Partitioning (rpart) model. More information on
 
 For the rpart model, I will use 5-fold cross validation with the caret packages' in-built `trainControl` function. As hyperparameter tuning specifications, I will use the built-in function of the `caret` package by specifying the `tuneLength` argument to 2. The 'tuneLength' parameter tells the algorithm to try different default values for the main parameters, in our case 2. I will use both the `tuneLength` and the `trainControl` functions for the following models as well.
 
-```{r hyperparameter-tuning2, warning=FALSE, message=FALSE, echo=FALSE}
+```{r hyperparameter-tuning2, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # ## Hyperparameter tuning to optimize the model for better performance
 # # 1. trainControl()
 # 
@@ -1126,7 +1126,7 @@ For the rpart model, I will use 5-fold cross validation with the caret packages'
 ```
 
 
-```{r rpart-caret, warning=FALSE, message=FALSE, echo=FALSE}
+```{r rpart-caret, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
 # 
@@ -1155,7 +1155,7 @@ Next, I will compute a conditional inference trees (CTree) model. More informati
  * [ctree](https://cran.r-project.org/web/packages/partykit/vignettes/ctree.pdf)
  
  
-```{r ctree-caret, warning=FALSE, message=FALSE, echo=FALSE}
+```{r ctree-caret, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # ## Training ctree
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
@@ -1183,7 +1183,7 @@ Next, I will compute a popular and widely used Random Forest model. More informa
 
  * [Random Forest](https://rafalab.github.io/dsbook/examples-of-algorithms.html#random-forests)
  
-```{r rf-caret, warning=FALSE, message=FALSE, echo=FALSE}
+```{r rf-caret, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # ## Training Random Forest
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
@@ -1225,7 +1225,7 @@ Next, I will compute a Gradient boosting (GBM) model. More information on this m
 # confmat_gbm <- confusionMatrix(reference = testData3$wrclmch, data = predicted8)
 ```
 
-```{r gbm-caret-plot, warning=F, message=F, echo=F}
+```{r gbm-caret-plot, warning=F, message=F, echo=F, cache=TRUE}
 confmat_gbm
 ```
 
@@ -1243,7 +1243,7 @@ Next, I will compute a Adaptive Boosting (adaBOOST)  which is a statistical clas
  * [adaBoost](https://en.wikipedia.org/wiki/AdaBoost)
  
   
-```{r adaboost-caret, warning=FALSE, message=FALSE, echo=FALSE}
+```{r adaboost-caret, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 # ##Training Adaboost
 # # Set the seed for reproducibility
 # set.seed(123, sample.kind="Rounding")
@@ -1279,57 +1279,57 @@ In the final step, I will Ensemble the predictions of all `models` that I have r
 Up until here, I have run several ML algorithms individually. However, the `caretEnsemble` package also allows us to run all the different ML models in one call using the `caretEnsemble::caretList()` function instead of the `caret::train()` function. This is what I am going to employ next. As a first step for the Ensemble model, I will start defining the cross-validation method and the desired summary statistics using the `trainControl` function.  Then I am going to create a vector which contains the names of the all the algorithms I want to run. These are going to be the same ones as I have employed before and therefore, when I run the Ensemble model in the next step, I will be able ascertain whether the Ensemble model yields a better accuracy score compared to the individual models. 
 
 
-```{r caret-ensemble1, warning=FALSE, message=FALSE, echo=FALSE, include=FALSE}
-# ### Ensembling the predictions
-# library(caretEnsemble)
-# 
-# # Set the seed for reproducibility
-# set.seed(123, sample.kind="Rounding")
-# 
-# # Stacking Algorithms - Run multiple algorithms in one call.
-# trainControl <- trainControl(method="repeatedcv", 
-#                              number=5, 
-#                              repeats=2,
-#                              savePredictions=TRUE, 
-#                              classProbs=TRUE)
-# 
-# algorithmList <- c('knn', 'naive_bayes', 'C5.0', 'rpart', 'ctree',  'rf', 'gbm', 'adaboost', 'svmRadial')
-# 
-# 
-# models <- caretList(wrclmch ~ ., data=trainData, trControl=trainControl, methodList=algorithmList) 
-# results <- resamples(models)
-# summary(results)
+```{r caret-ensemble1, warning=FALSE, message=FALSE, echo=FALSE, include=FALSE, cache=TRUE}
+### Ensembling the predictions
+library(caretEnsemble)
+
+# Set the seed for reproducibility
+set.seed(123, sample.kind="Rounding")
+
+# Stacking Algorithms - Run multiple algorithms in one call.
+trainControl <- trainControl(method="repeatedcv",
+                             number=5,
+                             repeats=2,
+                             savePredictions=TRUE,
+                             classProbs=TRUE)
+
+algorithmList <- c('knn', 'naive_bayes', 'C5.0', 'rpart', 'ctree',  'rf', 'gbm', 'adaboost', 'svmRadial')
+
+
+models <- caretList(wrclmch ~ ., data=trainData, trControl=trainControl, methodList=algorithmList)
+results <- resamples(models)
+summary(results)
 ```
 
 The plots above show the accuracy and Kappa results for all models in the Ensemble individually.
 
-```{r caret-ensemble-plot, warning=FALSE, message=FALSE, echo=FALSE}
-# # Box plots to compare models
-# scales <- list(x=list(relation="free"), y=list(relation="free"))
-# bwplot(results, scales=scales)
+```{r caret-ensemble-plot, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
+# Box plots to compare models
+scales <- list(x=list(relation="free"), y=list(relation="free"))
+bwplot(results, scales=scales)
 ```
 
 
 The next step is then to combine the predictions of all our models to form a final prediction using a Generalized Linear Model algorithm (GLM). Below, the results for the Ensemble GLM model are shown.
 
 
-```{r caret-ensemble2, warning=FALSE, message=FALSE, echo=FALSE}
-# ### Combine the predictions of multiple models to form a final prediction
-# # Create the trainControl
-# set.seed(123, sample.kind="Rounding")
-# stackControl <- trainControl(method="repeatedcv", 
-#                              number=5, 
-#                              repeats=2,
-#                              savePredictions=TRUE, 
-#                              classProbs=TRUE)
-# 
-# # Ensemble the predictions of `models` to form a new combined prediction based on glm
-# stack.glm <- caretStack(models, method="glm", metric="Accuracy", trControl=stackControl)
-# stack.glm
-# 
-# # Predict on testData and Compute the confusion matrix
-# predicted12 <- predict(stack.glm, newdata=testData3)
-# confmat_glm <- confusionMatrix(reference = testData3$wrclmch, data = predicted12, positive = 'Worried')
+```{r caret-ensemble2, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
+### Combine the predictions of multiple models to form a final prediction
+# Create the trainControl
+set.seed(123, sample.kind="Rounding")
+stackControl <- trainControl(method="repeatedcv",
+                             number=5,
+                             repeats=2,
+                             savePredictions=TRUE,
+                             classProbs=TRUE)
+
+# Ensemble the predictions of `models` to form a new combined prediction based on glm
+stack.glm <- caretStack(models, method="glm", metric="Accuracy", trControl=stackControl)
+stack.glm
+
+# Predict on testData and Compute the confusion matrix
+predicted12 <- predict(stack.glm, newdata=testData3)
+confmat_glm <- confusionMatrix(reference = testData3$wrclmch, data = predicted12, positive = 'Worried')
 ```
 
 
@@ -1342,7 +1342,7 @@ The next step is then to combine the predictions of all our models to form a fin
 
 Let's now take a closer look at the accuracy scores of all the models that I have run by visualizing the accuracy scores side-by-side. 
 
-```{r model-accuracies, warning=FALSE, message=FALSE, echo=FALSE}
+```{r model-accuracies, warning=FALSE, message=FALSE, echo=FALSE, cache=TRUE}
 ## Visualize to compare the accuracy of all methods
 col <- c("#ed3b3b", "#0099ff")
 par(mfrow=c(4,4))
@@ -1357,15 +1357,15 @@ fourfoldplot(confmat_ctree$table, color = col, conf.level = 0, margin = 1, main=
 fourfoldplot(confmat_rf$table, color = col, conf.level = 0, margin = 1, main=paste("RandomForest (",round(confmat_rf$overall[1]*100),"%)",sep=""))
 fourfoldplot(confmat_gbm$table, color = col, conf.level = 0, margin = 1, main=paste("GBM (",round(confmat_gbm$overall[1]*100),"%)",sep=""))
 fourfoldplot(confmat_ada$table, color = col, conf.level = 0, margin = 1, main=paste("AdaBoost (",round(confmat_ada$overall[1]*100),"%)",sep=""))
-# fourfoldplot(confmat_glm$table, color = col, conf.level = 0, margin = 1, main=paste("Ensemble GLM (",round(confmat_glm$overall[1]*100),"%)",sep=""))
+fourfoldplot(confmat_glm$table, color = col, conf.level = 0, margin = 1, main=paste("Ensemble GLM (",round(confmat_glm$overall[1]*100),"%)",sep=""))
 ```
 
 
 
-```{r best-model-accuracy, message=FALSE, warning=FALSE, echo=FALSE}
+```{r best-model-accuracy, message=FALSE, warning=FALSE, echo=FALSE, cache=TRUE}
 opt_predict <- c(cm_c50$overall[1], cm_imp_c50$overall[1], cm_knn$overall[1], cm_nb$overall[1], cm_svm$overall[1], cm_imp_svm$overall[1], 
-                 confmat_rpart$overall[1], confmat_ctree$overall[1], confmat_rf$overall[1], confmat_gbm$overall[1], confmat_ada$overall[1]) #, confmat_glm$overall[1]
-names(opt_predict) <- c('c50', 'imp_c50', 'knn', 'nb', 'svm' , 'imp_svm', 'rpart', 'ctree', 'rf', 'gbm', 'ada') #, 'glm'
+                 confmat_rpart$overall[1], confmat_ctree$overall[1], confmat_rf$overall[1], confmat_gbm$overall[1], confmat_ada$overall[1], confmat_glm$overall[1]) #
+names(opt_predict) <- c('c50', 'imp_c50', 'knn', 'nb', 'svm' , 'imp_svm', 'rpart', 'ctree', 'rf', 'gbm', 'ada', 'glm') #, 'glm'
 best_predict_model <- subset(opt_predict, opt_predict==max(opt_predict))
 ```
 
@@ -1381,22 +1381,22 @@ As shown in the plots above, the individual model which achieved the best accura
 
 Looking at the results of the algorithms individually, the plot below depicts the performance of the models in terms of accuracy:
 
-```{r model_comparison, message=FALSE, warning=FALSE, echo=FALSE}
-# # Box plots to compare models
-# scales <- list(x=list(relation="free"), y=list(relation="free"))
-# bwplot(results, scales=scales)
+```{r model_comparison, message=FALSE, warning=FALSE, echo=FALSE, cache=TRUE}
+# Box plots to compare models
+scales <- list(x=list(relation="free"), y=list(relation="free"))
+bwplot(results, scales=scales)
 ```
 
 The best accuracy score(-s) used on the test set achieved an accuracy of:
 
-```{r best-model-accuracy1, message=FALSE, warning=FALSE, echo=FALSE}
+```{r best-model-accuracy1, message=FALSE, warning=FALSE, echo=FALSE, cache=TRUE}
 best_predict_model
 ```
 
 In contrast, using an Ensemble model yielded an accuracy as shown below.
 
-```{r glm-results, message=FALSE, warning=FALSE, echo=FALSE}
-# stack.glm
+```{r glm-results, message=FALSE, warning=FALSE, echo=FALSE, cache=TRUE}
+stack.glm
 ```
 
 
