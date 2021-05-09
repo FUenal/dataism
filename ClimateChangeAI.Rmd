@@ -40,21 +40,20 @@ hc_world
 
 # 1. Overview
 
-In the following, I am presenting the results of the second part of my **HarvardX PH125.9x Data Science: Capstone Project**. The goal of this full-stack data science project is to download, wrangle, explore, and analyze European Citizens' perceptions of climate change using 10 different Machine Learning (ML) Algorithms (*KNN, naiveBayes, Random Forest, adaBOOST, SVM, Ensemble, ctree, GBM, C5.0, rpart*) based on data from the 8th round European Social Survey (2016). I will also employ hyperparameter tuning (e.g., *tuneGrid* and *tuneLength*) to improve the results.  The response variable (outcome) in this project is "climate change worry", i.e., whether or not individuals in more than 20 European countries are worried about climate change. The response to this variable will be binary ('yes' vs. 'no') and thus, this project deals with a classification problem.
+In the following, I am presenting some results of my work on **Predictors of Climate Change Perceptions: A Machine Learning Approach**. The goal of this full-stack data science project is to download, wrangle, explore, and analyze European Citizens' perceptions of climate change using 10 different Machine Learning (ML) Algorithms (*KNN, naiveBayes, Random Forest, adaBOOST, SVM, Ensemble, ctree, GBM, C5.0, rpart*) based on data from the 8th round European Social Survey (2016). I will also employ hyper-parameter tuning (e.g., *tuneGrid* and *tuneLength*) to improve the results.  The response variable (outcome) in this project is "climate change worry", i.e., whether or not individuals in more than 20 European countries are worried about climate change. The response to this variable will be binary ('yes' vs. 'no') and thus, this project deals with a classification problem. The report thus consists of seven parts:
 
-After a contextual introduction, I will start with detailing the process of how data download, selection, and cleaning was done. Then, after splitting the data into *train* and *test* sets, I will proceed with an Exploratory Data Analysis (EDA) in which I explore the train data set and visualize the initial data exploration to gain key insights for modeling. In the Methods & Analysis Section, I will first do some feature engineering beyond the steps undertaken in the initial data selection process (i.e., missing value imputation, removing zero variance features, normalization of data). Afterwards, I will employ several ML algorithms and check to what extent each of the algorithms accurately classifies the response variable. The report thus consists of seven parts:
+ * After this **Overview** section, I will provide some contextual information on the data and classification problem of this project in the **Introduction** section.
 
-After this **Overview** section, I will provide some contextual information on the data and classification problem of this project in the **Introduction** section.
+ * The following **Data Download & Preparation** section describes how to download and prepare the data-sets. The data set containing over 500 columns most of which are irrelevant for this project. In this section I therefore also clean the data by removing many of the unnecessary columns such as 'administrative' columns from the data-set and describe how I arrived at the final, cleaned data set. 
 
-The following **Data Download & Preparation** section describes how to download and prepare the data-sets. The data set containing over 500 columns most of which are irrelevant for this project. In this section I therefore also clean the data by removing many of the unnecessary columns such as 'administrative' columns from the data-set and describe how I arrived at the final, cleaned data set. 
+ * The following section **Exploratory Data Analysis (EDA)** describes the performed exploratory data analysis and provides an overview of the data and first approaches to optimize it for the machine learning algorithms. Before I begin with the EDA, the **trainData**- and **testData** sets are generated.
 
-The following section **Exploratory Data Analysis (EDA)** describes the performed exploratory data analysis and provides an overview of the data and first approaches to optimize it for the machine learning algorithms. Before I begin with the EDA, the **trainData**- and **testData** sets are generated.
+ * In the **Methods and Analysis** section, I will first perform some feature engineering using several pre-processing steps. After the pre-processing, I will run several ML Algorithms and employ hyperparameter tuning to some of them. Next, I will apply the same pre-processing steps on the **testData** set, and compare the accuracy of each trained model on the test set. 
 
-In the **Methods and Analysis** section, I will first perform some feature engineering using several pre-processing steps. After the pre-processing, I will run several ML Algorithms and employ hyperparameter tuning to some of them. Next, I will apply the same pre-processing steps on the **testData** set, and compare the accuracy of each trained model on the test set. 
+ * In the **Results** section, I will briefly present the results of the model comparison on the test set and determine the best ML model using appropriate model evaluation metrics. 
 
-In the **Results** section, I will briefly present the results of the model comparison on the test set and determine the best ML model using appropriate model evaluation metrics. 
+ * The report ends with a **Conclusion** section presenting the main findings, and providing some insights into the limitations of the analysis as well as discussing possible future directions.
 
-The report ends with a **Conclusion** section presenting the main findings, and providing some insights into the limitations of the analysis as well as discussing possible future directions.
 
 
 ---
@@ -150,7 +149,7 @@ df <- read.csv("ess8_subsample.csv") # If you download the data from edX
 # df <- sample_n(df, 500)
 
 ## First peak into cleaned data
-df_str(df)
+# df_str(df)
 
 # df_str(df, return = "skimr")
 ```
@@ -302,6 +301,8 @@ table(testData$wrclmch)
 
 
 ## 4.3 Climate Change Perceptions Across Europe 
+
+Next, we'll start by gaining some insights by visualizing the relationship between our variable of main interest "climate change worry" and the available features. Previous research has identified dozens of factors which shape whether people are concerned by climate change or not.
 
 ###  {.tabset}
 
@@ -1450,7 +1451,7 @@ plot(varimp_rf, main="Variable Importance with Random Forest")
 
 # 7. Conclusion
 
-Here, I reported the results of the second part of my **HarvardX PH125.9x Data Science: Capstone Project**. The goal of this full-stack data science project was to download, wrangle, explore, and analyze European Citizens' perceptions of climate change using 10 different Machine Learning (ML) Algorithms (*KNN, naiveBayes, Random Forest, adaBOOST, SVM, Ensemble, ctree, GBM, C5.0, rpart*) while also employing hyperparameter tuning (e.g., *tuneGrid* and *tuneLength*) to some of the models to improve the results. 
+The goal of this full-stack data science project was to download, wrangle, explore, and analyze European Citizens' perceptions of climate change using 10 different Machine Learning (ML) Algorithms (*KNN, naiveBayes, Random Forest, adaBOOST, SVM, Ensemble, ctree, GBM, C5.0, rpart*) while also employing hyperparameter tuning (e.g., *tuneGrid* and *tuneLength*) to some of the models to improve the results. 
 
 The data for this project came from the 8th round [European Social Survey (2016)](https://www.europeansocialsurvey.org/data/download.html?r=8), a publicly available academic data set. The response variable (outcome) in this project was "climate change worry", i.e., whether or not individuals in more than 30 European countries are worried about climate change. The response to this variable was binary ('yes' vs. 'no') and thus, this project dealt with a classification problem
 
@@ -1473,10 +1474,6 @@ If you are interested in finding out more about the data used in this project, t
 
  * [European Social Survey 8 (2016)](https://www.europeansocialsurvey.org/data/download.html?r=8) 
 
-
-
-
-**In closing, I would like to thank Prof Rafael Irizarry and his team at Harvard University, as well as the edX team for this very rewarding and comprehensive learning experience!** 
 
 
 
