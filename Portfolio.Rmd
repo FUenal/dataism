@@ -6,15 +6,19 @@ output: html_document
 ### Installing R and R-Studio
 [R](http://www.r-project.org) is a free open-source programming language that can be used for statistical analysis, data-simulation, data visualization, and lots of other things, like building this website. Another free program is [R-studio](http://www.rstudio.com). It provides a nice graphic interface for R. Download R first, then download R-studio. Both are compatible with PCs, Macs, or Linux. For this course, you will need to download both programs and follow the course materials outlined in the [syllabus](https://fuenal.github.io/dataism/Syllabus.html). 
 
+```{r echo=F,include=F,error=F}
+library(vembedr)
+```
 
 
-<figure>
-<img src="./images/Rlogo.png" alt="R Studio" style="width:20%">
-</figure> 
-
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=aCP8X7Pnh4o" frameborder="0" allowfullscreen></iframe>
+```{r echo=F,error=F}
+embed_youtube("aCP8X7Pnh4o", width = NULL,
+  height = 500,
+  ratio = c("16by9", "4by3"),
+  frameborder = 0,
+  allowfullscreen = TRUE) %>% 
+  use_align(align = "center")
+```
 
 
 
