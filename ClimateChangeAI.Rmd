@@ -802,34 +802,72 @@ testData3 <- testData3 %>% relocate(wrclmch, .before = wrdpimp)
 
 ## 5.2 Modeling
 
-As I mentioned in the beginning, I will employ a number of Machine Learning Algorithms and compare the results of them to determine the best algorithm. I am taking this broader approach since the underlying motivation of this project is more training and showcasing of skills, rather than employing a model which will inform real-world decision making. I will employ 10 algorithms in total. These algorithms are quite commonly used and represent some of the most up to date and powerful algorithms available on the market. Below is a list of all ML algorithms tested in this project:
+As I mentioned in the beginning, I will employ a number of Machine Learning Algorithms and compare the results of them to determine the best algorithm. I am taking this broader approach since the underlying motivation of this project is more training and showcasing of skills, rather than employing a model which will inform real-world decision making. I will employ 10 algorithms in total. These algorithms are quite commonly used and represent some of the most up to date and powerful algorithms available on the market.
+
 
 ### 5.2.1 Model Overview  {.tabset}
 
- * C5.0 
+
+#### knn
+
+As a first ML algorithm, I will compute a K-Nearest Neighbors (KNN) model. More information on this model can be found under the link below:
+
+ * [KNN](https://rafalab.github.io/dsbook/examples-of-algorithms.html#k-nearest-neighbors)
  
- * KNN 
+As in the model hereafter, I will evaluate the accuracy by testing different hyper-tuning parameter values. The plot below shows the optimal number of `k` yielding the best accuracy score. Thus, I will subsequently run a model with this value specification.
  
- * SVM 
- 
- * naiveBayes 
- 
- * rpart 
- 
- * ctree 
- 
- * Random Forest 
- 
- * adaBOOST 
- 
- * GBM 
- 
- * Ensemble 
+```{r knn, warning=FALSE, message=FALSE, echo=FALSE}
+# ## KNN - Tune 
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# library(class)
+# 
+# acc_test <- numeric() 
+# 
+# for(i in 1:30){
+#         predict <- knn(train=trainData[,-1], test=testData3[,-1], cl=trainData[,1], k=i, prob=T)
+#         acc_test <- c(acc_test,mean(predict==testData3[,1]))
+# }
+# 
+# acc <- data.frame(k= seq(1,30), cnt = acc_test)
+# 
+# opt_k <- subset(acc, cnt==max(cnt))[1,]
+# sub <- paste("Optimal number of k is", opt_k$k, "(accuracy :", opt_k$cnt,") in KNN")
+# 
+# # Plot
+# hchart(acc, 'line', hcaes(k, cnt)) %>%
+#         hc_title(text = "Accuracy With Varying K (KNN)") %>%
+#         hc_subtitle(text = sub) %>%
+#         hc_add_theme(hc_theme_google()) %>%
+#         hc_xAxis(title = list(text = "Number of Neighbors(k)")) %>%
+#         hc_yAxis(title = list(text = "Accuracy"))
+viz_5
+```
+
+
+```{r knn1, warning=FALSE, message=FALSE, echo=FALSE}
+# ## Apply optimal K to show best predict performance in KNN
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# pre_knn <- knn(train = trainData[,-1], test = testData3[,-1], cl = trainData[,1], k=opt_k$k, prob=T)
+# cm_knn  <- confusionMatrix(pre_knn, testData3$wrclmch)
+cm_knn
+```
+
+As shown above, a model with optimized number of (`r opt_k$k` `k`) yielded an accuracy score of `r opt_k$cnt` which we determined above as best score between 1 to 30 `k` values.
+
+
+
+
+---
+
 
 
 #### C5.0 
 
-As a first ML algorithm, I will compute a C5.0 Decision Tree Algorithm. More information on this model can be found under the link below:
+Next,, I will compute a C5.0 Decision Tree Algorithm. More information on this model can be found under the link below:
 
  * [C5.0](https://rpubs.com/cyobero/C50)
  
@@ -911,62 +949,6 @@ As shown above, a model with optimized parameters (`r opt_t$t` Trials) yielded a
 ---
 
 
-
-
-#### knn
-
-Next, I will compute a K-Nearest Neighbors (KNN) model. More information on this model can be found under the link below:
-
- * [KNN](https://rafalab.github.io/dsbook/examples-of-algorithms.html#k-nearest-neighbors)
- 
-As in the model before, I will evaluate the accuracy by testing different hypertuning parameter values. The plot below shows the optimal number of `k` yielding the best accuracy score. Thus, I will subsequently run a model with this value specification.
- 
-```{r knn, warning=FALSE, message=FALSE, echo=FALSE}
-# ## KNN - Tune 
-# # Set the seed for reproducibility
-# set.seed(123, sample.kind="Rounding")
-# 
-# library(class)
-# 
-# acc_test <- numeric() 
-# 
-# for(i in 1:30){
-#         predict <- knn(train=trainData[,-1], test=testData3[,-1], cl=trainData[,1], k=i, prob=T)
-#         acc_test <- c(acc_test,mean(predict==testData3[,1]))
-# }
-# 
-# acc <- data.frame(k= seq(1,30), cnt = acc_test)
-# 
-# opt_k <- subset(acc, cnt==max(cnt))[1,]
-# sub <- paste("Optimal number of k is", opt_k$k, "(accuracy :", opt_k$cnt,") in KNN")
-# 
-# # Plot
-# hchart(acc, 'line', hcaes(k, cnt)) %>%
-#         hc_title(text = "Accuracy With Varying K (KNN)") %>%
-#         hc_subtitle(text = sub) %>%
-#         hc_add_theme(hc_theme_google()) %>%
-#         hc_xAxis(title = list(text = "Number of Neighbors(k)")) %>%
-#         hc_yAxis(title = list(text = "Accuracy"))
-viz_5
-```
-
-
-```{r knn1, warning=FALSE, message=FALSE, echo=FALSE}
-# ## Apply optimal K to show best predict performance in KNN
-# # Set the seed for reproducibility
-# set.seed(123, sample.kind="Rounding")
-# 
-# pre_knn <- knn(train = trainData[,-1], test = testData3[,-1], cl = trainData[,1], k=opt_k$k, prob=T)
-# cm_knn  <- confusionMatrix(pre_knn, testData3$wrclmch)
-cm_knn
-```
-
-As shown above, a model with optimized number of (`r opt_k$k` `k`) yielded an accuracy score of `r opt_k$cnt` which we determined above as best score between 1 to 30 `k` values.
-
-
-
-
----
 
 
 #### naiveBayes 
