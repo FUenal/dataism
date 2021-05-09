@@ -82,7 +82,7 @@ Below, you can check out the App:
 <div style="margin-bottom:30px;">
 </div>
 
-In my role as a Postdoctoral Research Associate & Data Scientist with <a href="https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal" target="_blank">The University of Cambridge</a>, I have worked with big data sets using Machine Learning Algorithms to identify the most robust predictors of Climate Change Attitudes and Policy Preferences. Some of the results of this line of work is available 
+In my role as a Postdoctoral Research Associate & Data Scientist with <a href="https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal" target="_blank">The University of Cambridge</a>, I have worked with big data sets using Machine Learning Algorithms to identify the most robust predictors of Climate Change Attitudes and Policy Preferences. Some of the results of this line of work is available below:
 
 <div style="margin-bottom:30px;">
 </div>
