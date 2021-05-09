@@ -12,9 +12,17 @@ output: html_document
 <img src="./images/Rlogo.png" alt="R Studio" style="width:20%">
 </figure> 
 
+
+
 ![](https://youtu.be/aCP8X7Pnh4o)
 
+
+
+
 <iframe width="560" height="315" src="https://youtu.be/aCP8X7Pnh4o" frameborder="0" allowfullscreen></iframe>
+
+
+
 
 - Installing R: Go to the [R website](http://www.r-project.org) and download the installer file. Once downloaded, open the installer file and follow the instructions.
 
