@@ -12,8 +12,8 @@ navbar:
       href: Syllabus.html
     - text: "ClimateChangeAI"
       href: ClimateChangeAI.html
-    - text: "Resources"
-      href: Resources.html
+    - text: "Portfolio"
+      href: Portfolio.html
     - text: "About me"
       href: AboutMe.html
 output_dir: "docs"
