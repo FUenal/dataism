@@ -27,18 +27,8 @@ pacman::p_load(essurvey, readr, readxl, curl, tidyverse, broom, haven, foreign, 
                partykit, caret, caretEnsemble, lares, GGally, ggplot2, PerformanceAnalytics, fastmatch, Metrics, ipred, mlbench, RANN,
                highcharter, ggimage, countrycode, survey, srvyr, dplyr, questionr, sjmisc, car, data.table, ryouready)
 
-# Load ML data (split due to file size limitation at github)
-load(file = "ml_image1.RData")
-load(file = "ml_image2.RData")
-# load(file = "ml_image3.RData")
-# load(file = "ml_image4.RData")
-
-
 # Load visualization data
 load(file = "ess8.RData")
-
-# Load ML data
-
 ```
 
 ```{r echo = F, warning = F, message = F, error = F}
@@ -439,12 +429,7 @@ top20corr <- corr_var(trainData, # name of data set
                       wrclmch, # name of variable to focus on
                       top = 20, # display top 20 correlations
                       ranks = FALSE, # Boolean. Add ranking numbers // MAKE THIS LINE FALSE FOR THE NEXT STEP TO RUN!
-                      plot = FALSE # Don't return plot
-<<<<<<< HEAD
-)
-=======
-) 
->>>>>>> parent of 7c39454... Portfolio
+                      plot = FALSE) # Don't return plot
 
 print(top20corr)
 
@@ -479,10 +464,8 @@ library(GGally)
 ggpairs(trainData[,c(2:11,1)], aes(color=wrclmch, alpha=0.75), lower=list(continuous="smooth"))+ theme_bw()+
         labs(title="Climate Worry Mean")+
         theme(plot.title=element_text(face='bold',color='black',hjust=0.5,size=12))
-<<<<<<< HEAD
+
 # viz_1
-=======
->>>>>>> parent of 7c39454... Portfolio
 ```
 
 #### Correlation Viz 2
@@ -492,10 +475,8 @@ ggcorr(trainData[,c(2:11)], name = "corr", label = TRUE)+
         theme(legend.position="none")+
         labs(title="Climate Worry Mean")+
         theme(plot.title=element_text(face='bold',color='black',hjust=0.5,size=12))
-<<<<<<< HEAD
+
 # viz_2
-=======
->>>>>>> parent of 7c39454... Portfolio
 ```
 
 #### Correlation Viz 3
@@ -584,6 +565,14 @@ testData3 <- testData3 %>% relocate(wrclmch, .before = wrdpimp)
 
 
 ## 5.2 Modeling
+```{r}
+# Load ML data (split due to file size limitation at github)
+load(file = "ml_imageX.RData")
+# load(file = "ml_image2.RData")
+# load(file = "ml_image3.RData")
+# load(file = "ml_image4.RData")
+```
+
 
 As I mentioned in the beginning, I will employ a number of Machine Learning Algorithms and compare the results of them to determine the best algorithm. I am taking this broader approach since the underlying motivation of this project is more training and showcasing of skills, rather than employing a model which will inform real-world decision making. I will employ 10 algorithms in total. These algorithms are quite commonly used and represent some of the most up to date and powerful algorithms available on the market. Below is a list of all ML algorithms tested in this project:
 
@@ -619,14 +608,14 @@ As a first ML algorithm, I will compute a C5.0 Decision Tree Algorithm. More inf
 In the first run, I will run a model without parameter tuning. 
  
 ```{r c50, warning=FALSE, message=FALSE, echo=FALSE}
-## C5.0 
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-library(C50)
-learn_c50 <- C5.0(trainData[,-1],trainData$wrclmch)
-pre_c50 <- predict(learn_c50, testData3[,-1])
-cm_c50 <- confusionMatrix(pre_c50, testData3$wrclmch)
+# ## C5.0 
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# library(C50)
+# learn_c50 <- C5.0(trainData[,-1],trainData$wrclmch)
+# pre_c50 <- predict(learn_c50, testData3[,-1])
+# cm_c50 <- confusionMatrix(pre_c50, testData3$wrclmch)
 cm_c50
 ```
 
@@ -645,44 +634,45 @@ As shown above, the C5.0 model yielded an accuracy score of `r cm_c50$overall[1]
 Let's now see if we can improve the accuracy by testing different hypertuning parameter values. The plot below shows the optimal number of trials for the best accuracy score and we will subsequently run a model with this value. 
 
 ```{r c50-tune, warning=FALSE, message=FALSE, echo=FALSE}
-## C5.0 Tune 
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-acc_test <- numeric()
-accuracy1 <- NULL; accuracy2 <- NULL
-
-for(i in 1:50){
-        learn_imp_c50 <- C5.0(trainData[,-1],trainData$wrclmch,trials = i)      
-        p_c50 <- predict(learn_imp_c50, testData3[,-1]) 
-        accuracy1 <- confusionMatrix(p_c50, testData3$wrclmch)
-        accuracy2[i] <- accuracy1$overall[1]
-}
-
-acc <- data.frame(t= seq(1,50), cnt = accuracy2)
-
-opt_t <- subset(acc, cnt==max(cnt))[1,]
-sub <- paste("Optimal number of trials is", opt_t$t, "(accuracy :", opt_t$cnt,") in C5.0")
-
-# Plot
-library(highcharter)
-hchart(acc, 'line', hcaes(t, cnt)) %>%
-        hc_title(text = "Accuracy With Varying Trials (C5.0)") %>%
-        hc_subtitle(text = sub) %>%
-        hc_add_theme(hc_theme_google()) %>%
-        hc_xAxis(title = list(text = "Number of Trials")) %>%
-        hc_yAxis(title = list(text = "Accuracy"))
+# ## C5.0 Tune 
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# acc_test <- numeric()
+# accuracy1 <- NULL; accuracy2 <- NULL
+# 
+# for(i in 1:50){
+#         learn_imp_c50 <- C5.0(trainData[,-1],trainData$wrclmch,trials = i)      
+#         p_c50 <- predict(learn_imp_c50, testData3[,-1]) 
+#         accuracy1 <- confusionMatrix(p_c50, testData3$wrclmch)
+#         accuracy2[i] <- accuracy1$overall[1]
+# }
+# 
+# acc <- data.frame(t= seq(1,50), cnt = accuracy2)
+# 
+# opt_t <- subset(acc, cnt==max(cnt))[1,]
+# sub <- paste("Optimal number of trials is", opt_t$t, "(accuracy :", opt_t$cnt,") in C5.0")
+# 
+# # Plot
+# library(highcharter)
+# hchart(acc, 'line', hcaes(t, cnt)) %>%
+#         hc_title(text = "Accuracy With Varying Trials (C5.0)") %>%
+#         hc_subtitle(text = sub) %>%
+#         hc_add_theme(hc_theme_google()) %>%
+#         hc_xAxis(title = list(text = "Number of Trials")) %>%
+#         hc_yAxis(title = list(text = "Accuracy"))
+viz_4
 ```
 
 
 ```{r c50-tuned, warning=FALSE, message=FALSE, echo=FALSE}
-### Apply optimal trials to show best predict performance in C5.0
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-learn_imp_c50 <- C5.0(trainData[,-1],trainData$wrclmch,trials=opt_t$t)    
-pre_imp_c50 <- predict(learn_imp_c50, testData3[,-1])
-cm_imp_c50 <- confusionMatrix(pre_imp_c50, testData3$wrclmch)
+# ### Apply optimal trials to show best predict performance in C5.0
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# learn_imp_c50 <- C5.0(trainData[,-1],trainData$wrclmch,trials=opt_t$t)    
+# pre_imp_c50 <- predict(learn_imp_c50, testData3[,-1])
+# cm_imp_c50 <- confusionMatrix(pre_imp_c50, testData3$wrclmch)
 cm_imp_c50
 ```
 
@@ -704,41 +694,42 @@ Next, I will compute a K-Nearest Neighbors (KNN) model. More information on this
 As in the model before, I will evaluate the accuracy by testing different hypertuning parameter values. The plot below shows the optimal number of `k` yielding the best accuracy score. Thus, I will subsequently run a model with this value specification.
  
 ```{r knn, warning=FALSE, message=FALSE, echo=FALSE}
-## KNN - Tune 
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-library(class)
-
-acc_test <- numeric() 
-
-for(i in 1:30){
-        predict <- knn(train=trainData[,-1], test=testData3[,-1], cl=trainData[,1], k=i, prob=T)
-        acc_test <- c(acc_test,mean(predict==testData3[,1]))
-}
-
-acc <- data.frame(k= seq(1,30), cnt = acc_test)
-
-opt_k <- subset(acc, cnt==max(cnt))[1,]
-sub <- paste("Optimal number of k is", opt_k$k, "(accuracy :", opt_k$cnt,") in KNN")
-
-# Plot
-hchart(acc, 'line', hcaes(k, cnt)) %>%
-        hc_title(text = "Accuracy With Varying K (KNN)") %>%
-        hc_subtitle(text = sub) %>%
-        hc_add_theme(hc_theme_google()) %>%
-        hc_xAxis(title = list(text = "Number of Neighbors(k)")) %>%
-        hc_yAxis(title = list(text = "Accuracy"))
+# ## KNN - Tune 
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# library(class)
+# 
+# acc_test <- numeric() 
+# 
+# for(i in 1:30){
+#         predict <- knn(train=trainData[,-1], test=testData3[,-1], cl=trainData[,1], k=i, prob=T)
+#         acc_test <- c(acc_test,mean(predict==testData3[,1]))
+# }
+# 
+# acc <- data.frame(k= seq(1,30), cnt = acc_test)
+# 
+# opt_k <- subset(acc, cnt==max(cnt))[1,]
+# sub <- paste("Optimal number of k is", opt_k$k, "(accuracy :", opt_k$cnt,") in KNN")
+# 
+# # Plot
+# hchart(acc, 'line', hcaes(k, cnt)) %>%
+#         hc_title(text = "Accuracy With Varying K (KNN)") %>%
+#         hc_subtitle(text = sub) %>%
+#         hc_add_theme(hc_theme_google()) %>%
+#         hc_xAxis(title = list(text = "Number of Neighbors(k)")) %>%
+#         hc_yAxis(title = list(text = "Accuracy"))
+viz_5
 ```
 
 
 ```{r knn1, warning=FALSE, message=FALSE, echo=FALSE}
-## Apply optimal K to show best predict performance in KNN
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-pre_knn <- knn(train = trainData[,-1], test = testData3[,-1], cl = trainData[,1], k=opt_k$k, prob=T)
-cm_knn  <- confusionMatrix(pre_knn, testData3$wrclmch)
+# ## Apply optimal K to show best predict performance in KNN
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# pre_knn <- knn(train = trainData[,-1], test = testData3[,-1], cl = trainData[,1], k=opt_k$k, prob=T)
+# cm_knn  <- confusionMatrix(pre_knn, testData3$wrclmch)
 cm_knn
 ```
 
@@ -759,45 +750,46 @@ The next ML algorithm I will compute is a Naive Bayes model. More information on
 I will run a model re-iterating over 1 to 30 in ‘laplace’ values. 
 
 ```{r naivebayes, warning=FALSE, message=FALSE, echo=FALSE}
-library(e1071)
-
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-acc_test <- numeric()
-accuracy1 <- NULL; accuracy2 <- NULL
-
-for(i in 1:30){
-        learn_imp_nb <- naiveBayes(trainData[,-1], trainData$wrclmch, laplace=i)    
-        p_nb <- predict(learn_imp_nb, testData3[,-1]) 
-        accuracy1 <- confusionMatrix(p_nb, testData3$wrclmch)
-        accuracy2[i] <- accuracy1$overall[1]
-}
-
-acc <- data.frame(l= seq(1,30), cnt = accuracy2)
-
-opt_l <- subset(acc, cnt==max(cnt))[1,]
-sub <- paste("Optimal number of laplace is", opt_l$l, "(accuracy :", opt_l$cnt,") in naiveBayes")
-
-# Plot
-hchart(acc, 'line', hcaes(l, cnt)) %>%
-        hc_title(text = "Accuracy With Varying Laplace (naiveBayes)") %>%
-        hc_subtitle(text = sub) %>%
-        hc_add_theme(hc_theme_google()) %>%
-        hc_xAxis(title = list(text = "Number of Laplace")) %>%
-        hc_yAxis(title = list(text = "Accuracy"))
+# library(e1071)
+# 
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# acc_test <- numeric()
+# accuracy1 <- NULL; accuracy2 <- NULL
+# 
+# for(i in 1:30){
+#         learn_imp_nb <- naiveBayes(trainData[,-1], trainData$wrclmch, laplace=i)    
+#         p_nb <- predict(learn_imp_nb, testData3[,-1]) 
+#         accuracy1 <- confusionMatrix(p_nb, testData3$wrclmch)
+#         accuracy2[i] <- accuracy1$overall[1]
+# }
+# 
+# acc <- data.frame(l= seq(1,30), cnt = accuracy2)
+# 
+# opt_l <- subset(acc, cnt==max(cnt))[1,]
+# sub <- paste("Optimal number of laplace is", opt_l$l, "(accuracy :", opt_l$cnt,") in naiveBayes")
+# 
+# # Plot
+# hchart(acc, 'line', hcaes(l, cnt)) %>%
+#         hc_title(text = "Accuracy With Varying Laplace (naiveBayes)") %>%
+#         hc_subtitle(text = sub) %>%
+#         hc_add_theme(hc_theme_google()) %>%
+#         hc_xAxis(title = list(text = "Number of Laplace")) %>%
+#         hc_yAxis(title = list(text = "Accuracy"))
+viz_6
 ```
 
 As visible in the plot above, varying the  ‘laplace’ values does not improve (nor diminish) the prediction of the model. Thus, I will run a naiveBayes model without specific ‘laplace’ specification. 
 
 ```{r naivebayes1, warning=FALSE, message=FALSE, echo=FALSE}
-# naiveBayes without laplace
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-learn_nb <- naiveBayes(trainData[,-1], trainData$wrclmch)
-pre_nb <- predict(learn_nb, testData3[,-1])
-cm_nb <- confusionMatrix(pre_nb, testData3$wrclmch)        
+# # naiveBayes without laplace
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# learn_nb <- naiveBayes(trainData[,-1], trainData$wrclmch)
+# pre_nb <- predict(learn_nb, testData3[,-1])
+# cm_nb <- confusionMatrix(pre_nb, testData3$wrclmch)        
 cm_nb
 ```
 
@@ -820,13 +812,13 @@ Next, I will compute a Support Vector Machine (SVM) model. More information on t
 Let's first try a model without hyperparameter tuning.
 
 ```{r svm, warning=FALSE, message=FALSE, echo=FALSE}
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-## SVM 
-learn_svm <- svm(wrclmch~., data=trainData)
-pre_svm <- predict(learn_svm, testData3[,-1])
-cm_svm <- confusionMatrix(pre_svm, testData3$wrclmch)
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# ## SVM 
+# learn_svm <- svm(wrclmch~., data=trainData)
+# pre_svm <- predict(learn_svm, testData3[,-1])
+# cm_svm <- confusionMatrix(pre_svm, testData3$wrclmch)
 cm_svm
 ```
 
@@ -840,51 +832,52 @@ The confusion matrix visible above indicates an accuracy score of `r cm_svm$over
 
 #### SVM Tune 
 ```{r svm-tune, warning=FALSE, message=FALSE, echo=FALSE}
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-## SVM -Tune 
-### Choose ‘gamma, cost’ which shows best predict performance in SVM
-
-gamma <- seq(0,0.1,0.005)
-cost <- 2^(0:5)
-parms <- expand.grid(cost=cost, gamma=gamma)    ## 231
-
-acc_test <- numeric()
-accuracy1 <- NULL; accuracy2 <- NULL
-
-for(i in 1:NROW(parms)){        
-        learn_svm <- svm(wrclmch~., data=trainData, gamma=parms$gamma[i], cost=parms$cost[i])
-        pre_svm <- predict(learn_svm, testData3[,-1])
-        accuracy1 <- confusionMatrix(pre_svm, testData3$wrclmch)
-        accuracy2[i] <- accuracy1$overall[1]
-}
-
-acc <- data.frame(p= seq(1,NROW(parms)), cnt = accuracy2)
-
-opt_p <- subset(acc, cnt==max(cnt))[1,]
-sub <- paste("Optimal number of parameter is", opt_p$p, "(accuracy :", opt_p$cnt,") in SVM")
-
-# Plot
-hchart(acc, 'line', hcaes(p, cnt)) %>%
-        hc_title(text = "Accuracy With Varying Parameters (SVM)") %>%
-        hc_subtitle(text = sub) %>%
-        hc_add_theme(hc_theme_google()) %>%
-        hc_xAxis(title = list(text = "Number of Parameters")) %>%
-        hc_yAxis(title = list(text = "Accuracy"))
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# ## SVM -Tune 
+# ### Choose ‘gamma, cost’ which shows best predict performance in SVM
+# 
+# gamma <- seq(0,0.1,0.005)
+# cost <- 2^(0:5)
+# parms <- expand.grid(cost=cost, gamma=gamma)    ## 231
+# 
+# acc_test <- numeric()
+# accuracy1 <- NULL; accuracy2 <- NULL
+# 
+# for(i in 1:NROW(parms)){        
+#         learn_svm <- svm(wrclmch~., data=trainData, gamma=parms$gamma[i], cost=parms$cost[i])
+#         pre_svm <- predict(learn_svm, testData3[,-1])
+#         accuracy1 <- confusionMatrix(pre_svm, testData3$wrclmch)
+#         accuracy2[i] <- accuracy1$overall[1]
+# }
+# 
+# acc <- data.frame(p= seq(1,NROW(parms)), cnt = accuracy2)
+# 
+# opt_p <- subset(acc, cnt==max(cnt))[1,]
+# sub <- paste("Optimal number of parameter is", opt_p$p, "(accuracy :", opt_p$cnt,") in SVM")
+# 
+# # Plot
+# hchart(acc, 'line', hcaes(p, cnt)) %>%
+#         hc_title(text = "Accuracy With Varying Parameters (SVM)") %>%
+#         hc_subtitle(text = sub) %>%
+#         hc_add_theme(hc_theme_google()) %>%
+#         hc_xAxis(title = list(text = "Number of Parameters")) %>%
+#         hc_yAxis(title = list(text = "Accuracy"))
+viz_7
 ```
 
 As shown in the plot above, the optimal number of parameters seems to be `r opt_p$p` yielding an accuracy score of `r opt_p$cnt`. We will use this value for our optimized model. 
 
 ```{r svm-tune1, warning=FALSE, message=FALSE, echo=FALSE}
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-### Apply optimal parameters(gamma, cost) to show best predict performance in SVM
-
-learn_imp_svm <- svm(wrclmch~., data=trainData, cost=parms$cost[opt_p$p], gamma=parms$gamma[opt_p$p])
-pre_imp_svm <- predict(learn_imp_svm, testData3[,-1])
-cm_imp_svm <- confusionMatrix(pre_imp_svm, testData3$wrclmch)
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# ### Apply optimal parameters(gamma, cost) to show best predict performance in SVM
+# 
+# learn_imp_svm <- svm(wrclmch~., data=trainData, cost=parms$cost[opt_p$p], gamma=parms$gamma[opt_p$p])
+# pre_imp_svm <- predict(learn_imp_svm, testData3[,-1])
+# cm_imp_svm <- confusionMatrix(pre_imp_svm, testData3$wrclmch)
 cm_imp_svm
 ```
 
@@ -907,31 +900,31 @@ Next, I will compute a Recursive Partitioning (rpart) model. More information on
 For the rpart model, I will use 5-fold cross validation with the caret packages' in-built `trainControl` function. As hyperparameter tuning specifications, I will use the built-in function of the `caret` package by specifying the `tuneLength` argument to 2. The 'tuneLength' parameter tells the algorithm to try different default values for the main parameters, in our case 2. I will use both the `tuneLength` and the `trainControl` functions for the following models as well.
 
 ```{r hyperparameter-tuning2, warning=FALSE, message=FALSE, echo=FALSE}
-## Hyperparameter tuning to optimize the model for better performance
-# 1. trainControl()
-
-# Define the training control
-fitControl <- trainControl(
-        method = 'cv',                   # k-fold cross validation
-        number = 5,                      # number of folds
-        savePredictions = 'final',       # saves predictions for optimal tuning parameter
-        classProbs = T,                  # should class probabilities be returned
-        summaryFunction=twoClassSummary  # results summary function
-) 
+# ## Hyperparameter tuning to optimize the model for better performance
+# # 1. trainControl()
+# 
+# # Define the training control
+# fitControl <- trainControl(
+#         method = 'cv',                   # k-fold cross validation
+#         number = 5,                      # number of folds
+#         savePredictions = 'final',       # saves predictions for optimal tuning parameter
+#         classProbs = T,                  # should class probabilities be returned
+#         summaryFunction=twoClassSummary  # results summary function
+# ) 
 ```
 
 
 ```{r rpart-caret, warning=FALSE, message=FALSE, echo=FALSE}
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-# Train the model using rpart
-model_rpart = train(wrclmch ~ ., data=trainData, method='rpart', tuneLength=2, trControl = fitControl)
-# model_rpart
-
-# Predict on testData and Compute the confusion matrix
-predicted5 <- predict(model_rpart, testData3)
-confmat_rpart <- confusionMatrix(reference = testData3$wrclmch, data = predicted5)
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# # Train the model using rpart
+# model_rpart = train(wrclmch ~ ., data=trainData, method='rpart', tuneLength=2, trControl = fitControl)
+# # model_rpart
+# 
+# # Predict on testData and Compute the confusion matrix
+# predicted5 <- predict(model_rpart, testData3)
+# confmat_rpart <- confusionMatrix(reference = testData3$wrclmch, data = predicted5)
 confmat_rpart
 ```
 
@@ -951,17 +944,17 @@ Next, I will compute a conditional inference trees (CTree) model. More informati
  
  
 ```{r ctree-caret, warning=FALSE, message=FALSE, echo=FALSE}
-## Training ctree
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-# Train the model using ctree
-model_ctree = train(wrclmch ~ ., data=trainData, method='ctree', tuneLength=2, trControl = fitControl)
-# model_ctree
-
-# Predict on testData and Compute the confusion matrix
-predicted6 <- predict(model_ctree, testData3)
-confmat_ctree <- confusionMatrix(reference = testData3$wrclmch, data = predicted6)
+# ## Training ctree
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# # Train the model using ctree
+# model_ctree = train(wrclmch ~ ., data=trainData, method='ctree', tuneLength=2, trControl = fitControl)
+# # model_ctree
+# 
+# # Predict on testData and Compute the confusion matrix
+# predicted6 <- predict(model_ctree, testData3)
+# confmat_ctree <- confusionMatrix(reference = testData3$wrclmch, data = predicted6)
 confmat_ctree
 ```
 
@@ -979,17 +972,17 @@ Next, I will compute a popular and widely used Random Forest model. More informa
  * [Random Forest](https://rafalab.github.io/dsbook/examples-of-algorithms.html#random-forests)
  
 ```{r rf-caret, warning=FALSE, message=FALSE, echo=FALSE}
-## Training Random Forest
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-# Train the model using rf
-model_rf = train(wrclmch ~ ., data=trainData, method='rf', tuneLength=2, trControl = fitControl)
-# model_rf
-
-# Predict on testData and Compute the confusion matrix
-predicted7 <- predict(model_rf, testData3)
-confmat_rf <- confusionMatrix(reference = testData3$wrclmch, data = predicted7)
+# ## Training Random Forest
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# # Train the model using rf
+# model_rf = train(wrclmch ~ ., data=trainData, method='rf', tuneLength=2, trControl = fitControl)
+# # model_rf
+# 
+# # Predict on testData and Compute the confusion matrix
+# predicted7 <- predict(model_rf, testData3)
+# confmat_rf <- confusionMatrix(reference = testData3$wrclmch, data = predicted7)
 confmat_rf
 ```
 
@@ -1007,18 +1000,17 @@ Next, I will compute a Gradient boosting (GBM) model. More information on this m
  
 
 ```{r gbm-caret, warning=FALSE, message=FALSE, echo=FALSE, include=F}
-## Training GBM
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-# Train the model using GBM
-model_gbm = train(wrclmch ~ ., data=trainData, method='gbm', tuneLength=2, trControl = fitControl)
-# model_gbm
-
-# Predict on testData and Compute the confusion matrix
-predicted8 <- predict(model_gbm, testData3)
-confmat_gbm <- confusionMatrix(reference = testData3$wrclmch, data = predicted8)
-
+# ## Training GBM
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# # Train the model using GBM
+# model_gbm = train(wrclmch ~ ., data=trainData, method='gbm', tuneLength=2, trControl = fitControl)
+# # model_gbm
+# 
+# # Predict on testData and Compute the confusion matrix
+# predicted8 <- predict(model_gbm, testData3)
+# confmat_gbm <- confusionMatrix(reference = testData3$wrclmch, data = predicted8)
 ```
 
 ```{r gbm-caret-plot, warning=F, message=F, echo=F}
@@ -1040,17 +1032,17 @@ Next, I will compute a Adaptive Boosting (adaBOOST)  which is a statistical clas
  
   
 ```{r adaboost-caret, warning=FALSE, message=FALSE, echo=FALSE}
-##Training Adaboost
-# Set the seed for reproducibility
-set.seed(123, sample.kind="Rounding")
-
-# Train the model using Adaboost
-model_adaboost = train(wrclmch ~ ., data=trainData, method='adaboost', tuneLength=2, trControl = fitControl)
-# model_adaboost
-
-# Predict on testData and Compute the confusion matrix
-predicted9 <- predict(model_adaboost, testData3)
-confmat_ada <- confusionMatrix(reference = testData3$wrclmch, data = predicted9)
+# ##Training Adaboost
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# # Train the model using Adaboost
+# model_adaboost = train(wrclmch ~ ., data=trainData, method='adaboost', tuneLength=2, trControl = fitControl)
+# # model_adaboost
+# 
+# # Predict on testData and Compute the confusion matrix
+# predicted9 <- predict(model_adaboost, testData3)
+# confmat_ada <- confusionMatrix(reference = testData3$wrclmch, data = predicted9)
 confmat_ada
 ```
 
@@ -1076,43 +1068,33 @@ Up until here, I have run several ML algorithms individually. However, the `care
 
 
 ```{r caret-ensemble1, warning=FALSE, message=FALSE, echo=FALSE, include=FALSE}
-<<<<<<< HEAD
 # ### Ensembling the predictions
-library(caretEnsemble)
-# Stacking Algorithms - Run multiple algorithms in one call.
-trainControl <- trainControl(method="repeatedcv",
-                             number=5,
-                             repeats=2,
-                             savePredictions=TRUE,
-=======
-### Ensembling the predictions
-library(caretEnsemble)
-# Stacking Algorithms - Run multiple algorithms in one call.
-trainControl <- trainControl(method="repeatedcv", 
-                             number=5, 
-                             repeats=2,
-                             savePredictions=TRUE, 
->>>>>>> parent of 7c39454... Portfolio
-                             classProbs=TRUE)
-
-algorithmList <- c('knn', 'naive_bayes', 'C5.0', 'rpart', 'ctree',  'rf', 'gbm', 'adaboost', 'svmRadial')
-
-set.seed(123, sample.kind="Rounding")
-<<<<<<< HEAD
-models <- caretList(wrclmch ~ ., data=trainData, trControl=trainControl, methodList=algorithmList)
-=======
-models <- caretList(wrclmch ~ ., data=trainData, trControl=trainControl, methodList=algorithmList) 
->>>>>>> parent of 7c39454... Portfolio
-results <- resamples(models)
-summary(results)
+# library(caretEnsemble)
+# 
+# # Set the seed for reproducibility
+# set.seed(123, sample.kind="Rounding")
+# 
+# # Stacking Algorithms - Run multiple algorithms in one call.
+# trainControl <- trainControl(method="repeatedcv", 
+#                              number=5, 
+#                              repeats=2,
+#                              savePredictions=TRUE, 
+#                              classProbs=TRUE)
+# 
+# algorithmList <- c('knn', 'naive_bayes', 'C5.0', 'rpart', 'ctree',  'rf', 'gbm', 'adaboost', 'svmRadial')
+# 
+# 
+# models <- caretList(wrclmch ~ ., data=trainData, trControl=trainControl, methodList=algorithmList) 
+# results <- resamples(models)
+# summary(results)
 ```
 
 The plots above show the accuracy and Kappa results for all models in the Ensemble individually.
 
 ```{r caret-ensemble-plot, warning=FALSE, message=FALSE, echo=FALSE}
-# Box plots to compare models
-scales <- list(x=list(relation="free"), y=list(relation="free"))
-bwplot(results, scales=scales)
+# # Box plots to compare models
+# scales <- list(x=list(relation="free"), y=list(relation="free"))
+# bwplot(results, scales=scales)
 ```
 
 
@@ -1120,29 +1102,22 @@ The next step is then to combine the predictions of all our models to form a fin
 
 
 ```{r caret-ensemble2, warning=FALSE, message=FALSE, echo=FALSE}
-### Combine the predictions of multiple models to form a final prediction
-# Create the trainControl
-set.seed(124, sample.kind="Rounding")
-<<<<<<< HEAD
-stackControl <- trainControl(method="repeatedcv",
-                             number=5,
-                             repeats=2,
-                             savePredictions=TRUE,
-=======
-stackControl <- trainControl(method="repeatedcv", 
-                             number=5, 
-                             repeats=2,
-                             savePredictions=TRUE, 
->>>>>>> parent of 7c39454... Portfolio
-                             classProbs=TRUE)
-
-# Ensemble the predictions of `models` to form a new combined prediction based on glm
-stack.glm <- caretStack(models, method="glm", metric="Accuracy", trControl=stackControl)
-stack.glm
-
-# Predict on testData and Compute the confusion matrix
-predicted12 <- predict(stack.glm, newdata=testData3)
-confmat_glm <- confusionMatrix(reference = testData3$wrclmch, data = predicted12, positive = 'Worried')
+# ### Combine the predictions of multiple models to form a final prediction
+# # Create the trainControl
+# set.seed(123, sample.kind="Rounding")
+# stackControl <- trainControl(method="repeatedcv", 
+#                              number=5, 
+#                              repeats=2,
+#                              savePredictions=TRUE, 
+#                              classProbs=TRUE)
+# 
+# # Ensemble the predictions of `models` to form a new combined prediction based on glm
+# stack.glm <- caretStack(models, method="glm", metric="Accuracy", trControl=stackControl)
+# stack.glm
+# 
+# # Predict on testData and Compute the confusion matrix
+# predicted12 <- predict(stack.glm, newdata=testData3)
+# confmat_glm <- confusionMatrix(reference = testData3$wrclmch, data = predicted12, positive = 'Worried')
 ```
 
 
@@ -1170,19 +1145,15 @@ fourfoldplot(confmat_ctree$table, color = col, conf.level = 0, margin = 1, main=
 fourfoldplot(confmat_rf$table, color = col, conf.level = 0, margin = 1, main=paste("RandomForest (",round(confmat_rf$overall[1]*100),"%)",sep=""))
 fourfoldplot(confmat_gbm$table, color = col, conf.level = 0, margin = 1, main=paste("GBM (",round(confmat_gbm$overall[1]*100),"%)",sep=""))
 fourfoldplot(confmat_ada$table, color = col, conf.level = 0, margin = 1, main=paste("AdaBoost (",round(confmat_ada$overall[1]*100),"%)",sep=""))
-fourfoldplot(confmat_glm$table, color = col, conf.level = 0, margin = 1, main=paste("Ensemble GLM (",round(confmat_glm$overall[1]*100),"%)",sep=""))
+# fourfoldplot(confmat_glm$table, color = col, conf.level = 0, margin = 1, main=paste("Ensemble GLM (",round(confmat_glm$overall[1]*100),"%)",sep=""))
 ```
 
 
 
 ```{r best-model-accuracy, message=FALSE, warning=FALSE, echo=FALSE}
-<<<<<<< HEAD
-opt_predict <- c(cm_c50$overall[1], cm_imp_c50$overall[1], cm_knn$overall[1], cm_nb$overall[1], cm_svm$overall[1], cm_imp_svm$overall[1],
-=======
 opt_predict <- c(cm_c50$overall[1], cm_imp_c50$overall[1], cm_knn$overall[1], cm_nb$overall[1], cm_svm$overall[1], cm_imp_svm$overall[1], 
->>>>>>> parent of 7c39454... Portfolio
-                 confmat_rpart$overall[1], confmat_ctree$overall[1], confmat_rf$overall[1], confmat_gbm$overall[1], confmat_ada$overall[1], confmat_glm$overall[1])
-names(opt_predict) <- c('c50', 'imp_c50', 'knn', 'nb', 'svm' , 'imp_svm', 'rpart', 'ctree', 'rf', 'gbm', 'ada', 'glm')
+                 confmat_rpart$overall[1], confmat_ctree$overall[1], confmat_rf$overall[1], confmat_gbm$overall[1], confmat_ada$overall[1]) #, confmat_glm$overall[1]
+names(opt_predict) <- c('c50', 'imp_c50', 'knn', 'nb', 'svm' , 'imp_svm', 'rpart', 'ctree', 'rf', 'gbm', 'ada') #, 'glm'
 best_predict_model <- subset(opt_predict, opt_predict==max(opt_predict))
 ```
 
@@ -1199,9 +1170,9 @@ As shown in the plots above, the individual model which achieved the best accura
 Looking at the results of the algorithms individually, the plot below depicts the performance of the models in terms of accuracy:
 
 ```{r model_comparison, message=FALSE, warning=FALSE, echo=FALSE}
-# Box plots to compare models
-scales <- list(x=list(relation="free"), y=list(relation="free"))
-bwplot(results, scales=scales)
+# # Box plots to compare models
+# scales <- list(x=list(relation="free"), y=list(relation="free"))
+# bwplot(results, scales=scales)
 ```
 
 The best accuracy score(-s) used on the test set achieved an accuracy of:
@@ -1213,7 +1184,7 @@ best_predict_model
 In contrast, using an Ensemble model yielded an accuracy as shown below.
 
 ```{r glm-results, message=FALSE, warning=FALSE, echo=FALSE}
-stack.glm
+# stack.glm
 ```
 
 
