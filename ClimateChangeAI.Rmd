@@ -1,11 +1,13 @@
 ---
-title: 'ClimateChangeAI'
+title: '**Predictors of Climate Change Perceptions:<br> A Machine Learning Approach**'
 author: "Dr. Fatih Uenal, Cambridge, UK"
 date: "4/27/2021"
 output: 
   html_document:
     toc: yes
-    toc_depth: 5
+    toc_float: true
+    collapsed: false
+    toc_depth: 3
     theme: cosmo
     highlight: tango
     code_folding: show
@@ -16,22 +18,20 @@ output:
 ```{r general-options-document-format, include=FALSE}
 # knitr::opts_chunk$set(echo = F, warning = F, fig.pos ='h', message = F, error = F) # Set knitting options general
 options(tinytex.verbose = TRUE)  # debugging
+options(tinytex.verbose = T, dplyr.summarise.inform = F)  # Debugging & Suppress summary info
 ```
 
 ```{r setup, include=FALSE}
-## Install/Load required packages
-# All of the following packages need to be installed to run this document properly
-if(!require(devtools)) install.packages("devtools", repos = "http://cran.us.r-project.org")
-library(devtools)
-if(!require(lares)) devtools::install_github("laresbernardo/lares")
-if(!require(pacman)) install.packages("pacman", repos = "http://cran.us.r-project.org")
+# ## Install/Load required packages
 library(pacman)
+pacman::p_load(essurvey, readr, readxl, curl, tidyverse, broom, haven, foreign, labelled, skimr, C50, class, e1071, randomForest, rpart, rpart.plot,
+               partykit, caret, caretEnsemble, lares, GGally, ggplot2, PerformanceAnalytics, fastmatch, Metrics, ipred, mlbench, RANN,
+               highcharter, ggimage, countrycode, survey, srvyr, dplyr, questionr, sjmisc, car, data.table, ryouready)
+```
 
-pacman::p_load(essurvey, readr, curl, tidyverse, haven, skimr, C50, class, e1071, randomForest, rpart, rpart.plot, 
-               partykit, caret, caretEnsemble, lares, GGally, ggplot2, PerformanceAnalytics, fastmatch,
-               Metrics, ipred, mlbench, RANN, highcharter)
-
-options(dplyr.summarise.inform = FALSE) # Suppress summary info
+```{r}
+options(highcharter.theme = hc_theme_hcrt(tooltip = list(valueDecimals = 2)))
+hc_world
 ```
 
 # 1. Overview
@@ -101,6 +101,7 @@ For this project, I used the second method, and downloaded the data using the 'e
 
 ## Download data file from my github
 df8 <- read.csv(curl('https://raw.githubusercontent.com/FUenal/Harvard_Capstone_Project/main/ESS8e02.1_F1.csv'))
+load(file = "ess8.RData")
 ```
 
 *PLEASE NOTE: The code is included in the RMD file but explicitly tuned off (echo=FALSE)*.
