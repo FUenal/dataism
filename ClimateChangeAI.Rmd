@@ -27,6 +27,8 @@ library(pacman)
 pacman::p_load(essurvey, readr, readxl, curl, tidyverse, broom, haven, foreign, labelled, skimr, C50, class, e1071, randomForest, rpart, rpart.plot,
                partykit, caret, caretEnsemble, lares, GGally, ggplot2, PerformanceAnalytics, fastmatch, Metrics, ipred, mlbench, RANN,
                highcharter, ggimage, countrycode, survey, srvyr, dplyr, questionr, sjmisc, car, data.table, ryouready)
+
+load(file = "ess8.RData")
 ```
 
 ```{r}
@@ -96,12 +98,11 @@ For this project, I used the second method, and downloaded the data using the 'e
 
 
 ## Load data file locally if you download the data from edX
-# df8 <- read.csv("ESS8e02.1_F1.csv") 
+df8 <- read.csv("ESS8e02.1_F1.csv") 
 
 
 ## Download data file from my github
-df8 <- read.csv(curl('https://raw.githubusercontent.com/FUenal/Harvard_Capstone_Project/main/ESS8e02.1_F1.csv'))
-load(file = "ess8.RData")
+# df8 <- read.csv(curl('https://raw.githubusercontent.com/FUenal/Harvard_Capstone_Project/main/ESS8e02.1_F1.csv'))
 ```
 
 *PLEASE NOTE: The code is included in the RMD file but explicitly tuned off (echo=FALSE)*.
@@ -138,10 +139,10 @@ Given the large amount of specific cleaning tasks, I manually went through the d
 ```{r data-peak-2, warning=FALSE, message=FALSE, echo=FALSE}
 ## From here on after the cleaned and smaller subset of the data will be used
 ## Load cleaned data set locally
-# df <- read.csv("ess8_subsample.csv") # If you download the data from edX
+df <- read.csv("ess8_subsample.csv") # If you download the data from edX
 
 ## Download data file from my github
-df <- read.csv(curl('https://raw.githubusercontent.com/FUenal/Harvard_Capstone_Project/main/ess8_subsample.csv'))
+# df <- read.csv(curl('https://raw.githubusercontent.com/FUenal/Harvard_Capstone_Project/main/ess8_subsample.csv'))
 
 ## Random sample for testing purposes: You can choose to work with an even smaller subsample to have shorter run times
 # df <- sample_n(df, 500)
