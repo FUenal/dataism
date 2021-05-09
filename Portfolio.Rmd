@@ -51,44 +51,11 @@ embed_youtube("aCP8X7Pnh4o", width = NULL,
 
 ## Climate Change and Machine Learning
 
-In my role as a Postdoctoral Research Associate & Data Scientist with [The University of Cambridge](https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal), I have worked with big data sets using Machine Learning Algorithms to identify the most robust predictors of Climate Change Attitudes and Policy Preferences. Some of the results of this line of work is available [here](https://fuenal.github.io/dataism/ClimateChangeAI.html)
+In my role as a Postdoctoral Research Associate & Data Scientist with [The University of Cambridge](https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal), I have worked with big data sets using Machine Learning Algorithms to identify the most robust predictors of Climate Change Attitudes and Policy Preferences. Some of the results of this line of work is available 
+
+ * [here](https://fuenal.github.io/dataism/ClimateChangeAI.html)
+
 
 ---
 
-<figure>
-<img src="./images/RStudio-Logo-Flat.png" alt="R Studio" style="width:400px">
-</figure> 
-  
-  
-- Installing RStudio: Go to the [R studio website](http://www.rstudio.com), and follow the links to download RStudio. The version you want is the “RStudio Desktop”. Once the installer is downloaded, open it, and follow the instructions. “RStudio and Shiny are trademarks of RStudio, PBC”
 
----
-
-### Resources
-
-The reading and video materials used on this website are based on Prof Rafael Irizarry`s work which are publicly available:
-
-Irizarry, R. (2019). Introduction to Data Science. Data Analysis and Prediction Algorithms with R. eBook available at https://rafalab.github.io/dsbook/
-
-
-### Additional R resources
-
-1. Google knows, ask Google.
-2. [Stackoverflow](https://stackoverflow.com) is awesome, pure, and simple. Chances are high that someone else has had a similar question as you and usually you find that many people have answered your question already.
-3. Danielle Navarro wrote a [free Psych Stats textbook using R](https://compcogscisydney.org/learning-statistics-with-r/), it's worth checking out (some of our reading materials are based on her work)
-4. Another solid and accessible resource for Data Science and social science statistics using R [http://datascience.tntlab.org/](http://datascience.tntlab.org/). The approach taken in this course is an augmented version of the tnt-approach.
-5. One of my favorite websites is Erin Buchanan's fantastic [Statistics of Doom](https://statisticsofdoom.com/) repository. It contains a ton of great materials for R, SPSS, JASP covering all levels of statistical analysis with some hands-on youtube videos, r-codes, exercises, and other materials to guide you through the Stats.
-
-### Further R resources for Psychologists
-
-1.	Neth, H. (2020).  Data Science for Psychologists.  Social Psychology and Decision Sciences, University of Konstanz, Germany.  Textbook and R package ds4psy (version 0.2.1, May 6, 2020).  eBook available at https://bookdown.org/hneth/ds4psy/;  R package at https://CRAN.R-project.org/package=ds4psy
-
-2.	Navarro, D. (2019). Learning statistics with R: A tutorial for psychology students and other beginners. (Version 0.6.1, June 19, 2019). Danielle Navarro (bookdown translation: Emily Kothe) eBook available at https://learningstatisticswithr.com/book/
-
-3.	Wickham, H. & Grolemund, G. (2017). R for Data Science Import, Tidy, Transform, Visualize, and Model Data. eBook available at https://r4ds.had.co.nz/ 
-
-4.	Field, A., Miles, J., & Field, Z. (2012). Discovering Statistics Using R. London, UK: Sage Publications. Not available online currently. 
-
-5.	Silge, J. & Robinson, D. (2017). Text Mining with R: A Tidy Approach. eBook available at https://www.tidytextmining.com/
-
-6.	Harrer, M., Cuijpers, P., Furukawa, T.A, & Ebert, D. D. (2019). Doing Meta-Analysis in R: A Hands-on Guide. eBook available at https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/. 
