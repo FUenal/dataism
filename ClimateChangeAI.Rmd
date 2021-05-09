@@ -1280,33 +1280,33 @@ Up until here, I have run several ML algorithms individually. However, the `care
 
 
 ```{r caret-ensemble1, warning=FALSE, message=FALSE, echo=FALSE, include=FALSE}
-# ### Ensembling the predictions
-# library(caretEnsemble)
-# 
-# # Set the seed for reproducibility
-# set.seed(123, sample.kind="Rounding")
-# 
-# # Stacking Algorithms - Run multiple algorithms in one call.
-# trainControl <- trainControl(method="repeatedcv", 
-#                              number=5, 
-#                              repeats=2,
-#                              savePredictions=TRUE, 
-#                              classProbs=TRUE)
-# 
-# algorithmList <- c('knn', 'naive_bayes', 'C5.0', 'rpart', 'ctree',  'rf', 'gbm', 'adaboost', 'svmRadial')
-# 
-# 
-# models <- caretList(wrclmch ~ ., data=trainData, trControl=trainControl, methodList=algorithmList) 
-# results <- resamples(models)
-# summary(results)
+### Ensembling the predictions
+library(caretEnsemble)
+
+# Set the seed for reproducibility
+set.seed(123, sample.kind="Rounding")
+
+# Stacking Algorithms - Run multiple algorithms in one call.
+trainControl <- trainControl(method="repeatedcv",
+                             number=5,
+                             repeats=2,
+                             savePredictions=TRUE,
+                             classProbs=TRUE)
+
+algorithmList <- c('knn', 'naive_bayes', 'C5.0', 'rpart', 'ctree',  'rf', 'gbm', 'adaboost', 'svmRadial')
+
+
+models <- caretList(wrclmch ~ ., data=trainData, trControl=trainControl, methodList=algorithmList)
+results <- resamples(models)
+summary(results)
 ```
 
 The plots above show the accuracy and Kappa results for all models in the Ensemble individually.
 
 ```{r caret-ensemble-plot, warning=FALSE, message=FALSE, echo=FALSE}
-# # Box plots to compare models
-# scales <- list(x=list(relation="free"), y=list(relation="free"))
-# bwplot(results, scales=scales)
+# Box plots to compare models
+scales <- list(x=list(relation="free"), y=list(relation="free"))
+bwplot(results, scales=scales)
 ```
 
 
@@ -1314,22 +1314,22 @@ The next step is then to combine the predictions of all our models to form a fin
 
 
 ```{r caret-ensemble2, warning=FALSE, message=FALSE, echo=FALSE}
-# ### Combine the predictions of multiple models to form a final prediction
-# # Create the trainControl
-# set.seed(123, sample.kind="Rounding")
-# stackControl <- trainControl(method="repeatedcv", 
-#                              number=5, 
-#                              repeats=2,
-#                              savePredictions=TRUE, 
-#                              classProbs=TRUE)
-# 
-# # Ensemble the predictions of `models` to form a new combined prediction based on glm
-# stack.glm <- caretStack(models, method="glm", metric="Accuracy", trControl=stackControl)
-# stack.glm
-# 
-# # Predict on testData and Compute the confusion matrix
-# predicted12 <- predict(stack.glm, newdata=testData3)
-# confmat_glm <- confusionMatrix(reference = testData3$wrclmch, data = predicted12, positive = 'Worried')
+### Combine the predictions of multiple models to form a final prediction
+# Create the trainControl
+set.seed(123, sample.kind="Rounding")
+stackControl <- trainControl(method="repeatedcv",
+                             number=5,
+                             repeats=2,
+                             savePredictions=TRUE,
+                             classProbs=TRUE)
+
+# Ensemble the predictions of `models` to form a new combined prediction based on glm
+stack.glm <- caretStack(models, method="glm", metric="Accuracy", trControl=stackControl)
+stack.glm
+
+# Predict on testData and Compute the confusion matrix
+predicted12 <- predict(stack.glm, newdata=testData3)
+confmat_glm <- confusionMatrix(reference = testData3$wrclmch, data = predicted12, positive = 'Worried')
 ```
 
 
@@ -1357,15 +1357,15 @@ fourfoldplot(confmat_ctree$table, color = col, conf.level = 0, margin = 1, main=
 fourfoldplot(confmat_rf$table, color = col, conf.level = 0, margin = 1, main=paste("RandomForest (",round(confmat_rf$overall[1]*100),"%)",sep=""))
 fourfoldplot(confmat_gbm$table, color = col, conf.level = 0, margin = 1, main=paste("GBM (",round(confmat_gbm$overall[1]*100),"%)",sep=""))
 fourfoldplot(confmat_ada$table, color = col, conf.level = 0, margin = 1, main=paste("AdaBoost (",round(confmat_ada$overall[1]*100),"%)",sep=""))
-# fourfoldplot(confmat_glm$table, color = col, conf.level = 0, margin = 1, main=paste("Ensemble GLM (",round(confmat_glm$overall[1]*100),"%)",sep=""))
+fourfoldplot(confmat_glm$table, color = col, conf.level = 0, margin = 1, main=paste("Ensemble GLM (",round(confmat_glm$overall[1]*100),"%)",sep=""))
 ```
 
 
 
 ```{r best-model-accuracy, message=FALSE, warning=FALSE, echo=FALSE}
 opt_predict <- c(cm_c50$overall[1], cm_imp_c50$overall[1], cm_knn$overall[1], cm_nb$overall[1], cm_svm$overall[1], cm_imp_svm$overall[1], 
-                 confmat_rpart$overall[1], confmat_ctree$overall[1], confmat_rf$overall[1], confmat_gbm$overall[1], confmat_ada$overall[1]) #, confmat_glm$overall[1]
-names(opt_predict) <- c('c50', 'imp_c50', 'knn', 'nb', 'svm' , 'imp_svm', 'rpart', 'ctree', 'rf', 'gbm', 'ada') #, 'glm'
+                 confmat_rpart$overall[1], confmat_ctree$overall[1], confmat_rf$overall[1], confmat_gbm$overall[1], confmat_ada$overall[1], confmat_glm$overall[1]) #, confmat_glm$overall[1]
+names(opt_predict) <- c('c50', 'imp_c50', 'knn', 'nb', 'svm' , 'imp_svm', 'rpart', 'ctree', 'rf', 'gbm', 'ada', 'glm') #, 'glm'
 best_predict_model <- subset(opt_predict, opt_predict==max(opt_predict))
 ```
 
@@ -1382,9 +1382,9 @@ As shown in the plots above, the individual model which achieved the best accura
 Looking at the results of the algorithms individually, the plot below depicts the performance of the models in terms of accuracy:
 
 ```{r model_comparison, message=FALSE, warning=FALSE, echo=FALSE}
-# # Box plots to compare models
-# scales <- list(x=list(relation="free"), y=list(relation="free"))
-# bwplot(results, scales=scales)
+# Box plots to compare models
+scales <- list(x=list(relation="free"), y=list(relation="free"))
+bwplot(results, scales=scales)
 ```
 
 The best accuracy score(-s) used on the test set achieved an accuracy of:
@@ -1396,7 +1396,7 @@ best_predict_model
 In contrast, using an Ensemble model yielded an accuracy as shown below.
 
 ```{r glm-results, message=FALSE, warning=FALSE, echo=FALSE}
-# stack.glm
+stack.glm
 ```
 
 

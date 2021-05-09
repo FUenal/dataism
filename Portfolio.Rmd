@@ -88,11 +88,11 @@ The results of the model evaluation showed an overall accuracy of 73% with a pre
 <div style="margin-bottom:30px;">
 </div>
 
-<a href="https://fuenal.github.io/dataism/Lectures.html"> 
+
 ```{r ann, out.width=1600, out.height=500, echo=F}
 knitr::include_graphics("images/ANN.png")
 ```
-</a>
+
 
 
 ---
