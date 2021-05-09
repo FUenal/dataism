@@ -1416,12 +1416,12 @@ div.tocify {
 ##    2 classes: &#39;Not_worried&#39;, &#39;Worried&#39; 
 ## 
 ## No pre-processing
-## Resampling: Cross-Validated (5 fold, repeated 2 times) 
-## Summary of sample sizes: 4063, 4062, 4062, 4063, 4062, 4063, ... 
+## Resampling: Cross-Validated (2 fold, repeated 2 times) 
+## Summary of sample sizes: 2539, 2539, 2539, 2539 
 ## Resampling results:
 ## 
 ##   Accuracy   Kappa    
-##   0.7791469  0.3257383</code></pre>
+##   0.7789484  0.3248996</code></pre>
 <hr />
 </div>
 </div>
@@ -1452,12 +1452,12 @@ div.tocify {
 ##    2 classes: &#39;Not_worried&#39;, &#39;Worried&#39; 
 ## 
 ## No pre-processing
-## Resampling: Cross-Validated (5 fold, repeated 2 times) 
-## Summary of sample sizes: 4063, 4062, 4062, 4063, 4062, 4063, ... 
+## Resampling: Cross-Validated (2 fold, repeated 2 times) 
+## Summary of sample sizes: 2539, 2539, 2539, 2539 
 ## Resampling results:
 ## 
 ##   Accuracy   Kappa    
-##   0.7791469  0.3257383</code></pre>
+##   0.7789484  0.3248996</code></pre>
 <p>As a final step, let`s now take a closer look at the specific variables which were most important in the prediction of on of the models. The plot below shows the most important features in the classification of our response variable.</p>
 <p><img src="ClimateChangeAI_files/figure-html/varImp-1.png" width="1152" /></p>
 <hr />
@@ -1562,17 +1562,18 @@ div.tocify {
 ##  [85] sjlabelled_1.1.7     dbplyr_2.1.1         MASS_7.3-53.1       
 ##  [88] cli_2.4.0            mitools_2.4          quadprog_1.5-8      
 ##  [91] R.methodsS3_1.8.1    parallel_4.0.2       insight_0.13.2      
-##  [94] gower_0.2.2          igraph_1.2.6         pkgconfig_2.0.3     
-##  [97] rvcheck_0.1.8        coin_1.4-1           recipes_0.1.16      
-## [100] xml2_1.3.2           foreach_1.5.1        bslib_0.2.4         
-## [103] prodlim_2019.11.13   rvest_1.0.0          digest_0.6.27       
-## [106] strucchange_1.5-2    rmarkdown_2.7        cellranger_1.1.0    
-## [109] shiny_1.6.0          modeltools_0.2-23    h2o_3.32.0.1        
-## [112] lifecycle_1.0.0      nlme_3.1-152         jsonlite_1.7.2      
-## [115] fansi_0.4.2          pillar_1.6.0         fastmap_1.1.0       
-## [118] httr_1.4.2           glue_1.4.2           zip_2.1.1           
-## [121] iterators_1.0.13     stringi_1.5.3        sass_0.3.1          
-## [124] rematch2_2.1.2       styler_1.4.1</code></pre>
+##  [94] gower_0.2.2          igraph_1.2.6         naivebayes_0.9.7    
+##  [97] pkgconfig_2.0.3      rvcheck_0.1.8        coin_1.4-1          
+## [100] recipes_0.1.16       xml2_1.3.2           foreach_1.5.1       
+## [103] bslib_0.2.4          prodlim_2019.11.13   rvest_1.0.0         
+## [106] digest_0.6.27        strucchange_1.5-2    rmarkdown_2.7       
+## [109] cellranger_1.1.0     kernlab_0.9-29       shiny_1.6.0         
+## [112] modeltools_0.2-23    h2o_3.32.0.1         lifecycle_1.0.0     
+## [115] nlme_3.1-152         jsonlite_1.7.2       fansi_0.4.2         
+## [118] pillar_1.6.0         fastmap_1.1.0        httr_1.4.2          
+## [121] glue_1.4.2           zip_2.1.1            gbm_2.1.8           
+## [124] iterators_1.0.13     stringi_1.5.3        sass_0.3.1          
+## [127] rematch2_2.1.2       styler_1.4.1</code></pre>
 </div>
 <div id="benchmark-time-to-generate-html-from-rmd" class="section level2">
 <h2>Benchmark: time to generate Html from Rmd</h2>
