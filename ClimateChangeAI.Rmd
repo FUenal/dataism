@@ -301,6 +301,257 @@ table(testData$wrclmch)
 ```
 
 
+## 4.3 Climate Change Perceptions Across Europe 
+
+###  {.tabset}
+
+
+#### Climate Change: Awareness
+
+```{r}
+map_aware
+```
+
+
+#### Climate Change: Threat Perceptions
+
+```{r}
+map_worried
+```
+
+
+#### Climate Change: Cause Attributions
+
+```{r}
+hw_grid(map_cause_humans, map_cause_nature, map_cause_denial, 
+        ncol = 3)
+```
+
+
+#### Climate Change: Impact Valence
+
+```{r}
+hw_grid(map_bad_impact, map_good_impact, 
+        ncol = 2)
+```
+
+#### Climate Change: Feeling Responsibilty
+
+```{r}
+hw_grid(map_responsible, map_not_responsible, 
+        ncol = 2)
+```
+
+#### Climate Change: Support for Mitigation Policies
+
+```{r}
+hw_grid(map_tax_support, map_tax_opposition, map_tax_undecided, 
+        ncol = 3)
+```
+
+## 4.4 National Level Predictors of Climate Change Perceptions and Attitudes
+
+### Economic Factors {.tabset}
+
+
+#### Gross Domestic Product (GDP)
+
+```{r}
+hc_plot_GDP
+```
+
+
+#### Socio-Economic Inequality (GINI Coefficient)
+
+```{r}
+hc_plot_Gini
+```
+
+### Environmental Factors {.tabset}
+
+#### Environmental Performance (EPI)
+
+```{r}
+hc_plot_EPI
+```
+
+
+#### Environmental Health Index
+
+```{r}
+hc_plot_Environmental_Health
+```
+
+
+#### Ecosystem Vitality Index
+
+```{r}
+hc_plot_Ecosystem_Vitality
+```
+
+
+### Political Factors {.tabset}
+
+#### EnvironMental Policy Stringency 
+
+```{r}
+hc_plot_EnvironMental_Policy_Stringency
+```
+
+
+#### Green Party Seats Parliament
+
+```{r}
+hc_plot_Green_Party_Seats_Parliament
+```
+
+
+#### Number of Supply Side Restrcition Fossil-Fuel Policies
+
+```{r}
+hc_plot_Policy_total
+```
+
+
+### Risk Factors {.tabset}
+
+#### Climate Risk Index (CRI)
+
+```{r}
+hc_plot_cri
+```
+
+
+#### Country Greenhous Gas Emissions (MTCO2e)
+
+```{r}
+hc_plot_MTCO2e
+```
+
+
+#### Domestic Material Consumption (DMC)
+
+```{r}
+hc_plot_DMC
+```
+
+
+
+#### Fossil-Fuel Share in overall Engery Consumption (Sub-energy %)
+
+```{r}
+hc_plot_fossil_fuel_share_energy_2019
+```
+
+
+
+## 4.5 Individual Level Predictors of Climate Change Perceptions and Attitudes
+
+### Human values {.tabset}
+
+
+#### Environemntal Values
+
+```{r}
+hc_plot_impenv
+```
+
+
+#### Materialism
+
+```{r}
+hc_plot_imprich
+```
+
+
+#### Empathy and Sociality
+
+```{r}
+hc_plot_iphlppl
+```
+
+
+### Politics  {.tabset}
+
+
+#### Political Orientation
+
+```{r}
+hc_plot_1
+```
+
+#### Trust in the European Parliament
+
+```{r}
+hc_plot_trsteuparl
+```
+
+
+#### Immigration bad or good for country's economy
+
+```{r}
+hc_plot_immigr
+```
+
+
+
+### Welfare attitudes  {.tabset}
+
+#### Government should reduce differences in income levels
+```{r}
+hc_plot_equal
+```
+
+
+#### Attitudes toward a basic income scheme 
+
+```{r}
+hc_plot_basinc
+```
+
+
+#### Risk of Unemployment
+
+```{r}
+hc_plot_lkuemp
+```
+
+
+### Media & Social Trust  {.tabset}
+
+
+#### Internet Usage
+
+```{r}
+hc_plot_intuse
+```
+
+#### News Consumption (in minutes per day)
+
+```{r}
+hc_plot_nwspol
+```
+
+
+#### General Trust in People
+
+```{r}
+hc_plot_ppltrst
+```
+
+
+### Social and Demographic Factors  {.tabset}
+
+
+#### Education
+
+
+#### Income
+
+
+#### Gender
+
+
 Next, we'll continue to analyze the distribution of our outcome variable in the **trainData** set. Let's visualize the distribution of climate change worry first. 
 
 ```{r eda-3, warning=FALSE, message=FALSE, echo=FALSE}
