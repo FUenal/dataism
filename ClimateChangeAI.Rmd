@@ -56,7 +56,9 @@ In the following, I am presenting some results of my work on **Predictors of Cli
 
 
 
+
 ---
+
 
 
 # 2. Introduction
@@ -66,7 +68,9 @@ Reports on the impact of climate change on planetary health are distressing (e.g
 In this project, I am going to make use of ML algorithms to overcome the shortcomings of previous studies using data from the 8th Round of the European Social Survey (2016). "The European Social Survey (ESS) is an academically driven cross-national survey that has been conducted across Europe since its establishment in 2001. Every two years, face-to-face interviews are conducted with newly selected, cross-sectional samples. The survey measures the attitudes, beliefs and behaviour patterns of diverse populations in more than thirty nations." The 8th Round of the ESS contains climate change attitudes and a wide of predictor variable of interest. Using this data, I will employ several ML techniques to accurately predict whether or not individuals in this survey are either worried or not worried by climate change and identify which predictors ('features') are the most robust and important factors explaining differences in climate change worry. 
 
 
+
 ---
+
 
 
 # 3. Data Download & Preparation
