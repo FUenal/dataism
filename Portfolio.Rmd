@@ -2,11 +2,6 @@
 title: "Portfolio"
 output:
   html_document:
-    toc: true
-    toc_float: true
-    collapsed: false
-    number_sections: false
-    toc_depth: 2
     theme: lumen
     highlight: tango
 ---
@@ -21,6 +16,8 @@ options(tinytex.verbose = T, dplyr.summarise.inform = F)  # Debugging & Suppress
 Here, I am showcasing some selected Data Science & AI projects which I had the pleasure to work on in the last couple of years. 
 
 
+---
+
 
 # Automated Fossil Fuel Policy Tracker
 
@@ -28,11 +25,10 @@ As part of my Data Science Fellowship with <a href="https://faculty.ai/" target=
 
 The FFNPT Initiative has recently been endorsed by <a href="https://www.theguardian.com/environment/2021/apr/21/101-nobel-laureates-call-for-global-fossil-fuel-non-proliferation-treaty" target="_blank">101 Nobel Laureates</a>  and is thus rapidly gaining international traction.
 
-I had the pleasure to work with the FFNPT on a Data Science project in which I programmed an interactive outline app, using web-scraping and Natural Language Processing (Artificial Neural Network) to automatically identify, filter, and visualize relevant policies globally.
+I had the pleasure to work with the FFNPT on a Data Science project in which I programmed an interactive <a href="https://fossil-fuel-tracker.herokuapp.com/" target="_blank">Online App</a>, using web-scraping and Natural Language Processing (Artificial Neural Network) to automatically identify, filter, and visualize relevant policies globally. 
 
- * <a href="https://fossil-fuel-tracker.herokuapp.com/" target="_blank">FFNPT App</a>
- 
-In the video below I present the app in more detail.
+
+**In the video below, I present the App in more detail.**
 
 ```{r echo=F,include=F,error=F}
 library(vembedr)
@@ -40,7 +36,7 @@ library(vembedr)
 
 
 ```{r echo=F,error=F}
-embed_youtube("aCP8X7Pnh4o", width = NULL,
+embed_youtube("aCP8X7Pnh4o", width = 1000,
   height = 500,
   ratio = c("16by9", "4by3"),
   frameborder = 0,
@@ -49,14 +45,33 @@ embed_youtube("aCP8X7Pnh4o", width = NULL,
 ```
 
 
-<iframe width='1000px' height='1000px' src='https://fossil-fuel-tracker.herokuapp.com' >
+
+---
+
+**Below, you can check out the App:**
+
+
+<iframe width='1000px' height='600px' src='https://fossil-fuel-tracker.herokuapp.com' >
   <p>Your browser does not support iframes</p>
 </iframe>
+
+
+---
+
+
+
+
 
 
 # Climate Change and Machine Learning
 
 In my role as a Postdoctoral Research Associate & Data Scientist with <a href="https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal" target="_blank">The University of Cambridge</a>, I have worked with big data sets using Machine Learning Algorithms to identify the most robust predictors of Climate Change Attitudes and Policy Preferences. Some of the results of this line of work is available 
+
+
+<iframe width='1000px' height='600px' src='https://fuenal.github.io/dataism/ClimateChangeAI.html' >
+  <p>Your browser does not support iframes</p>
+</iframe>
+
 
  * <a href="https://fuenal.github.io/dataism/ClimateChangeAI.html" target="_blank">Climate Change Perceptions: A Machine Learning Approach</a> 
 
