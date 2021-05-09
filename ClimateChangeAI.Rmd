@@ -162,7 +162,7 @@ Before proceeding to the next section, I will thus further process the data by i
 ```{r data-peak-3, warning=FALSE, message=FALSE, echo=FALSE}
 ## Check missing values
 highmiss <- missingness(df)
-head(highmiss)
+# head(highmiss)
 
 # Store columns with NaNs > 50%
 highmiss50 <- highmiss %>%
@@ -179,8 +179,8 @@ Checking again for missing values, we can now see that we have less missing valu
 
 ```{r data-peak-4, warning=FALSE, message=FALSE, echo=FALSE}
 # Recheck missing values
-df_str(df)
-head(missingness(df))
+# df_str(df)
+# head(missingness(df))
 ```
 
 Checking zero-variance features indicates that non of the remaining features show zero variance and thus I don't have remove any feature based on this criterion.
@@ -194,7 +194,7 @@ Moreover, I will check for missing values in the main variable of interest for t
 
 ```{r data-peak-6, warning=FALSE, message=FALSE, echo=FALSE}
 # Check Missing Values in Response Variable
-sum(is.na(df$wrclmch))
+# sum(is.na(df$wrclmch))
 
 # Drop NAs in response variable
 df <- df %>%
@@ -230,7 +230,7 @@ df <- df %>%
                           gndr >= 2 ~ "Female"),
          gndr = factor(gndr, levels = c("Male", "Female")))
 
-table(df$gndr)
+# table(df$gndr)
 ```
 
 
@@ -278,7 +278,7 @@ After cleaning and partitioning the data, I proceed to taking a quick glance at 
 
 ```{r eda-1, warning=FALSE, message=FALSE, echo=FALSE}
 ## First peak into partitioned trainData
-head(df_str(trainData, return = "skimr"))
+# head(df_str(trainData, return = "skimr"))
 ```
 
 First, let's find out how our response variable is distributed across both the **trainData**- and the **testData**-sets. In other words, let's see how many respondents indicated that they were worried about climate change vs. not worried. The distribution does not indicate a severely high class imbalance and we see that our sample contains more worried than not-worried responses.
