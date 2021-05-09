@@ -1,7 +1,6 @@
 ---
 title: '**Predictors of Climate Change Perceptions:<br> A Machine Learning Approach**'
 author: "Dr. Fatih Uenal, Cambridge, UK"
-date: "4/27/2021"
 output: 
   html_document:
     toc: yes
@@ -28,6 +27,15 @@ pacman::p_load(essurvey, readr, readxl, curl, tidyverse, broom, haven, foreign, 
                partykit, caret, caretEnsemble, lares, GGally, ggplot2, PerformanceAnalytics, fastmatch, Metrics, ipred, mlbench, RANN,
                highcharter, ggimage, countrycode, survey, srvyr, dplyr, questionr, sjmisc, car, data.table, ryouready)
 
+<<<<<<< HEAD
+# Load ML data (split due to file size limitation at github)
+load(file = "ml_image1.RData")
+load(file = "ml_image2.RData")
+# load(file = "ml_image3.RData")
+# load(file = "ml_image4.RData")
+
+=======
+>>>>>>> parent of 7c39454... Portfolio
 # Load visualization data
 load(file = "ess8.RData")
 
@@ -434,7 +442,11 @@ top20corr <- corr_var(trainData, # name of data set
                       top = 20, # display top 20 correlations
                       ranks = FALSE, # Boolean. Add ranking numbers // MAKE THIS LINE FALSE FOR THE NEXT STEP TO RUN!
                       plot = FALSE # Don't return plot
+<<<<<<< HEAD
+)
+=======
 ) 
+>>>>>>> parent of 7c39454... Portfolio
 
 print(top20corr)
 
@@ -469,6 +481,10 @@ library(GGally)
 ggpairs(trainData[,c(2:11,1)], aes(color=wrclmch, alpha=0.75), lower=list(continuous="smooth"))+ theme_bw()+
         labs(title="Climate Worry Mean")+
         theme(plot.title=element_text(face='bold',color='black',hjust=0.5,size=12))
+<<<<<<< HEAD
+# viz_1
+=======
+>>>>>>> parent of 7c39454... Portfolio
 ```
 
 #### Correlation Viz 2
@@ -478,6 +494,10 @@ ggcorr(trainData[,c(2:11)], name = "corr", label = TRUE)+
         theme(legend.position="none")+
         labs(title="Climate Worry Mean")+
         theme(plot.title=element_text(face='bold',color='black',hjust=0.5,size=12))
+<<<<<<< HEAD
+# viz_2
+=======
+>>>>>>> parent of 7c39454... Portfolio
 ```
 
 #### Correlation Viz 3
@@ -1058,6 +1078,15 @@ Up until here, I have run several ML algorithms individually. However, the `care
 
 
 ```{r caret-ensemble1, warning=FALSE, message=FALSE, echo=FALSE, include=FALSE}
+<<<<<<< HEAD
+# ### Ensembling the predictions
+library(caretEnsemble)
+# Stacking Algorithms - Run multiple algorithms in one call.
+trainControl <- trainControl(method="repeatedcv",
+                             number=5,
+                             repeats=2,
+                             savePredictions=TRUE,
+=======
 ### Ensembling the predictions
 library(caretEnsemble)
 # Stacking Algorithms - Run multiple algorithms in one call.
@@ -1065,12 +1094,17 @@ trainControl <- trainControl(method="repeatedcv",
                              number=5, 
                              repeats=2,
                              savePredictions=TRUE, 
+>>>>>>> parent of 7c39454... Portfolio
                              classProbs=TRUE)
 
 algorithmList <- c('knn', 'naive_bayes', 'C5.0', 'rpart', 'ctree',  'rf', 'gbm', 'adaboost', 'svmRadial')
 
 set.seed(123, sample.kind="Rounding")
+<<<<<<< HEAD
+models <- caretList(wrclmch ~ ., data=trainData, trControl=trainControl, methodList=algorithmList)
+=======
 models <- caretList(wrclmch ~ ., data=trainData, trControl=trainControl, methodList=algorithmList) 
+>>>>>>> parent of 7c39454... Portfolio
 results <- resamples(models)
 summary(results)
 ```
@@ -1091,10 +1125,17 @@ The next step is then to combine the predictions of all our models to form a fin
 ### Combine the predictions of multiple models to form a final prediction
 # Create the trainControl
 set.seed(124, sample.kind="Rounding")
+<<<<<<< HEAD
+stackControl <- trainControl(method="repeatedcv",
+                             number=5,
+                             repeats=2,
+                             savePredictions=TRUE,
+=======
 stackControl <- trainControl(method="repeatedcv", 
                              number=5, 
                              repeats=2,
                              savePredictions=TRUE, 
+>>>>>>> parent of 7c39454... Portfolio
                              classProbs=TRUE)
 
 # Ensemble the predictions of `models` to form a new combined prediction based on glm
@@ -1137,7 +1178,11 @@ fourfoldplot(confmat_glm$table, color = col, conf.level = 0, margin = 1, main=pa
 
 
 ```{r best-model-accuracy, message=FALSE, warning=FALSE, echo=FALSE}
+<<<<<<< HEAD
+opt_predict <- c(cm_c50$overall[1], cm_imp_c50$overall[1], cm_knn$overall[1], cm_nb$overall[1], cm_svm$overall[1], cm_imp_svm$overall[1],
+=======
 opt_predict <- c(cm_c50$overall[1], cm_imp_c50$overall[1], cm_knn$overall[1], cm_nb$overall[1], cm_svm$overall[1], cm_imp_svm$overall[1], 
+>>>>>>> parent of 7c39454... Portfolio
                  confmat_rpart$overall[1], confmat_ctree$overall[1], confmat_rf$overall[1], confmat_gbm$overall[1], confmat_ada$overall[1], confmat_glm$overall[1])
 names(opt_predict) <- c('c50', 'imp_c50', 'knn', 'nb', 'svm' , 'imp_svm', 'rpart', 'ctree', 'rf', 'gbm', 'ada', 'glm')
 best_predict_model <- subset(opt_predict, opt_predict==max(opt_predict))
