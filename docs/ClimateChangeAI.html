@@ -615,10 +615,10 @@ div.tocify {
 <p>This is an important step to accomplish prior to EDA since using the entire data set for EDA purposes would obfuscate our train-test set-up by basing our initial understanding of the data on both the <strong>trainData</strong>- and <strong>testData</strong> sets. However, following good Data Science practice requires us to avoid making any decisions based on the test set to avoid so-called data leakage and increase the robustness and generalizability of the results.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Split data</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="co"># Validation set will be 40% of data</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="kw">set.seed</span>(<span class="dv">123</span>, <span class="dt">sample.kind=</span><span class="st">&quot;Rounding&quot;</span>) <span class="co"># if using R 3.5 or earlier, use `set.seed(1)`</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="kw">set.seed</span>(<span class="dv">123</span>, <span class="dt">sample.kind =</span> <span class="st">&quot;Rounding&quot;</span>) <span class="co"># if using R 3.5 or earlier, use `set.seed(1)`</span></span>
 <span id="cb7-4"><a href="#cb7-4"></a>test_index &lt;-<span class="st"> </span><span class="kw">createDataPartition</span>(<span class="dt">y =</span> df<span class="op">$</span>wrclmch, <span class="dt">times =</span> <span class="dv">1</span>, <span class="dt">p =</span> <span class="fl">0.4</span>, <span class="dt">list =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb7-5"><a href="#cb7-5"></a>trainData &lt;-<span class="st"> </span>df[<span class="op">-</span>test_index,]</span>
-<span id="cb7-6"><a href="#cb7-6"></a>testData &lt;-<span class="st"> </span>df[test_index,]</span></code></pre></div>
+<span id="cb7-5"><a href="#cb7-5"></a>trainData &lt;-<span class="st"> </span>df[<span class="op">-</span>test_index, ]</span>
+<span id="cb7-6"><a href="#cb7-6"></a>testData &lt;-<span class="st"> </span>df[test_index, ]</span></code></pre></div>
 </div>
 <div id="frequencies-distributions" class="section level2">
 <h2>4.2. Frequencies &amp; Distributions</h2>
@@ -838,14 +838,16 @@ div.tocify {
 <h3>5.1.2 Normalization</h3>
 <p>As was shown in the previous sections, the data set contains features with differing scale units and ranges. A common practice in such cases is to normalize data before modeling. The caret package offers an easy way within the preProcess function to apply normalization of data sets, which I am applying next. Below we can see the first 10 columns of the data set indicating that the data has been successfully normalized.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">## Normalize data</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>preProcess_range_model &lt;-<span class="st"> </span><span class="kw">preProcess</span>(trainData, <span class="dt">method=</span><span class="st">&#39;range&#39;</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a>preProcess_range_model &lt;-<span class="st"> </span><span class="kw">preProcess</span>(trainData, <span class="dt">method =</span> <span class="st">&quot;range&quot;</span>)</span>
 <span id="cb14-3"><a href="#cb14-3"></a>trainData &lt;-<span class="st"> </span><span class="kw">predict</span>(preProcess_range_model, <span class="dt">newdata =</span> trainData)</span>
 <span id="cb14-4"><a href="#cb14-4"></a></span>
 <span id="cb14-5"><a href="#cb14-5"></a><span class="co"># Append the Y variable</span></span>
 <span id="cb14-6"><a href="#cb14-6"></a>trainData<span class="op">$</span>wrclmch &lt;-<span class="st"> </span>y</span>
 <span id="cb14-7"><a href="#cb14-7"></a></span>
 <span id="cb14-8"><a href="#cb14-8"></a><span class="co"># Show first 10 columns of normalized data</span></span>
-<span id="cb14-9"><a href="#cb14-9"></a><span class="kw">apply</span>(trainData[, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dv">2</span>, <span class="dt">FUN=</span><span class="cf">function</span>(x){<span class="kw">c</span>(<span class="st">&#39;min&#39;</span>=<span class="kw">min</span>(x), <span class="st">&#39;max&#39;</span>=<span class="kw">max</span>(x))})</span></code></pre></div>
+<span id="cb14-9"><a href="#cb14-9"></a><span class="kw">apply</span>(trainData[, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dv">2</span>, <span class="dt">FUN =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb14-10"><a href="#cb14-10"></a>  <span class="kw">c</span>(<span class="st">&quot;min&quot;</span> =<span class="st"> </span><span class="kw">min</span>(x), <span class="st">&quot;max&quot;</span> =<span class="st"> </span><span class="kw">max</span>(x))</span>
+<span id="cb14-11"><a href="#cb14-11"></a>})</span></code></pre></div>
 <pre><code>##     wrclmch       gndr     nwspol         netustm       agea         eduyrs 
 ## min &quot;Not_worried&quot; &quot;Female&quot; &quot;0.0000000000&quot; &quot;0.000000000&quot; &quot;0.00000000&quot; &quot;0.000&quot;
 ## max &quot;Worried&quot;     &quot;Male&quot;   &quot;1.0000000000&quot; &quot;1.000000000&quot; &quot;1.00000000&quot; &quot;1.000&quot;
@@ -933,11 +935,6 @@ div.tocify {
 </div>
 <div id="modeling" class="section level2">
 <h2>5.2 Modeling</h2>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Load ML data (split due to file size limitation at github)</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="kw">load</span>(<span class="dt">file =</span> <span class="st">&quot;ml_imageX.RData&quot;</span>)</span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="co"># load(file = &quot;ml_image2.RData&quot;)</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a><span class="co"># load(file = &quot;ml_image3.RData&quot;)</span></span>
-<span id="cb18-5"><a href="#cb18-5"></a><span class="co"># load(file = &quot;ml_image4.RData&quot;)</span></span></code></pre></div>
 <p>As I mentioned in the beginning, I will employ a number of Machine Learning Algorithms and compare the results of them to determine the best algorithm. I am taking this broader approach since the underlying motivation of this project is more training and showcasing of skills, rather than employing a model which will inform real-world decision making. I will employ 10 algorithms in total. These algorithms are quite commonly used and represent some of the most up to date and powerful algorithms available on the market. Below is a list of all ML algorithms tested in this project:</p>
 <div id="model-overview" class="section level3 tabset">
 <h3>5.2.1 Model Overview</h3>
@@ -1460,46 +1457,48 @@ div.tocify {
 ## [53] pacman_0.5.1              
 ## 
 ## loaded via a namespace (and not attached):
-##   [1] backports_1.2.1      plyr_1.8.6           igraph_1.2.6        
-##   [4] repr_1.1.3           splines_4.0.2        TH.data_1.0-10      
-##   [7] digest_0.6.27        foreach_1.5.1        h2o_3.32.0.1        
-##  [10] htmltools_0.5.1.1    magick_2.7.1         fansi_0.4.2         
-##  [13] magrittr_2.0.1       openxlsx_4.2.3       recipes_0.1.16      
-##  [16] modelr_0.1.8         gower_0.2.2          matrixStats_0.58.0  
-##  [19] sandwich_3.0-0       strucchange_1.5-2    colorspace_2.0-0    
-##  [22] rvest_1.0.0          mitools_2.4          xfun_0.22           
-##  [25] crayon_1.4.1         RCurl_1.98-1.3       jsonlite_1.7.2      
-##  [28] iterators_1.0.13     glue_1.4.2           gtable_0.3.0        
-##  [31] quantmod_0.4.18      abind_1.4-5          scales_1.1.1        
-##  [34] DBI_1.1.1            miniUI_0.1.1.1       Rcpp_1.0.6          
-##  [37] xtable_1.8-4         Cubist_0.2.3         gridGraphics_0.5-1  
-##  [40] proxy_0.4-25         Formula_1.2-4        stats4_4.0.2        
-##  [43] lava_1.6.9           prodlim_2019.11.13   htmlwidgets_1.5.3   
-##  [46] httr_1.4.2           RColorBrewer_1.1-2   modeltools_0.2-23   
-##  [49] ellipsis_0.3.1       farver_2.1.0         pkgconfig_2.0.3     
-##  [52] reshape_0.8.8        nnet_7.3-15          sass_0.3.1          
-##  [55] dbplyr_2.1.1         utf8_1.2.1           labeling_0.4.2      
-##  [58] later_1.1.0.1        ggplotify_0.0.6      tidyselect_1.1.0    
-##  [61] rlang_0.4.10         reshape2_1.4.4       munsell_0.5.0       
-##  [64] cellranger_1.1.0     tools_4.0.2          cli_2.4.0           
-##  [67] party_1.3-7          generics_0.1.0       sjlabelled_1.1.7    
-##  [70] fastmap_1.1.0        evaluate_0.14        yaml_2.2.1          
-##  [73] ModelMetrics_1.2.2.2 knitr_1.32           fs_1.5.0            
-##  [76] zip_2.1.1            coin_1.4-1           pbapply_1.4-3       
-##  [79] nlme_3.1-152         mime_0.10            xml2_1.3.2          
-##  [82] compiler_4.0.2       rstudioapi_0.13      reprex_2.0.0        
-##  [85] bslib_0.2.4          stringi_1.5.3        highr_0.9           
-##  [88] vctrs_0.3.7          pillar_1.6.0         lifecycle_1.0.0     
-##  [91] BiocManager_1.30.12  jquerylib_0.1.3      insight_0.13.2      
-##  [94] bitops_1.0-6         httpuv_1.5.5         patchwork_1.1.1     
-##  [97] R6_2.5.0             promises_1.2.0.1     rio_0.5.26          
-## [100] gridExtra_2.3        fastAdaboost_1.0.0   codetools_0.2-18    
-## [103] MASS_7.3-53.1        assertthat_0.2.1     withr_2.4.2         
-## [106] multcomp_1.4-16      rlist_0.4.6.1        mgcv_1.8-34         
-## [109] parallel_4.0.2       hms_1.0.0            quadprog_1.5-8      
-## [112] timeDate_3043.102    rvcheck_0.1.8        rmarkdown_2.7       
-## [115] inum_1.0-4           TTR_0.24.2           pROC_1.17.0.1       
-## [118] shiny_1.6.0          lubridate_1.7.10     base64enc_0.1-3</code></pre>
+##   [1] utf8_1.2.1           R.utils_2.10.1       tidyselect_1.1.0    
+##   [4] htmlwidgets_1.5.3    pROC_1.17.0.1        munsell_0.5.0       
+##   [7] codetools_0.2-18     miniUI_0.1.1.1       withr_2.4.2         
+##  [10] colorspace_2.0-0     highr_0.9            knitr_1.32          
+##  [13] rstudioapi_0.13      stats4_4.0.2         TTR_0.24.2          
+##  [16] labeling_0.4.2       repr_1.1.3           farver_2.1.0        
+##  [19] vctrs_0.3.7          generics_0.1.0       TH.data_1.0-10      
+##  [22] fastAdaboost_1.0.0   xfun_0.22            party_1.3-7         
+##  [25] rlist_0.4.6.1        R6_2.5.0             bitops_1.0-6        
+##  [28] reshape_0.8.8        gridGraphics_0.5-1   assertthat_0.2.1    
+##  [31] promises_1.2.0.1     scales_1.1.1         multcomp_1.4-16     
+##  [34] nnet_7.3-15          gtable_0.3.0         Cubist_0.2.3        
+##  [37] sandwich_3.0-0       timeDate_3043.102    rlang_0.4.10        
+##  [40] splines_4.0.2        ModelMetrics_1.2.2.2 BiocManager_1.30.12 
+##  [43] yaml_2.2.1           reshape2_1.4.4       abind_1.4-5         
+##  [46] modelr_0.1.8         backports_1.2.1      httpuv_1.5.5        
+##  [49] quantmod_0.4.18      inum_1.0-4           tools_4.0.2         
+##  [52] lava_1.6.9           ggplotify_0.0.6      ellipsis_0.3.1      
+##  [55] jquerylib_0.1.3      RColorBrewer_1.1-2   proxy_0.4-25        
+##  [58] Rcpp_1.0.6           plyr_1.8.6           base64enc_0.1-3     
+##  [61] RCurl_1.98-1.3       pbapply_1.4-3        fs_1.5.0            
+##  [64] magrittr_2.0.1       magick_2.7.1         openxlsx_4.2.3      
+##  [67] reprex_2.0.0         R.cache_0.15.0       matrixStats_0.58.0  
+##  [70] hms_1.0.0            patchwork_1.1.1      mime_0.10           
+##  [73] evaluate_0.14        xtable_1.8-4         rio_0.5.26          
+##  [76] gridExtra_2.3        compiler_4.0.2       crayon_1.4.1        
+##  [79] R.oo_1.24.0          htmltools_0.5.1.1    mgcv_1.8-34         
+##  [82] later_1.1.0.1        Formula_1.2-4        lubridate_1.7.10    
+##  [85] DBI_1.1.1            sjlabelled_1.1.7     dbplyr_2.1.1        
+##  [88] MASS_7.3-53.1        cli_2.4.0            mitools_2.4         
+##  [91] R.methodsS3_1.8.1    quadprog_1.5-8       parallel_4.0.2      
+##  [94] insight_0.13.2       gower_0.2.2          igraph_1.2.6        
+##  [97] pkgconfig_2.0.3      rvcheck_0.1.8        coin_1.4-1          
+## [100] recipes_0.1.16       xml2_1.3.2           foreach_1.5.1       
+## [103] bslib_0.2.4          prodlim_2019.11.13   rvest_1.0.0         
+## [106] digest_0.6.27        strucchange_1.5-2    rmarkdown_2.7       
+## [109] cellranger_1.1.0     shiny_1.6.0          modeltools_0.2-23   
+## [112] h2o_3.32.0.1         lifecycle_1.0.0      nlme_3.1-152        
+## [115] jsonlite_1.7.2       fansi_0.4.2          pillar_1.6.0        
+## [118] fastmap_1.1.0        httr_1.4.2           glue_1.4.2          
+## [121] zip_2.1.1            iterators_1.0.13     stringi_1.5.3       
+## [124] sass_0.3.1           rematch2_2.1.2       styler_1.4.1</code></pre>
 </div>
 <div id="benchmark-time-to-generate-pdf-from-rmd" class="section level2">
 <h2>Benchmark: time to generate Pdf from Rmd</h2>

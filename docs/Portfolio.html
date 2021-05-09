@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -28,9 +28,11 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="site_libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
 
 <style type="text/css">
@@ -42,16 +44,6 @@
   ul.task-list{list-style: none;}
     </style>
 
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -218,6 +210,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -225,6 +280,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-sm-12 col-md-4 col-lg-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-sm-12 col-md-8 col-lg-9">
 
 
 
@@ -279,17 +344,27 @@ $(document).ready(function () {
 </div>
 
 
-<div id="automated-fossil-fuel-policy-tracker" class="section level3">
-<h3>Automated Fossil Fuel Policy Tracker</h3>
-<p><a href="http://www.r-project.org">R</a> is a free open-source programming language that can be used for statistical analysis, data-simulation, data visualization, and lots of other things, like building this website. Another free program is <a href="http://www.rstudio.com">R-studio</a>. It provides a nice graphic interface for R. Download R first, then download R-studio. Both are compatible with PCs, Macs, or Linux. For this course, you will need to download both programs and follow the course materials outlined in the <a href="https://fuenal.github.io/dataism/Syllabus.html">syllabus</a>.</p>
+<div id="portfolio-dataism" class="section level1">
+<h1>Portfolio Dataism</h1>
+<p>Here, I am showcasing some selected Data Science &amp; AI projects which I had the pleasure to work on in the last couple of years.</p>
+<div id="automated-fossil-fuel-policy-tracker" class="section level2">
+<h2>Automated Fossil Fuel Policy Tracker</h2>
+<p>As part of my Data Science Fellowship with <a href="https://faculty.ai/">Faculty AI</a>, I worked together with the <em>The Fossil Fuel Non-Proliferation Treaty Initiative (FFNPT)</em>. The <a href="https://fossilfueltreaty.org/">FFNPT Initiative</a> is a global NGO empowering policy advisers, activists, and researchers to facilitate a rapid global transition away from fossil fuel toward clean energy.</p>
+<p>The FFNPT Initiative has recently been endorsed by <a href="https://www.theguardian.com/environment/2021/apr/21/101-nobel-laureates-call-for-global-fossil-fuel-non-proliferation-treaty">101 Nobel Laureates</a> and is thus rapidly gaining international traction.</p>
+<p>I had the pleasure to work with the FFNPT on a Data Science project in which I programmed an interactive outline app, using web-scraping and Natural Language Processing (Artificial Neural Network) to automatically identify, filter, and visualize relevant policies globally.</p>
+<ul>
+<li><a href="https://fossil-fuel-tracker.herokuapp.com/">FFNPT App</a></li>
+</ul>
+<p>In the video below I present the app in more detail.</p>
 <div class="vembedr" align="center">
 <div>
 <iframe src="https://www.youtube.com/embed/aCP8X7Pnh4o" width="889" height="500" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
-<ul>
-<li>Installing R: Go to the <a href="http://www.r-project.org">R website</a> and download the installer file. Once downloaded, open the installer file and follow the instructions.</li>
-</ul>
+</div>
+<div id="climate-change-and-machine-learning" class="section level2">
+<h2>Climate Change and Machine Learning</h2>
+<p>In my role as a Postdoctoral Research Associate &amp; Data Scientist with <a href="https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal">The University of Cambridge</a>, I have worked with big data sets using Machine Learning Algorithms to identify the most robust predictors of Climate Change Attitudes and Policy Preferences.</p>
 <hr />
 <figure>
 <img src="images/RStudio-Logo-Flat.png" alt="R Studio" style="width:400px">
@@ -298,7 +373,6 @@ $(document).ready(function () {
 <li>Installing RStudio: Go to the <a href="http://www.rstudio.com">R studio website</a>, and follow the links to download RStudio. The version you want is the “RStudio Desktop”. Once the installer is downloaded, open it, and follow the instructions. “RStudio and Shiny are trademarks of RStudio, PBC”</li>
 </ul>
 <hr />
-</div>
 <div id="resources" class="section level3">
 <h3>Resources</h3>
 <p>The reading and video materials used on this website are based on Prof Rafael Irizarry`s work which are publicly available:</p>
@@ -325,9 +399,13 @@ $(document).ready(function () {
 <li><p>Harrer, M., Cuijpers, P., Furukawa, T.A, &amp; Ebert, D. D. (2019). Doing Meta-Analysis in R: A Hands-on Guide. eBook available at <a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/" class="uri">https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/</a>.</p></li>
 </ol>
 </div>
+</div>
+</div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -360,6 +438,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -15,8 +15,7 @@ output:
 ---
 
 ```{r general-options-document-format, include=FALSE}
-# knitr::opts_chunk$set(echo = F, warning = F, fig.pos ='h', message = F, error = F) # Set knitting options general
-options(tinytex.verbose = TRUE)  # debugging
+knitr::opts_chunk$set(tidy = 'styler', warning = F, message = F, echo = F, error = F)  # Set knitting options general
 options(tinytex.verbose = T, dplyr.summarise.inform = F)  # Debugging & Suppress summary info
 ```
 
@@ -26,6 +25,9 @@ library(pacman)
 pacman::p_load(essurvey, readr, readxl, curl, tidyverse, broom, haven, foreign, labelled, skimr, C50, class, e1071, randomForest, rpart, rpart.plot,
                partykit, caret, caretEnsemble, lares, GGally, ggplot2, PerformanceAnalytics, fastmatch, Metrics, ipred, mlbench, RANN,
                highcharter, ggimage, countrycode, survey, srvyr, dplyr, questionr, sjmisc, car, data.table, ryouready)
+
+# Load ML data
+load(file = "ml_imageX.RData")
 
 # Load visualization data
 load(file = "ess8.RData")
@@ -423,13 +425,13 @@ Below are the 20 feature which are most highly correlated with the response vari
 
 
 ```{r preprocessing-3, warning=FALSE, message=FALSE, echo=FALSE}
-## Correlation Analysis
-# Highest correlation with dependent variable for processing
-top20corr <- corr_var(trainData, # name of data set
-                      wrclmch, # name of variable to focus on
-                      top = 20, # display top 20 correlations
-                      ranks = FALSE, # Boolean. Add ranking numbers // MAKE THIS LINE FALSE FOR THE NEXT STEP TO RUN!
-                      plot = FALSE) # Don't return plot
+# ## Correlation Analysis
+# # Highest correlation with dependent variable for processing
+# top20corr <- corr_var(trainData, # name of data set
+#                       wrclmch, # name of variable to focus on
+#                       top = 20, # display top 20 correlations
+#                       ranks = FALSE, # Boolean. Add ranking numbers // MAKE THIS LINE FALSE FOR THE NEXT STEP TO RUN!
+#                       plot = FALSE) # Don't return plot
 
 print(top20corr)
 
@@ -565,14 +567,6 @@ testData3 <- testData3 %>% relocate(wrclmch, .before = wrdpimp)
 
 
 ## 5.2 Modeling
-```{r}
-# Load ML data (split due to file size limitation at github)
-load(file = "ml_imageX.RData")
-# load(file = "ml_image2.RData")
-# load(file = "ml_image3.RData")
-# load(file = "ml_image4.RData")
-```
-
 
 As I mentioned in the beginning, I will employ a number of Machine Learning Algorithms and compare the results of them to determine the best algorithm. I am taking this broader approach since the underlying motivation of this project is more training and showcasing of skills, rather than employing a model which will inform real-world decision making. I will employ 10 algorithms in total. These algorithms are quite commonly used and represent some of the most up to date and powerful algorithms available on the market. Below is a list of all ML algorithms tested in this project:
 
