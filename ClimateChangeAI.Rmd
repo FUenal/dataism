@@ -814,7 +814,7 @@ As a first ML algorithm, I will compute a K-Nearest Neighbors (KNN) model. More 
 
  * [KNN](https://rafalab.github.io/dsbook/examples-of-algorithms.html#k-nearest-neighbors)
  
-As in the model hereafter, I will evaluate the accuracy by testing different hyper-tuning parameter values. The plot below shows the optimal number of `k` yielding the best accuracy score. Thus, I will subsequently run a model with this value specification.
+I will evaluate the accuracy by testing different hyper-tuning parameter values. The plot below shows the optimal number of `k` yielding the best accuracy score. Thus, I will subsequently run a model with this value specification.
  
 ```{r knn, warning=FALSE, message=FALSE, echo=FALSE}
 # ## KNN - Tune 
@@ -1451,7 +1451,7 @@ sessionInfo(package = NULL)
 
 
 
-## Benchmark: time to generate Pdf from Rmd 
+## Benchmark: time to generate Html from Rmd 
  
  | Machine                | Time    |
  |------------------------|--------:|
