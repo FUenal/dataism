@@ -132,7 +132,6 @@ Having studied the data documentation, I decided to remove many columns from the
  * For similar reasons as above, I also don't need the sampling stratification weights and population weights and will remove those from the data set as well. 
  
  * The data set also contains a number of so-called 'administrative variables' such as interview time and date etc which are not relevant for my goals and will thus be removed. 
- 
  * The survey documentation also list several binary type variables which indicate no relevance to this projects main objective and I will thus remove those as well.
  
  * Lastly, the survey contains many missing values which are coded in many different ways. For example, missing values refer to invalid answers (e.g. refusal, don't know, missing) which are  encoded with numbers 66, 77, 99 for some features, and with 6, 7, 8, 9 for the other features.  Generally, there are a lot of different ways of how the question encoding was designed. This may be the result of many different groups of people working on this survey. I will make use of the 'esssurvey' function to automatically label all invalid answers into NaN values. See documentation of this package in the link provided above.
@@ -306,7 +305,8 @@ table(testData$wrclmch)
 
 ## 4.3 Climate Change Perceptions Across Europe 
 
-Next, we'll start by gaining some insights by visualizing the relationship between our variable of main interest "climate change worry" and the available features. Previous research has identified dozens of factors which shape whether people are concerned by climate change or not.
+Now, we'll first tale  look at the averaged weighted percentage of climate change concern and other variables present in the dataset by mapping them. How are European countries differing in terms of their climate change awareness, concern? What percentage of each countries population sees themselves as responsible for climate change? How high is the support for Climate Change Mitigation policies? And finally, what are the causal attributions of European Citizens in terms of identifying the cause of climate change (man-made vs. natural vs. denial)
+
 
 ###  {.tabset}
 
@@ -354,7 +354,13 @@ hw_grid(map_tax_support, map_tax_opposition, map_tax_undecided,
         ncol = 3)
 ```
 
+
 ## 4.4 National Level Predictors of Climate Change Perceptions and Attitudes
+
+
+As we have seen in the previous visualizations, European citizens show differences in their climate change perceptions and attitudes. Next, we'll start  gaining some more in-depth insights by visualizing the relationship between our variable of main interest "climate change worry" and the available features. Previous research has identified dozens of factors which are involved in shaping whether people are concerned by climate change or not. These feature can be divided into *National-level factors* such as economic, political and environmental factors and *Individual level factors* such as beliefs, values, ideology etc. The data set contains many such variables, and I am presenting only a subset of these below.
+
+
 
 ### Economic Factors {.tabset}
 
@@ -371,6 +377,7 @@ hc_plot_GDP
 ```{r}
 hc_plot_Gini
 ```
+
 
 ### Environmental Factors {.tabset}
 
@@ -557,37 +564,8 @@ hc_plot_ppltrst
 #### Gender
 
 
-Next, we'll continue to analyze the distribution of our outcome variable in the **trainData** set. Let's visualize the distribution of climate change worry first. 
 
-```{r eda-3, warning=FALSE, message=FALSE, echo=FALSE}
-# How many worried about climate change?
-trainData %>% freqs(wrclmch, plot = T, results = F, abc = TRUE)
-```
-
-
-Next, let's have a look at how our response variable varies across countries. As we can see, there is some  variation in 'being worried or not by climate change' depending on which country respondents are from with most countries having higher scores of 'worried' responses.
-
-```{r eda-4, warning=FALSE, message=FALSE, echo=FALSE}
-## climate worry across countries
-trainData %>% distr(wrclmch, cntry, clean = TRUE, abc = FALSE)
-```
-
-It is reasonable to assume that respondents might also differ in their degree of worry depending on their political leaning. Previous studies have shown that individual more on the right side of the political spectrum tend to see climate change as less of a threat with some even denying that climate change actually happens or is man-made. Let's visualize our response variable across the political spectrum next and find out. The political orientation was measured from 1 (Left) to 10 (Right).
-
-```{r eda-5, warning=FALSE, message=FALSE, echo=FALSE}
-## Climate worry across political spectrum
-trainData %>% distr(wrclmch, lrscale)
-# In politics people sometimes talk of 'left' and 'right'. Using this card, where would you place yourself on this scale, where 0 means the left and 10 means the right
-```
-
-Similarly to political orientation, previous studies haven shown that women tend to perceive climate change and environmental problems more worrying on average compared to men. Let's see how climate change worry is distributed across genders next. It appears that climate change worry varies somewhat across genders.
-
-```{r eda-6, warning=FALSE, message=FALSE, echo=FALSE}
-## Climate worry across genders (1: Male // 2: Female)
-trainData %>% distr(wrclmch, gndr)
-```
-
-As seen above, 'climate change worry' varies across different features. We only looked at three features, however, there are more than 120 features in total which we want to explore in more detail. Thus, I will choose another way to gaining insights into the importance of specific features in classifying whether respondents indicated that they were worried vs. not worried by climate change. In the next section, I will first apply some pre-processing steps after which I will consider Feature Selection based on strength of association with the response variable.
+As seen above, 'climate change worry' varies across different features. We only looked at a limited number of features, however, there are more than 120 features in total which we want to explore in more detail. Thus, I will choose another way to gaining insights into the importance of specific features in classifying whether respondents indicated that they were worried vs. not worried by climate change. In the next section, I will first apply some pre-processing steps after which I will consider Feature Selection based on strength of association with the response variable.
 
 
 ---
