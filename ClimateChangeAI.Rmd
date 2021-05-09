@@ -8,7 +8,7 @@ output:
     toc_float: true
     collapsed: false
     toc_depth: 3
-    theme: cosmo
+    theme: lumen
     highlight: tango
     code_folding: show
     fig_width: 12
@@ -28,7 +28,11 @@ pacman::p_load(essurvey, readr, readxl, curl, tidyverse, broom, haven, foreign, 
                partykit, caret, caretEnsemble, lares, GGally, ggplot2, PerformanceAnalytics, fastmatch, Metrics, ipred, mlbench, RANN,
                highcharter, ggimage, countrycode, survey, srvyr, dplyr, questionr, sjmisc, car, data.table, ryouready)
 
+# Load visualization data
 load(file = "ess8.RData")
+
+# Load ML data
+
 ```
 
 ```{r}
