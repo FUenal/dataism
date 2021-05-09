@@ -33,6 +33,7 @@ load(file = "ml_imageX.RData")
 load(file = "ess8.RData")
 ```
 
+
 ```{r echo = F, warning = F, message = F, error = F}
 options(highcharter.theme = hc_theme_hcrt(tooltip = list(valueDecimals = 2)))
 hc_world
