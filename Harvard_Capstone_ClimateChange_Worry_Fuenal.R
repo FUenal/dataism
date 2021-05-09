@@ -382,9 +382,7 @@ testData3 <- cbind(testData3, wrclmch)
 fmatch("wrclmch", names(testData3))
 testData3 <- testData3 %>% relocate(wrclmch, .before = wrdpimp)
 
-# Save First Image (Due to upload file size limitataion, I am going to create multiple images for github upload)
-save.image("ml_image1.RData")
-load("ml_image1.RData")
+
 #################################################################################################
 ##                                      Modeling                                               ##
 #################################################################################################
@@ -686,9 +684,9 @@ confmat_ada <- confusionMatrix(reference = testData3$wrclmch, data = predicted9)
 confmat_ada
 
 
-# Save First Image (Due to upload file size limitataion, I am going to create multiple images for github upload)
-save.image("ml_image2.RData")
-# load("ml_image2.RData")
+# Save First Image (Due to upload file size limitation, I am going to create multiple images for github upload)
+save.image("ml_imageX.RData")
+# load("ml_image.RData")
 
 ### Ensembling the predictions
 library(caretEnsemble)
@@ -714,9 +712,6 @@ summary(results)
 scales <- list(x=list(relation="free"), y=list(relation="free"))
 bwplot(results, scales=scales)
 
-# Save First Image (Due to upload file size limitataion, I am going to create multiple images for github upload)
-save.image("ml_image3.RData")
-# load("ml_image1.RData")
 
 ### Combine the predictions of multiple models to form a final prediction
 # Create the trainControl
@@ -765,10 +760,6 @@ best_predict_model <- subset(opt_predict, opt_predict==max(opt_predict))
 
 
 
-# Save First Image (Due to upload file size limitataion, I am going to create multiple images for github upload)
-save.image("ml_image4.RData")
-# load("ml_image4.RData")
-
 #################################################################################################
 ##                                      Results                                                ##
 #################################################################################################
@@ -800,5 +791,3 @@ best_predict_model
 
 
 # system("say hello sirs!")
-# save.image("ml_image.RData")
-# load("ml_image.RData")

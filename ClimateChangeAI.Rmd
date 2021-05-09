@@ -27,15 +27,13 @@ pacman::p_load(essurvey, readr, readxl, curl, tidyverse, broom, haven, foreign, 
                partykit, caret, caretEnsemble, lares, GGally, ggplot2, PerformanceAnalytics, fastmatch, Metrics, ipred, mlbench, RANN,
                highcharter, ggimage, countrycode, survey, srvyr, dplyr, questionr, sjmisc, car, data.table, ryouready)
 
-<<<<<<< HEAD
 # Load ML data (split due to file size limitation at github)
 load(file = "ml_image1.RData")
 load(file = "ml_image2.RData")
 # load(file = "ml_image3.RData")
 # load(file = "ml_image4.RData")
 
-=======
->>>>>>> parent of 7c39454... Portfolio
+
 # Load visualization data
 load(file = "ess8.RData")
 

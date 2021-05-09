@@ -2,7 +2,7 @@
 title: "Portfolio"
 output:
     html_document:
-    toc: yes
+    toc: true
     toc_float: true
     collapsed: false
     toc_depth: 3
@@ -10,8 +10,23 @@ output:
     highlight: tango
 ---
 
-### Installing R and R-Studio
-[R](http://www.r-project.org) is a free open-source programming language that can be used for statistical analysis, data-simulation, data visualization, and lots of other things, like building this website. Another free program is [R-studio](http://www.rstudio.com). It provides a nice graphic interface for R. Download R first, then download R-studio. Both are compatible with PCs, Macs, or Linux. For this course, you will need to download both programs and follow the course materials outlined in the [syllabus](https://fuenal.github.io/dataism/Syllabus.html). 
+```{r general-options-document-format, include=FALSE}
+# knitr::opts_chunk$set(echo = F, warning = F, fig.pos ='h', message = F, error = F) # Set knitting options general
+# options(tinytex.verbose = TRUE)  # debugging
+# options(tinytex.verbose = T, dplyr.summarise.inform = F)  # Debugging & Suppress summary info
+```
+
+# Automated Fossil Fuel Policy Tracker
+
+As part of my Data Science Fellowship with [Faculty AI](https://faculty.ai/), I worked together with the *The Fossil Fuel Non-Proliferation Treaty Initiative (FFNPT)*. The [FFNPT Initiative](https://fossilfueltreaty.org/) is a global NGO empowering policy advisers, activists, and researchers to facilitate a rapid global transition away from fossil fuel toward clean energy. 
+
+The FFNPT Initiative has recently been endorsed by [101 Nobel Laureates](https://www.theguardian.com/environment/2021/apr/21/101-nobel-laureates-call-for-global-fossil-fuel-non-proliferation-treaty) and is thus rapidly gaining international traction.
+
+I had the pleasure to work with the FFNPT on a Data Science project in which I programmed an interactive outline app, using web-scraping and Natural Language Processing (Artificial Neural Network) to automatically identify, filter, and visualize relevant policies globally.
+
+ * [FFNPT App](https://fossil-fuel-tracker.herokuapp.com/)
+ 
+In the video below I present the app in more detail.
 
 ```{r echo=F,include=F,error=F}
 library(vembedr)
@@ -29,7 +44,6 @@ embed_youtube("aCP8X7Pnh4o", width = NULL,
 
 
 
-- Installing R: Go to the [R website](http://www.r-project.org) and download the installer file. Once downloaded, open the installer file and follow the instructions.
 
 ---
 
