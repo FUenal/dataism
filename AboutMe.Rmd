@@ -40,7 +40,7 @@ If you are interested in my research, please visit my academic [website](https:/
 
 
 
-## Skills   
+### Skills   
 
  
 |                          |           |                   |
@@ -72,7 +72,7 @@ If you are interested in my research, please visit my academic [website](https:/
 |                          |  G*Gorilla.sc  |  Intermediate     |
 
 
-# Data Science
+### Data Science
 
 |                          |           |                   
 |--------------------------|----------:|
@@ -117,7 +117,7 @@ If you are interested in my research, please visit my academic [website](https:/
 <div style="margin-bottom:30px;">
 </div>
 
-## Certificates
+### Certificates
 
 **Harvard University Data Science Professional Certificate**
 
