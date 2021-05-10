@@ -21,7 +21,7 @@ Lectures
 
 Instructor
 
-- Dr. Fatih Uenal	Old Cavendish Labarotory
+- Dr. Fatih Uenal	Old Cavendish Laboratory
 - Office hours:	by appointment
 - fu212@cam.ac.uk
 
@@ -36,11 +36,11 @@ At the end of this course you will:
 
 1. Possess the fundamental R programming skills
 
-2. Have a good understanding of statistical concepts such as probability, inference, and modeling and how to apply them in practice
+2. Have a good understanding of statistical concepts such as probability, inference, and modelling and how to apply them in practice
 
 3. Gain experience with the tidyverse, including data visualization with ggplot2 and data wrangling with dplyr
 
-4. Become familiar with essential tools for practicing data scientists such as Unix/Linux, git and GitHub, and RStudio
+4. Become familiar with essential tools for practising data scientists such as Unix/Linux, git and GitHub, and RStudio
 
 5. Have implemented the most common machine learning algorithms
 
@@ -55,7 +55,7 @@ NOTE: The schedule and procedures described in this syllabus are subject to chan
 
 #### **datsci_00**: Introduction to Data Science Course: Course structure, syllabus, grading, and workflow.
 
-This short Module will get you started with R and RStudio. Here, we will introduce you the to the course structure and provide all necessary information for you to sucessfully complete the series.
+This short Module will get you started with R and RStudio. Here, we will introduce you the to the course structure and provide all necessary information for you to successfully complete the series.
 
 ---
 
