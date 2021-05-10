@@ -1478,12 +1478,12 @@ If you are interested in finding out more about the data used in this project, t
 
 6.    Inglehart, R. (1995). Public Support for Environmental Protection: Objective Problems and Subjective Values in 43 Societies. PS: Political Science and Politics, 28(1),         57. [DOI](https://www.jstor.org/stable/420583?origin=crossref&seq=1#metadata_info_tab_contents)
 
-7.    IPCC. (2014). Summary for policymakers. In C. B. Field, V. R. Barros, D. J. Dokken, K. J. Mach, M. D. Mastrandrea, T. E. Bilir, ... L. L. White (Eds.), Climate Change    
+7.    IPCC. (2014). Summary for policymakers. In C. B. Field, V. R. Barros, D. J. Dokken, K. J. Mach, M. D. Mastrandrea, T. E. Bilir, ... L. L. White (Eds.), Climate Change
       2014: Impacts, Adaptation, and Vulnerability. (pp. 1–32). Cambridge, UK and New York, NY, USA: Cambridge University Press.
 
 8.    Kunst, J. R., Fischer, R., Sidanius, J., & Thomsen, L. (2017). Preferences for group dominance track and mediate the effects of macro-level social inequality and violence       across societies. PNAS, 114(21), 5407–5412. [DOI](https://www.pnas.org/content/114/21/5407)
 
-9.    Lee, T. M., Markowitz, E. M., Howe, P. D., Ko, C.-Y., & Leiserowitz, A. A. (2015). Predictors of public climate change awareness and risk perception around the world.    
+9.    Lee, T. M., Markowitz, E. M., Howe, P. D., Ko, C.-Y., & Leiserowitz, A. A. (2015). Predictors of public climate change awareness and risk perception around the world.
       Nature Climate Change, 5(11), 1014–1020. [DOI](https://www.nature.com/articles/nclimate2728)
 
 10.   Leiserowitz, A. (2005). American Risk Perceptions: Is Climate Change Dangerous? Risk Analysis, 25(6), 1433–1442. [DOI](https://doi.org/10.1111/j.1540-6261.2005.00690.x) 
