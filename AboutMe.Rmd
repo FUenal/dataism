@@ -29,11 +29,107 @@ output:
 Last updated: `r Sys.Date()`
 
 
-Currently, I am working as a Postdoctoral Researcher & Data Scientist at the [Cambridge Social Decision-Making Lab](https://www.sdmlab.psychol.cam.ac.uk/) (University of Cambridge, UK). I am passionate about data-driven knowleddge production  with a specific focus on phenomena such as climate change, environmentalism, Islamophobia, racism, sexism, and speciesism. I am analyzing these topics from social and evolutionary psychological perspectives. 
+Currently, I am working as a Postdoctoral Researcher & Data Scientist at the [Cambridge Social Decision-Making Lab](https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal) (University of Cambridge, UK). I am passionate about data-driven knowleddge production  with a specific focus on phenomena such as climate change, environmentalism, Islamophobia, racism, sexism, and speciesism. I am analyzing these topics from social and evolutionary psychological perspectives. 
 
-My reesearch has been featured in the [Washington Post](https://www.washingtonpost.com/world/europe/at-a-site-of-nazi-terror-muslim-refugees-reckon-with-germanys-past/2017/08/10/12e2c864-779b-11e7-8c17-533c52b2f014_story.html), [Die Welt](https://www.welt.de/politik/deutschland/plus197864753/Juden-und-Muslime-Quelle-des-Antisemitismus-hat-sich-gewandelt.html) and other outlets.
+My reesearch has been featured in the [Washington Post](https://www.washingtonpost.com/world/europe/at-a-site-of-nazi-terror-muslim-refugees-reckon-with-germanys-past/2017/08/10/12e2c864-779b-11e7-8c17-533c52b2f014_story.html), [Die Welt](https://www.welt.de/politik/deutschland/plus197864753/Juden-und-Muslime-Quelle-des-Antisemitismus-hat-sich-gewandelt.html), [Der Spiegel](https://www.spiegel.de/panorama/integration-in-welcher-generation-wird-man-den-migrationshintergrund-los-a-3970c589-6941-4ceb-8a3e-379fd0110afc), [Varsity](https://www.varsity.co.uk/news/20008), and other outlets.
 
 If you are interested in my research, please visit my academic [website](https://scholar.harvard.edu/fatih-uenal) and my [ResearchGate Profile](https://www.researchgate.net/profile/Fatih_Uenal).
+
+<div style="margin-bottom:30px;">
+</div>
+
+
+
+## Skills   
+
+ 
+|                          |           |                   |
+|--------------------------|----------:|------------------:|
+| **Languages**            |           |          |
+|                          |           |                   |
+|                          |  German   |  Native Speaker   |
+|                          |  Turkish  |  Native Speaker   |
+|                          |  English  |  Proficient User  |
+|                          |  Arabic   |  Basic User       |
+|                          |  French   |  Basic User       |
+|                          |           |                   |
+| **Programming**          |           |                   |
+|                          |  R        |  Advanced         |
+|                          |  Python   |  Intermediate     |
+|                          |  Docker   |  Intermediate     |
+|                          |  SQL      |  Beginner         |
+|                          |           |                   |
+| **Statistical Software** |           |                   |
+|                          |  SPSS     |  Advanced         |
+|                          |  STATA    |  Intermediate     |
+|                          |  AMOS     |  Intermediate     |
+|                          |  G*Power  |  Intermediate     |
+| **Data collection**      |           |                   |
+|                          |           |                   |
+|                          |  Qualtrics|  Advanced         |
+|                          |  MTurk    |  Intermediate     |
+|                          |  Prolific |  Intermediate     |
+|                          |  G*Gorilla.sc  |  Intermediate     |
+
+
+# Data Science
+
+|                          |           |                   
+|--------------------------|----------:|
+| **Machine Learning**     |           |
+|                          |           |  
+|                          |  Supervised learning   | 
+|                          |  Unsupervised learning   | 
+|                          |  Reinforcement learning   | 
+|                          |  Natural Language Processing  | 
+|                          |  Artificial Neural Nets  |  
+|                          |  K-means   | 
+|                          |  Hierarchical cluster   | 
+|                          |  Linear discriminant analysis   | 
+|                          |  Quadratic discriminant analysis   | 
+|                          |  Principal Components Analysis  | 
+|                          |  Boosting   | 
+|                          |  Bagging   | 
+|                          |  Random forests   | 
+|                          |  Support Vector Machine   | 
+|                          |  Cross-validation   | 
+|                          |           |                   
+| **Statistics **          |  Probability         |  
+|                          |  Bayesian Statistics        | 
+|                          |  Univariate Analysis  |  
+|                          |  Multivariate  Analysis       | 
+|                          |  Time-series Analysis         | 
+|                          |  Structural Equation Modeling         | 
+|                          |  Confirmatory Factor Analysis         | 
+|                          |  Psychometrics         | 
+|                          |  A/B Testing         | 
+|                          |  Experimental Survey Analysis         | 
+|                          |  Population-Based Survey Analysis         | 
+|                          |           |                   
+| **DATA ANALYSIS & COMMUNICATION** |           | 
+|                          |  Modeling     |  
+|                          |  Hypothesis Testing         | 
+|                          |  Wrangling         | 
+|                          |  Data Visualization         | 
+|                          |  Presentation         | 
+
+
+<div style="margin-bottom:30px;">
+</div>
+
+## Certificates
+
+**Harvard University Data Science Professional Certificate**
+
+<div style="margin-bottom:30px;">
+</div>
+
+<a href="https://www.edx.org/professional-certificate/harvardx-data-science?index=product&queryID=d0f4f7fc8dcee50272013dbcb56859b1&position=2">
+```{r certificate, out.width=700, echo=F}
+knitr::include_graphics("images/Harvard_DS_Certificate.png")
+```
+</a>
+
 
 
 </div>

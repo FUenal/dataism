@@ -1521,7 +1521,7 @@ sessionInfo(package = NULL)
 
 
 
-## Benchmark: time to generate Html from Rmd 
+## Benchmark:
  
  | Machine                | Time    |
  |------------------------|--------:|
