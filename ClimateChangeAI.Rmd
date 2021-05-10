@@ -153,7 +153,6 @@ Having studied the data documentation, I decided to remove many columns from the
  
  * Lastly, the survey contains many missing values which are coded in many different ways. For example, missing values refer to invalid answers (e.g. refusal, don't know, missing) which are  encoded with numbers 66, 77, 99 for some features, and with 6, 7, 8, 9 for the other features.  Generally, there are a lot of different ways of how the question encoding was designed. This may be the result of many different groups of people working on this survey. I will make use of the 'esssurvey' function to automatically label all invalid answers into NaN values. See documentation of this package in the link provided above.
 
-**PLEASE NOTE: Due to resource constraints, I will only work with a small subset of the whole data set. Specifically, I will randomly sample 4400 rows (10% of the original data set) for this project. Using the entire data set would result in extremely long run times for some of the more complex ML algorithms such as 'AdaBoost' and 'Ensemble'**.
 
 Given the large amount of specific cleaning tasks, I manually went through the documentation, retrieved all the information needed for the cleaning and removed all irrelevant variables and saved the cleaned data set as 'ess8_subsample.csv'. 
 
@@ -806,7 +805,7 @@ testData3 <- testData3 %>%
 wrclmch <- y1
 testData3 <- cbind(testData3, wrclmch)
 
-str(testData3)
+# str(testData3)
 ```
 
 ```{r preprocessing-3ab, warning=FALSE, message=FALSE, echo=FALSE, include = FALSE}
@@ -824,6 +823,8 @@ testData3 <- testData3 %>% relocate(wrclmch, .before = wrdpimp)
 ## 5.2 Modeling
 
 As I mentioned in the beginning, I will employ a number of Machine Learning Algorithms and compare the results of them to determine the best algorithm. I am taking this broader approach since the underlying motivation of this project is more training and showcasing of skills, rather than employing a model which will inform real-world decision making. I will employ 10 algorithms in total. These algorithms are quite commonly used and represent some of the most up to date and powerful algorithms available on the market.
+
+**PLEASE NOTE: Due to resource constraints, I will only work with a small subset of the whole data set. Specifically, I will randomly sample 4400 rows (10% of the original data set) for this project. Using the entire data set would result in extremely long run times for some of the more complex ML algorithms such as 'AdaBoost' and 'Ensemble'**.
 
 
 ### 5.2.1 Model Overview  {.tabset}
