@@ -40,7 +40,7 @@ I had the pleasure to work with the FFNPT on a Data Science project in which I p
 <div style="margin-bottom:30px;">
 </div>
 
-In the video below, I present my work and the App in more detail.
+In this [video](https://www.youtube.com/watch?v=aCP8X7Pnh4o), I present my work and the App in more detail.
 
 <div style="margin-bottom:30px;">
 </div>
@@ -50,7 +50,7 @@ library(vembedr)
 ```
 
 
-```{r echo=F,error=F}
+```{r echo=F,error=F, include=F}
 embed_youtube("aCP8X7Pnh4o", width = 900,
   height = 500,
   ratio = c("16by9", "4by3"),
