@@ -24,7 +24,7 @@ knitr::include_graphics("images/The Brain.png")
 
 ---
 
-Currently, I am working as a Postdoctoral Researcher & Data Scientist at the [Cambridge Social Decision-Making Lab](https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal) (University of Cambridge, UK). I am passionate about data-driven knowleddge production  with a specific focus on phenomena such as climate change, environmentalism, Islamophobia, racism, sexism, and speciesism. I am analyzing these topics from social and evolutionary psychological perspectives. 
+Currently, I am working as a Postdoctoral Research Associate & Data Scientist at the [Cambridge Social Decision-Making Lab](https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal) (University of Cambridge, UK). I am passionate about data-driven knowledge production  with a specific focus on phenomena such as climate change, environmentalism, Islamophobia, racism, sexism, and speciesism. I am analyzing these topics from social and evolutionary psychological perspectives. 
 
 <div style="margin-bottom:30px;">
 </div>
@@ -36,9 +36,9 @@ My research has been featured in the [Washington Post](https://www.washingtonpos
 
 If you are interested in my research, please visit my 
 
- * [Academic website 1](https://scholar.harvard.edu/fatih-uenal)
+ * [Academic Website Harvard](https://scholar.harvard.edu/fatih-uenal)
  
- * [Academic website 2](https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal)
+ * [Academic Website Cambridge](https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal)
  
  * [ResearchGate Profile](https://www.researchgate.net/profile/Fatih_Uenal).
 
@@ -145,7 +145,7 @@ knitr::include_graphics("images/Harvard_DS_Certificate.png")
 <div style="margin-bottom:30px;">
 </div>
 
-**Harvard University: Data Science: Machine Learning**
+**Harvard University: Data Science - Machine Learning**
 
 <div style="margin-bottom:30px;">
 </div>
