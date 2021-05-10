@@ -41,9 +41,9 @@ hc_world
 
 # 1. Overview
 
-In the following, I am presenting some results of my work on **Predictors of Climate Change Perceptions: A Machine Learning Approach**. The goal of this full-stack data science project is to download, wrangle, explore, and analyze European Citizens' perceptions of climate change using 10 different Machine Learning (ML) Algorithms (*KNN, naiveBayes, Random Forest, adaBOOST, SVM, Ensemble, ctree, GBM, C5.0, rpart*) based on data from the 8th round European Social Survey (2016). I will also employ hyper-parameter tuning (e.g., *tuneGrid* and *tuneLength*) to improve the results.  The response variable (outcome) in this project is "climate change worry", i.e., whether or not individuals in more than 20 European countries are worried about climate change. The response to this variable will be binary ('yes' vs. 'no') and thus, this project deals with a classification problem. The report thus consists of seven parts:
+In the following, I am presenting some results of my work on **Predictors of Climate Change Perceptions: A Machine Learning Approach**. The goal of this full-stack data science project is to download, wrangle, explore, and analyze European Citizens' perceptions of climate change using 10 different Machine Learning (ML) Algorithms (*KNN, naiveBayes, Random Forest, adaBOOST, SVM, Ensemble, ctree, GBM, C5.0, rpart*) based on data from the 8th round European Social Survey (2016). I will also employ hyper-parameter tuning (e.g., *tuneGrid* and *tuneLength*) to improve the results.  The response variable (outcome) in this project is "climate change worry", i.e., whether or not individuals in more than 20 European countries and Israel are worried about climate change. The response to this variable will be binary ('yes' vs. 'no') and thus, this project deals with a classification problem. The report thus consists of seven parts:
 
- * After this **Overview** section, I will provide some contextual information on the data and classification problem of this project in the **Introduction** section.
+ * Following this **Overview** section, I will provide some contextual information on the data and classification problem of this project in the **Introduction** section.
 
  * The following **Data Download & Preparation** section describes how to download and prepare the data-sets. The data set containing over 500 columns most of which are irrelevant for this project. In this section I therefore also clean the data by removing many of the unnecessary columns such as 'administrative' columns from the data-set and describe how I arrived at the final, cleaned data set. 
 
@@ -67,9 +67,24 @@ In the following, I am presenting some results of my work on **Predictors of Cli
 
 Reports on the impact of climate change on planetary health are distressing (e.g., IPCC, 2014). Yet, despite being one of the most important anthropogenic societal challenges of our time, public perceptions of and engagement with climate change reveals great variation in regard to acknowledging the urgency and severity of the issue. A growing body of results from an interdisciplinary field spanning psychology, sociology, economics, and communication has identified a wide array of individual predictors of climate change perceptions and attitudes. Nevertheless, practical research limitations—such as limited degrees of freedom using traditional statistics methods—has prevented researchers from directly comparing or meaningfully aggregating the predictive power of these predictors.
 
+Reports on the impact of climate change on planetary health are distressing (e.g., Díaz et al., 2019; IPCC, 2014; Whitmee et al., 2015). Yet, despite being one of the most important societal challenges of our time, public perceptions of and engagement with climate change reveals great variation in regard to acknowledging the urgency and severity of the issue (e.g., Goldberg et al., 2020). Previous studies indicate that a sense of feeling threatened by climate change seems pivotal for increasing prosocial and pro-environmental attitudes and behaviors aimed at mitigating the consequences of global warming (e.g., Leiserowitz, 2005; Lee et al., 2015). However, previous research also shows that individuals differ greatly in their climate change risk and threat perceptions (e.g., Uenal et al., 2020; van der Linden et al., 2015). Against this background, a growing body of results from an interdisciplinary field spanning psychology, sociology, economics, and communication has identified a wide array of individual and macro-level predictors of climate change perceptions and attitudes (e.g., Swim et al., 2011; Howe et al., 2015; Inglehart, 1995; van der Linden, 2015).
+
+Nevertheless, practical research limitations—such as limited degrees of freedom using traditional statistics methods—has prevented researchers from directly comparing or meaningfully aggregating the predictive power of these multi-level variables (c.f. Howe et al., 2015; Lee et al., 2015). Moreover, previous research has analyzed individual or macro-level predictors independently from each other. Yet, individual-level perceptions and attitudes do not emerge in a socio-economic vacuum but are crucially shaped by ongoing interactions between systematic individual differences and the affordances and constraints of one’s immediate and lager socio-ecological environment (e.g., Gelfand et al., 2011; Kunst et al., 2017; Sheehy-Skeffington & Thomsen, 2020; Sidanius & Pratto, 1999).
+
 In this project, I am going to make use of ML algorithms to overcome the shortcomings of previous studies using data from the 8th Round of the European Social Survey (2016). "The European Social Survey (ESS) is an academically driven cross-national survey that has been conducted across Europe since its establishment in 2001. Every two years, face-to-face interviews are conducted with newly selected, cross-sectional samples. The survey measures the attitudes, beliefs and behaviour patterns of diverse populations in more than thirty nations." The 8th Round of the ESS contains climate change attitudes and a wide of predictor variable of interest. Using this data, I will employ several ML techniques to accurately predict whether or not individuals in this survey are either worried or not worried by climate change and identify which predictors ('features') are the most robust and important factors explaining differences in climate change worry. 
 
+The goal of this project isto distill the most robust individual and macro-level predictors of climate change perceptions and attitudes. I will use multi-level machine learning modeling (random forests: Breiman, 2001) to predict climate change perceptions and attitudes in each dataset. The random forests method is designed to handle a large number of predictors at once, with the goal of explaining as much variance in the outcome variable as possible. By comparing results across many datasets, research questions I hope to answer are: a) How much variance in climate change perceptions and attitudes are currently predictable by individual and macro-level predictors across countries? b) Which psychological and macro-structural measures most reliably emerge as predictors of climate change perceptions?
 
+<div style="margin-bottom:30px;">
+</div>
+
+
+```{r Machine Learning Model,  out.width=800, out.height=600, echo=F, fig.align='center'}
+knitr::include_graphics("images/Machine Learning Model.png")
+```
+
+<div style="margin-bottom:30px;">
+</div>
 
 ---
 
@@ -362,7 +377,7 @@ hw_grid(map_tax_support, map_tax_opposition, map_tax_undecided,
 
 As we have seen in the previous visualizations, European citizens show differences in their climate change perceptions and attitudes. Next, we'll start  gaining some more in-depth insights by visualizing the relationship between our variable of main interest "climate change worry" and the available features. Previous research has identified dozens of factors which are involved in shaping whether people are concerned by climate change or not. These feature can be divided into *National-level factors* such as economic, political and environmental factors and *Individual level factors* such as beliefs, values, ideology etc. The data set contains many such variables, and I am presenting only a subset of these below.
 
-
+We'll start by analyzing some *National-level factors*.
 
 ### Economic Factors {.tabset}
 
@@ -460,6 +475,10 @@ hc_plot_fossil_fuel_share_energy_2019
 
 
 ## 4.5 Individual Level Predictors of Climate Change Perceptions and Attitudes
+
+
+Next, we'll visualize the relationship between individual level factors such as values, beliefs, and ideology and our outcome variable, climate change concern.
+
 
 ### Human values {.tabset}
 
@@ -1444,6 +1463,54 @@ If you are interested in finding out more about the data used in this project, t
 
 
 
+# Bibliography
+
+
+1.    Breiman, L. (2001). Random forests. Machine Learning, 45(1), 5–32. [DOI](https://link.springer.com/article/10.1023%2FA%3A1010933404324)
+
+2.    Díaz, S., Settele, J., Brondízio, E. S., Ngo, H. T., Agard, J., Arneth, A., ... Zayas, C. N. (2019). Pervasive human-driven decline of life on Earth points to the need         for transformative change. Science, 366(6471), eaax3100. [DOI](https://science.sciencemag.org/content/366/6471/eaax3100)
+
+3.    Gelfand, M. J., Raver, J. L., Nishii, L., Leslie, L. M., Lun, J., Lim, B. C., ... Yamaguchi, S. (2011). Differences between tight and loose cultures: A 33-nation study.        Science, 332(6033), 1100–1104. [DOI](https://science.sciencemag.org/content/332/6033/1100)
+
+4.    Goldberg, M. H., Gustafson, A., Ballew, M. T., Rosenthal, S. A., & Leiserowitz, A. (2020). Identifying the most important predictors of support for climate policy in the       United States. Behavioural Public Policy, 1–23. [DOI](https://doi.org/10.1017/bpp.2020.39)
+
+5.    Howe, P. D., Mildenberger, M., Marlon, J. R., & Leiserowitz, A. (2015). Geographic variation in opinions on climate change at state and local scales in the USA. Nature         Climate Change, 5(6), 596–603. [DOI](https://www.nature.com/articles/nclimate2583)
+
+6.    Inglehart, R. (1995). Public Support for Environmental Protection: Objective Problems and Subjective Values in 43 Societies. PS: Political Science and Politics, 28(1),         57. [DOI](https://www.jstor.org/stable/420583?origin=crossref&seq=1#metadata_info_tab_contents)
+
+7.    IPCC. (2014). Summary for policymakers. In C. B. Field, V. R. Barros, D. J. Dokken, K. J. Mach, M. D. Mastrandrea, T. E. Bilir, ... L. L. White (Eds.), Climate Change    
+      2014: Impacts, Adaptation, and Vulnerability. (pp. 1–32). Cambridge, UK and New York, NY, USA: Cambridge University Press.
+
+8.    Kunst, J. R., Fischer, R., Sidanius, J., & Thomsen, L. (2017). Preferences for group dominance track and mediate the effects of macro-level social inequality and violence       across societies. PNAS, 114(21), 5407–5412. [DOI](https://www.pnas.org/content/114/21/5407)
+
+9.    Lee, T. M., Markowitz, E. M., Howe, P. D., Ko, C.-Y., & Leiserowitz, A. A. (2015). Predictors of public climate change awareness and risk perception around the world.    
+      Nature Climate Change, 5(11), 1014–1020. [DOI](https://www.nature.com/articles/nclimate2728)
+
+10.   Leiserowitz, A. (2005). American Risk Perceptions: Is Climate Change Dangerous? Risk Analysis, 25(6), 1433–1442. [DOI](https://doi.org/10.1111/j.1540-6261.2005.00690.x) 
+
+11.   Sheehy-Skeffington, J., & Thomsen, L. (2020, April 1). Egalitarianism: psychological and socio-ecological foundations. Current Opinion in Psychology. Elsevier B.V.
+      [DOI](https://www.sciencedirect.com/science/article/pii/S2352250X1930137X?via%3Dihub)
+
+12.   Sidanius, J., & Pratto, F. (1999). Social Dominance. Social Dominance. Cambridge University Press. [DOI](https://www.cambridge.org/core/books/social-dominance/ADA29C256881001463D6E2777404DB95)
+
+13.   Swim, J. K., Clayton, S., & Howard, G. S. (2011). Human Behavioral Contributions to Climate Change: Psychological and Contextual Drivers. American Psychologist, 66(4), 
+      251–264. [DOI](https://doi.org/10.1037/a0023472)
+
+14.   Uenal, F., Sidanius, J., & van der Linden, S. (2020, November 27). Climate change threats increase modern racism as a function of social dominance orientation. PsyArXiv. 
+      [DOI](https://psyarxiv.com/jw5qk/)
+
+15.   Uenal, F., Sidanius, J., & van der Linden, S. L. (2020, June 27). Social and ecological dominance orientations: Two sides of the same coin? Social and ecological 
+      dominance orientations predicting decreased support for climate change mitigation policies. PsyArXiv. [DOI](https://psyarxiv.com/9vnes/)
+
+16.   van der Linden, S., Maibach, E., & Leiserowitz, A. (2015). Improving Public Engagement With Climate Change: Five “Best Practice” Insights From Psychological Science. 
+      Perspectives on Psychological Science, 10(6), 758–763. [DOI](https://journals.sagepub.com/doi/10.1177/1745691615598516)
+
+17.   Whitmee, S., Haines, A., Beyrer, C., Boltz, F., Capon, A. G., De Souza Dias, B. F., ... Yach, D. (2015, November 14). Safeguarding human health in the Anthropocene epoch:
+      Report of the Rockefeller Foundation-Lancet Commission on planetary health. The Lancet. Lancet Publishing Group. [DOI](https://www.sciencedirect.com/science/article/pii/S0140673615609011?via%3Dihub)
+
+
+
+# Appendix
 
 ## Session Info 
 

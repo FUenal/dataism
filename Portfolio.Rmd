@@ -107,21 +107,37 @@ knitr::include_graphics("images/ANN.png")
 <div style="margin-bottom:30px;">
 </div>
 
-In my role as a Postdoctoral Research Associate & Data Scientist with <a href="https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal" target="_blank">The University of Cambridge</a>, I have worked with big data sets using Machine Learning Algorithms to identify the most robust predictors of Climate Change Attitudes and Policy Preferences. Some of the results of this line of work is available below:
+In my role as a Postdoctoral Research Associate & Data Scientist with <a href="https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal" target="_blank">The University of Cambridge</a>, I have worked with big data sets using Machine Learning Algorithms to identify the most robust predictors of Climate Change Attitudes and Policy Preferences. The Figure below depicts the overall research scheme:
 
 <div style="margin-bottom:30px;">
 </div>
 
+```{r Machine Learning Model,  out.width=800, out.height=600, echo=F}
+knitr::include_graphics("images/Machine Learning Model.png")
+```
+
+<div style="margin-bottom:30px;">
+</div>
+
+Some of the results of this line of work is available below:
+
+<div style="margin-bottom:30px;">
+</div>
 
 <iframe width='1000px' height='600px' src='https://fuenal.github.io/dataism/ClimateChangeAI.html' >
   <p>Your browser does not support iframes</p>
 </iframe>
+
 
 <div style="margin-bottom:30px;">
 </div>
 
 
  * <a href="https://fuenal.github.io/dataism/ClimateChangeAI.html" target="_blank">Climate Change Perceptions: A Machine Learning Approach</a> 
+
+<div style="margin-bottom:30px;">
+</div>
+
 
 
 
