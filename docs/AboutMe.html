@@ -28,6 +28,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
@@ -206,6 +209,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -213,6 +279,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-sm-12 col-md-4 col-lg-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-sm-12 col-md-8 col-lg-9">
 
 
 
@@ -267,28 +343,32 @@ $(document).ready(function () {
 </div>
 
 
-<style type="text/css">
-.title {
-  display: none;
-}
-
-#getting-started img {
-  margin-right: 10px;
-}
-
-</style>
-<div class="row" style="padding-top: 30px;">
-<div class="col-sm-6">
-<h1 id="dr.-fatih-uenal"><strong>Dr. Fatih Uenal</strong></h1>
-<h3 id="postdoctoral-researcher" style="padding-top: 0px;"><em>Postdoctoral Researcher</em></h3>
+<div id="dr.-fatih-uenal-social-political-psychologist-data-scientist" class="section level3">
+<h3>Dr. Fatih Uenal || Social &amp; Political Psychologist || Data Scientist</h3>
 <p>Last updated: 2021-05-10</p>
+<p><a href="https://fuenal.github.io/dataism/Lectures.html"> <img src="images/The%20Brain.png" width="150" /> </a></p>
+<hr />
 <p>Currently, I am working as a Postdoctoral Researcher &amp; Data Scientist at the <a href="https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal">Cambridge Social Decision-Making Lab</a> (University of Cambridge, UK). I am passionate about data-driven knowleddge production with a specific focus on phenomena such as climate change, environmentalism, Islamophobia, racism, sexism, and speciesism. I am analyzing these topics from social and evolutionary psychological perspectives.</p>
-<p>My reesearch has been featured in the <a href="https://www.washingtonpost.com/world/europe/at-a-site-of-nazi-terror-muslim-refugees-reckon-with-germanys-past/2017/08/10/12e2c864-779b-11e7-8c17-533c52b2f014_story.html">Washington Post</a>, <a href="https://www.welt.de/politik/deutschland/plus197864753/Juden-und-Muslime-Quelle-des-Antisemitismus-hat-sich-gewandelt.html">Die Welt</a>, <a href="https://www.spiegel.de/panorama/integration-in-welcher-generation-wird-man-den-migrationshintergrund-los-a-3970c589-6941-4ceb-8a3e-379fd0110afc">Der Spiegel</a>, <a href="https://www.varsity.co.uk/news/20008">Varsity</a>, and other outlets.</p>
-<p>If you are interested in my research, please visit my academic <a href="https://scholar.harvard.edu/fatih-uenal">website</a> and my <a href="https://www.researchgate.net/profile/Fatih_Uenal">ResearchGate Profile</a>.</p>
 <div style="margin-bottom:30px;">
 
 </div>
-<h3 id="skills">Skills</h3>
+<p>My research has been featured in the <a href="https://www.washingtonpost.com/world/europe/at-a-site-of-nazi-terror-muslim-refugees-reckon-with-germanys-past/2017/08/10/12e2c864-779b-11e7-8c17-533c52b2f014_story.html">Washington Post</a>, <a href="https://www.welt.de/politik/deutschland/plus197864753/Juden-und-Muslime-Quelle-des-Antisemitismus-hat-sich-gewandelt.html">Die Welt</a>, <a href="https://www.spiegel.de/panorama/integration-in-welcher-generation-wird-man-den-migrationshintergrund-los-a-3970c589-6941-4ceb-8a3e-379fd0110afc">Der Spiegel</a>, <a href="https://www.varsity.co.uk/news/20008">Varsity</a>, and other outlets.</p>
+<div style="margin-bottom:30px;">
+
+</div>
+<p>If you are interested in my research, please visit my</p>
+<ul>
+<li><p><a href="https://scholar.harvard.edu/fatih-uenal">Academic website 1</a></p></li>
+<li><p><a href="https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal">Academic website 2</a></p></li>
+<li><p><a href="https://www.researchgate.net/profile/Fatih_Uenal">ResearchGate Profile</a>.</p></li>
+</ul>
+<div style="margin-bottom:30px;">
+
+</div>
+<hr />
+</div>
+<div id="skills" class="section level1">
+<h1>Skills</h1>
 <table>
 <tbody>
 <tr class="odd">
@@ -418,7 +498,11 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
-<h3 id="data-science">Data Science</h3>
+<hr />
+</div>
+<div id="data-science" class="section level1">
+<h1>Data Science</h1>
+<hr />
 <table>
 <tbody>
 <tr class="odd">
@@ -542,7 +626,7 @@ $(document).ready(function () {
 <td align="right"></td>
 </tr>
 <tr class="odd">
-<td><strong>DATA ANALYSIS &amp; COMMUNICATION</strong></td>
+<td><strong>Data Analsysis &amp; Communication</strong></td>
 <td align="right"></td>
 </tr>
 <tr class="even">
@@ -570,20 +654,45 @@ $(document).ready(function () {
 <div style="margin-bottom:30px;">
 
 </div>
-<h3 id="certificates">Certificates</h3>
-<p><strong>Harvard University Data Science Professional Certificate</strong></p>
+<hr />
+</div>
+<div id="certificates" class="section level1">
+<h1>Certificates</h1>
+<p><strong>Harvard University: Data Science Professional Certificate</strong></p>
 <div style="margin-bottom:30px;">
 
 </div>
-<p><a href="https://www.edx.org/professional-certificate/harvardx-data-science?index=product&queryID=d0f4f7fc8dcee50272013dbcb56859b1&position=2"> <img src="images/Harvard_DS_Certificate.png" width="700" /> </a></p>
+<p><a href="https://www.edx.org/professional-certificate/harvardx-data-science?index=product&queryID=d0f4f7fc8dcee50272013dbcb56859b1&position=2"> <img src="images/Harvard_DS_Certificate.png" width="800" /> </a></p>
+<div style="margin-bottom:30px;">
+
 </div>
-<div class="col-sm-6">
-<p><a href="https://scholar.harvard.edu/fatih-uenal"> <img src="images/The%20Brain.png" width="400" /> </a></p>
+<p><strong>Harvard University: Data Science: Machine Learning</strong></p>
+<div style="margin-bottom:30px;">
+
 </div>
+<p><a href="https://courses.edx.org/certificates/f46fcf5ed6ce46deaee1065016c1badd"> <img src="images/harvard_ml.png" width="800" /> </a></p>
+<div style="margin-bottom:30px;">
+
+</div>
+<p><strong>University of Copenhagen: Measuring Causal Effects in the Social Sciences</strong></p>
+<div style="margin-bottom:30px;">
+
+</div>
+<p><a href="https://www.coursera.org/account/accomplishments/verify/2SNTCXJFY82P"> <img src="images/causal_effects.png" width="800" /> </a></p>
+<div style="margin-bottom:30px;">
+
+</div>
+<p><strong>University of Amsterdam: Quantitative Methods</strong></p>
+<div style="margin-bottom:30px;">
+
+</div>
+<p><a href="https://www.coursera.org/account/accomplishments/verify/WRARSZXHTLGZ"> <img src="images/quant_methods.png" width="800" /> </a></p>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -616,6 +725,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

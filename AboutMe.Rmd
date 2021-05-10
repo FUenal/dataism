@@ -3,44 +3,51 @@ title: "About me"
 output:    
   html_document:
     toc: yes
+    toc_float: true
     collapsed: false
-    toc_depth: 3
+    toc_depth: 1
     theme: lumen
     highlight: tango
 ---
 
-<style type="text/css">
-.title {
-  display: none;
-}
 
-#getting-started img {
-  margin-right: 10px;
-}
-
-</style>
-
-<div class="row" style="padding-top: 30px;">
-<div class="col-sm-6">
-
-# **Dr. Fatih Uenal**
-### *Postdoctoral Researcher* {style="padding-top: 0px;"}
-
+### Dr. Fatih Uenal || Social & Political Psychologist || Data Scientist
 Last updated: `r Sys.Date()`
 
 
+<a href="https://fuenal.github.io/dataism/Lectures.html"> 
+```{r The Brain, out.width=150, echo=F}
+knitr::include_graphics("images/The Brain.png")
+```
+</a>
+
+
+---
+
 Currently, I am working as a Postdoctoral Researcher & Data Scientist at the [Cambridge Social Decision-Making Lab](https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal) (University of Cambridge, UK). I am passionate about data-driven knowleddge production  with a specific focus on phenomena such as climate change, environmentalism, Islamophobia, racism, sexism, and speciesism. I am analyzing these topics from social and evolutionary psychological perspectives. 
-
-My reesearch has been featured in the [Washington Post](https://www.washingtonpost.com/world/europe/at-a-site-of-nazi-terror-muslim-refugees-reckon-with-germanys-past/2017/08/10/12e2c864-779b-11e7-8c17-533c52b2f014_story.html), [Die Welt](https://www.welt.de/politik/deutschland/plus197864753/Juden-und-Muslime-Quelle-des-Antisemitismus-hat-sich-gewandelt.html), [Der Spiegel](https://www.spiegel.de/panorama/integration-in-welcher-generation-wird-man-den-migrationshintergrund-los-a-3970c589-6941-4ceb-8a3e-379fd0110afc), [Varsity](https://www.varsity.co.uk/news/20008), and other outlets.
-
-If you are interested in my research, please visit my academic [website](https://scholar.harvard.edu/fatih-uenal) and my [ResearchGate Profile](https://www.researchgate.net/profile/Fatih_Uenal).
 
 <div style="margin-bottom:30px;">
 </div>
 
+My research has been featured in the [Washington Post](https://www.washingtonpost.com/world/europe/at-a-site-of-nazi-terror-muslim-refugees-reckon-with-germanys-past/2017/08/10/12e2c864-779b-11e7-8c17-533c52b2f014_story.html), [Die Welt](https://www.welt.de/politik/deutschland/plus197864753/Juden-und-Muslime-Quelle-des-Antisemitismus-hat-sich-gewandelt.html), [Der Spiegel](https://www.spiegel.de/panorama/integration-in-welcher-generation-wird-man-den-migrationshintergrund-los-a-3970c589-6941-4ceb-8a3e-379fd0110afc), [Varsity](https://www.varsity.co.uk/news/20008), and other outlets.
 
+<div style="margin-bottom:30px;">
+</div>
 
-### Skills   
+If you are interested in my research, please visit my 
+
+ * [Academic website 1](https://scholar.harvard.edu/fatih-uenal)
+ 
+ * [Academic website 2](https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal)
+ 
+ * [ResearchGate Profile](https://www.researchgate.net/profile/Fatih_Uenal).
+
+<div style="margin-bottom:30px;">
+</div>
+
+---
+
+# Skills   
 
  
 |                          |           |                   |
@@ -71,8 +78,11 @@ If you are interested in my research, please visit my academic [website](https:/
 |                          |  Prolific |  Intermediate     |
 |                          |  G*Gorilla.sc  |  Intermediate     |
 
+---
 
-### Data Science
+# Data Science
+
+---
 
 |                          |           |                   
 |--------------------------|----------:|
@@ -106,7 +116,7 @@ If you are interested in my research, please visit my academic [website](https:/
 |                          |  Experimental Survey Analysis         | 
 |                          |  Population-Based Survey Analysis         | 
 |                          |           |                   
-| **DATA ANALYSIS & COMMUNICATION** |           | 
+| **Data Analsysis & Communication** |           | 
 |                          |  Modeling     |  
 |                          |  Hypothesis Testing         | 
 |                          |  Wrangling         | 
@@ -117,30 +127,62 @@ If you are interested in my research, please visit my academic [website](https:/
 <div style="margin-bottom:30px;">
 </div>
 
-### Certificates
+---
 
-**Harvard University Data Science Professional Certificate**
+# Certificates
+
+**Harvard University: Data Science Professional Certificate**
 
 <div style="margin-bottom:30px;">
 </div>
 
 <a href="https://www.edx.org/professional-certificate/harvardx-data-science?index=product&queryID=d0f4f7fc8dcee50272013dbcb56859b1&position=2">
-```{r certificate, out.width=700, echo=F}
+```{r certificate, out.width=800, echo=F}
 knitr::include_graphics("images/Harvard_DS_Certificate.png")
 ```
 </a>
 
-
-
+<div style="margin-bottom:30px;">
 </div>
-<div class="col-sm-6">
 
-<a href="https://scholar.harvard.edu/fatih-uenal">
-```{r statsTextbook, out.width=400, echo=F}
-knitr::include_graphics("images/The Brain.png")
+**Harvard University: Data Science: Machine Learning**
+
+<div style="margin-bottom:30px;">
+</div>
+
+<a href="https://courses.edx.org/certificates/f46fcf5ed6ce46deaee1065016c1badd">
+```{r certificate-1a, out.width=800, echo=F}
+knitr::include_graphics("images/harvard_ml.png")
 ```
 </a>
 
+<div style="margin-bottom:30px;">
+</div>
 
+
+**University of Copenhagen: Measuring Causal Effects in the Social Sciences**
+
+
+<div style="margin-bottom:30px;">
 </div>
+
+<a href="https://www.coursera.org/account/accomplishments/verify/2SNTCXJFY82P">
+```{r certificate-1, out.width=800, echo=F}
+knitr::include_graphics("images/causal_effects.png")
+```
+</a>
+
+<div style="margin-bottom:30px;">
 </div>
+
+**University of Amsterdam: Quantitative Methods**
+
+<div style="margin-bottom:30px;">
+</div>
+
+<a href="https://www.coursera.org/account/accomplishments/verify/WRARSZXHTLGZ">
+```{r certificate-2, out.width=800, echo=F}
+knitr::include_graphics("images/quant_methods.png")
+```
+</a>
+
