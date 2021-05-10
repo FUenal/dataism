@@ -51,7 +51,7 @@ library(vembedr)
 
 
 ```{r echo=F,error=F}
-embed_youtube("aCP8X7Pnh4o", width = 800,
+embed_youtube("aCP8X7Pnh4o", width = 900,
   height = 500,
   ratio = c("16by9", "4by3"),
   frameborder = 0,
@@ -69,7 +69,7 @@ Below, you can check out the App:
 </div>
 
 
-<iframe width='800px' height='600px' src='https://fossil-fuel-tracker.herokuapp.com' >
+<iframe width='900px' height='600px' src='https://fossil-fuel-tracker.herokuapp.com' >
   <p>Your browser does not support iframes</p>
 </iframe>
 
@@ -93,7 +93,7 @@ The results of the model evaluation showed an overall accuracy of 73% with a pre
 </div>
 
 
-```{r ann, out.width=800, out.height=500, echo=F}
+```{r ann, out.width=900, out.height=500, echo=F}
 knitr::include_graphics("images/ANN.png")
 ```
 
@@ -112,7 +112,7 @@ In my role as a Postdoctoral Research Associate & Data Scientist with <a href="h
 <div style="margin-bottom:30px;">
 </div>
 
-```{r Machine Learning Model,  out.width=800, out.height=600, echo=F}
+```{r Machine Learning Model,  out.width=900, out.height=600, echo=F}
 knitr::include_graphics("images/Machine Learning Model.png")
 ```
 
