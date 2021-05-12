@@ -165,7 +165,7 @@ knitr::include_graphics("images/harvard_ml.png")
 </div>
 
 
-<a href="https://www.coursera.org/account/accomplishments/verify/2SNTCXJFY82P" target="_blank">University of Copenhagen: Measuring Causal Effects in the Social Sciences/a>
+<a href="https://www.coursera.org/account/accomplishments/verify/2SNTCXJFY82P" target="_blank">University of Copenhagen: Measuring Causal Effects in the Social Sciences</a>
 
 
 <div style="margin-bottom:30px;">
