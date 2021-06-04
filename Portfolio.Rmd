@@ -70,7 +70,7 @@ Below, you can check out the App:
 </div>
 
 
-<iframe width='900px' height='600px' src='https://fossil-fuel-tracker.herokuapp.com' >
+<iframe width='900px' height='600px' src='http://34.145.63.222/app/ffnpt' >
   <p>Your browser does not support iframes</p>
 </iframe>
 
