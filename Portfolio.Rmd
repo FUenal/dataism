@@ -85,6 +85,7 @@ Below, you can check out the App:
 
 As part of the Fossil Fuel Policy Tracking App, I used Natural Language Processing to classify specific policy text data. Understanding how supply-side fossil fuel policies develop across countries is critical to ensure timely and effective climate actions across multiple levels and scales. Studying climate change supply-side fossil fuel policies has become increasingly difficult, particularly given the increasing volume of potentially relevant data available, the validity of existing methods handling large volumes of data, and comprehensiveness of assessing ongoing developments over time. In this project, I utilized machine learning to assist the <a href="https://fossilfueltreaty.org/" target="_blank">FFNPT Initiative</a>, collaborators, and researchers when conducting policy research using text as data. Specifically, I trained an **Artificial Neural Network** model to classify policy texts using data from various sources such as news-articles and official government databases. The main goal of this model is to take text data as input and be able to produce a label to classify these as ‘Fossil-fuel related’, ’Non-fossil-fuel related’, or ‘Non-climate policies’ with a certain probability. Having such an automated classification model saves a significant amount of time and resources and allows for a real-time tracking of fossil-fuel policy developments.
 
+
 <div style="margin-bottom:30px;">
 </div>
 
@@ -98,7 +99,13 @@ The results of the model evaluation showed an overall accuracy of 73% with a pre
 knitr::include_graphics("images/ANN.png")
 ```
 
+<div style="margin-bottom:30px;">
+</div>
 
+The source code for the Artificial Neural Network is available in my <a href="https://github.com/FUenal/policy_nlp_neural_net" target="_blank">Github</a>
+
+<div style="margin-bottom:30px;">
+</div>
 
 ---
 
