@@ -70,7 +70,7 @@ Below, you can check out the App:
 </div>
 
 
-<iframe width='900px' height='600px' src='https://fossilfueltracker.org' >
+<iframe width='1000px' height='600px' src='https://fossilfueltracker.org' >
   <p>Your browser does not support iframes</p>
 </iframe>
 
