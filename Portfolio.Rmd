@@ -64,17 +64,17 @@ embed_youtube("aCP8X7Pnh4o", width = 900,
 ---
 
 
-Below, you can check out the App:
+Here, you can check out the <a href="https://fossilfueltracker.org" target="_blank">Online App</a>.
 
 <div style="margin-bottom:30px;">
 </div>
 
 
-<iframe width='1000px' height='600px' src='https://fossilfueltracker.org' >
-  <p>Your browser does not support iframes</p>
-</iframe>
+<!-- <iframe width='1000px' height='600px' src='https://fossilfueltracker.org' > -->
+<!--   <p>Your browser does not support iframes</p> -->
+<!-- </iframe> -->
 
-<a href="https://fossilfueltracker.org" target="_blank">Online App</a>
+
 
 ---
 
