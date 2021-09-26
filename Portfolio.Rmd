@@ -35,7 +35,7 @@ knitr::include_graphics("images/The Brain.png")
 
 As part of my Data Science Fellowship with <a href="https://faculty.ai/" target="_blank">Faculty AI</a>, I worked together with the *The Fossil Fuel Non-Proliferation Treaty Initiative (FFNPT)*. The <a href="https://fossilfueltreaty.org/" target="_blank">FFNPT Initiative</a> is a global NGO empowering policy advisers, activists, and researchers to facilitate a rapid global transition away from fossil fuel toward clean energy. The Initiative has recently been endorsed by <a href="https://www.theguardian.com/environment/2021/apr/21/101-nobel-laureates-call-for-global-fossil-fuel-non-proliferation-treaty" target="_blank">101 Nobel Laureates</a>  and is rapidly gaining international traction.
 
-I had the pleasure to work with the FFNPT on a Data Science project in which I programmed an interactive <a href="https://fossil-fuel-tracker.herokuapp.com/" target="_blank">Online App</a>, using web-scraping and Natural Language Processing (Artificial Neural Network) to automatically identify, filter, and visualize relevant policies globally. 
+I had the pleasure to work with the FFNPT on a Data Science project in which I programmed an interactive <a href="https://fossilfueltracker.org" target="_blank">Online App</a>, using web-scraping and Natural Language Processing (Artificial Neural Network) to automatically identify, filter, and visualize relevant policies globally. 
 
 <div style="margin-bottom:30px;">
 </div>
