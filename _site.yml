@@ -10,8 +10,8 @@ navbar:
       href: Lectures.html
     - text: "Syllabus"
       href: Syllabus.html
-    - text: "ClimateChangeAI"
-      href: ClimateChangeAI.html
+    # - text: "ClimateChangeAI"
+    #   href: ClimateChangeAI.html
     - text: "Portfolio"
       href: Portfolio.html
     - text: "About me"
