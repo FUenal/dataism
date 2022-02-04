@@ -70,7 +70,7 @@ Here, you can check out the <a href="https://fossilfueltracker.org" target="_bla
 </div>
 
 
-<iframe width='1200px' height='800px' src='http://138.68.178.48/app/ffnpt' >
+<iframe width='1200px' height='1000px' src='https://fossilfueltracker.org/app/ffnpt' >
   <p>Your browser does not support iframes</p>
 </iframe>
 
