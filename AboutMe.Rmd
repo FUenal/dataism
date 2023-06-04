@@ -11,20 +11,16 @@ output:
 ---
 
 
-### Dr. Fatih Uenal || Social & Political Psychologist || Data Scientist
+### Dr. Fatih Uenal 
+### Cultural & Political Psychologist || Data Scientist
 Last updated: `r Sys.Date()`
-
-
-<a href="https://fuenal.github.io/dataism/Lectures.html"> 
-```{r The Brain, out.width=150, echo=F}
-knitr::include_graphics("images/The Brain.png")
-```
-</a>
 
 
 ---
 
-Currently, I am working as a Postdoctoral Research Associate & Data Scientist at the [Cambridge Social Decision-Making Lab](https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal) (University of Cambridge, UK). I am passionate about data-driven knowledge production  with a specific focus on phenomena such as climate change, environmentalism, Islamophobia, racism, sexism, and speciesism. I am analyzing these topics from social and evolutionary psychological perspectives. 
+#### **Hello, and welcome to my personal website!**
+
+Currently, I am working as a Senior Lecturer (Mâitre-assistant) & Data Scientist at the [Swiss Center for Affective Sciences](https://www.unige.ch/cisa/center/members/uenal-fatih/) (University of Geneva, Switzerland). I consider myself a cultural and political psychologist, broadly defined. Working at the intersection of a variety of fields in the cultural, social, and behavioral sciences, I adopt an integrative perspective to the study of intercultural, interspecies, and human-environment relations in which I employ methods from cultural, social, and environmental psychology, political science, and sociology—while incorporating theoretical insights from emerging perspectives in anthropology. In my research I employ qualitative as well quantitative methods. Topics of particular interest to me are social and ecological (in)equality, climate change, speciesism, pro-environmental behaviors, anthropocentrism, misinformation and conspiracy beliefs, prejudice and discrimination, well-being, and political ideologies amongst others.
 
 <div style="margin-bottom:30px;">
 </div>
@@ -44,6 +40,85 @@ If you are interested in my research, please visit
 
 <div style="margin-bottom:30px;">
 </div>
+
+---
+
+# Publications
+
+### PUBLICATIONS PEER-REVIEWED
+#### Published
+
+Uenal, F., Sidanius, J., Maertens, R., Hudson, S. K. T., Davis, G., & Ghani, A. (2022). The roots of ecological dominance orientation: Assessing individual preferences for an 
+anthropocentric and hierarchically organized world. Journal of Environmental Psychology, 81, 101783. [DOI.](https://doi.org/10.1016/j.jenvp.2022.101783)
+Impact Factor: 7.65
+
+
+Uenal, F., Sidanius, J., & van der Linden, S. (2022). Social and ecological dominance orientations: Two sides of the same coin? Social and ecological dominance orientations predicting decreased support for climate change mitigation policies. Group Processes & Intergroup Relations, 25(6), 1555-1576. [DOI.](https://doi.org/10.1177/13684302211010923) Impact Factor: 2.71 
+
+
+Basol, M., Roozenbeek, J., Berriche, M., Uenal, F., McClanahan, W. P., & Linden, S. V. D. (2021). Towards psychological herd immunity: Cross-cultural evidence for two prebunking interventions against COVID-19 misinformation. Big Data & Society, 8(1). [DOI.](https://doi.org/10.1177/20539517211013868)
+Impact Factor: 8.73
+
+
+Uenal, F., Sidanius, J., Roozenbeek, J., & van der Linden, S. (2021). Climate change threats increase modern racism as a function of social dominance orientation and ingroup identification. Journal of Experimental Psychology, 97, 104228. [DOI.](https://doi.org/10.1016/j.jesp.2021.104228) 
+Impact Factor: 3.53
+
+
+Uenal, F., Bergh, R., Sidanius, J., Zick, A., Kimel, S., Kunst, J. (2020). The nature ofIslamophobia:A test of a tripartite view in five countries. Personality and Social Psychology Bulletin (Online First). [DOI.](https://doi.org/10.1177/0146167220922643) 
+Impact Factor: 4.56
+
+
+Uenal, F. (2016a). Disentangling Islamophobia: The differential effects of symbolic, realistic, and terroristic threat perceptions as mediators between social dominance orientation and Islamophobia. Journal of Social and Political Psychology, 4(1), 66–90. [DOI.](https://doi.org/10.5964/jspp.v4i1.463) 
+Impact Factor: 1.84
+
+
+Uenal, F. (2016b). The “Secret Islamization” of Europe: Exploring integrated threat theory for predicting Islamophobic conspiracy stereotypes. International Journal of Conflict and Violence, 10(1), 93–108. [DOI.](https://doi.org/10.4119/ijcv-3080) 
+Impact Factor: 0.58
+
+
+Uenal, F. (2016c). Islamophobia & Anti-Semitism. Comparing the social psychological underpinnings of Anti-Semitic and Anti-Muslim Beliefs in Contemporary Germany. Islamophobia Studies Journal, 3(2), 35–55. [DOI.](https://www.crg.berkeley.edu/wp-content/uploads/2017/01/ISJ6_Dec2016-Final-1.pdf) 
+Impact Factor: 0.94
+
+
+#### Revise & Resubmit
+
+
+Hudson, S.K.T. & Uenal, F. (2023). The connections between personality, ideology and (counter-)empathic emotions depend on the target. Journal of Personality. [DOI.](https://doi.org/10.31234/osf.io/t2wnp) 
+Impact Factor: 5.43
+
+
+Uenal, F. (2023). Die geheime Islamisierung des Abendlandes. Großgruppen Verschwörungstheorien als Nährboden von Fremdgruppen Diskriminierung und Rechtspopulismus. Journal für Psychologie. [DOI.](https://psyarxiv.com/4bax8) 
+Impact Factor: 1.53
+
+
+#### In preparation
+
+
+Uenal, F., Pagel, L., Spampatti, T., & Brosch, T. (2023). A systematic review and meta-analysis of communication interventions to promote climate change mitigation. For submission to: Nature Human Behaviour.
+Impact Factor: 24.25
+
+
+Uenal, F., Kunst, J., Hudson, S.K.T, Badloe, S., & Brosch. T (2023). Predictors of climate change policy preferences: A machine learning approach. For submission to: Global 
+Environmental Change. [DOI.](https://psyarxiv.com/65tx4)	
+Impact Factor: 11.16
+
+
+Uenal, F., Wac, K., & Brosch. T (2023). Cross-cultural differences in wellbeing. Social-psychological and cultural determinants analysis using machine learning. 
+
+
+### OTHER PUBLICATIONS
+
+
+Uenal, F., Pagel, L., & Brosch. T (2022). How to communicate about climate change: A concise guide. A step-by-step decision chart for more effective, equitable, and fair climate change communication in the context of individual behaviour change. Geneva: Center for Affective Sciences, University of Geneva. [Link.](https://scholar.harvard.edu/fatih-uenal/publications/how-communicate-about-climate-change-concise-guide-step-step-decision-chart)
+
+
+Uenal, F., Pagel, L., & Brosch. T (2022). Review of Climate Change Communication and Behavioural Intervention Strategies to Maximise Behavioural Impact. Geneva: Center 
+for Affective Sciences, University of Geneva. [Link.](https://scholar.harvard.edu/fatih-uenal/publications/review-climate-change-communication-and-behavioural-intervention-strategies)
+
+
+Roig, E. & Uenal, F. (2019). Intersektionalität in Deutschland, Chancen, Lücken und Herausforderungen. A Report by Center for Intersectional Justice e.V. and DeZIM e.V. 
+Berlin. [DOI.](https://www.intersectionaljustice.org/img/2019.09.18._cij-dezim_bericht-intersektionalit%C3%A4t-deutschland_ykgll2.pdf)
+
 
 ---
 
@@ -193,4 +268,12 @@ knitr::include_graphics("images/causal_effects.png")
 knitr::include_graphics("images/quant_methods.png")
 ```
 </a>
+
+<a href="https://fuenal.github.io/dataism/Lectures.html"> 
+```{r The Brain, out.width=150, echo=F}
+knitr::include_graphics("images/The Brain.png")
+```
+</a>
+
+
 

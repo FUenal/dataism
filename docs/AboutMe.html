@@ -13,7 +13,7 @@
 
 <title>About me</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -51,6 +51,7 @@
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -71,6 +72,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -128,11 +132,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -161,8 +169,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -170,16 +178,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -283,12 +284,12 @@ div.tocify {
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row">
-<div class="col-sm-12 col-md-4 col-lg-3">
+<div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
 </div>
 
-<div class="toc-content col-sm-12 col-md-8 col-lg-9">
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -296,7 +297,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -318,7 +319,7 @@ div.tocify {
   <a href="Syllabus.html">Syllabus</a>
 </li>
 <li>
-  <a href="ClimateChangeAI.html">ClimateChangeAI</a>
+  <a href="MachineLearningPredictors.html">Machine Learning Predictors</a>
 </li>
 <li>
   <a href="Portfolio.html">Portfolio</a>
@@ -343,12 +344,16 @@ div.tocify {
 </div>
 
 
-<div id="dr.-fatih-uenal-social-political-psychologist-data-scientist" class="section level3">
-<h3>Dr. Fatih Uenal || Social &amp; Political Psychologist || Data Scientist</h3>
-<p>Last updated: 2021-05-12</p>
-<p><a href="https://fuenal.github.io/dataism/Lectures.html"> <img src="images/The%20Brain.png" width="150" /> </a></p>
+<div id="dr.-fatih-uenal" class="section level3">
+<h3>Dr. Fatih Uenal</h3>
+</div>
+<div id="cultural-political-psychologist-data-scientist" class="section level3">
+<h3>Cultural &amp; Political Psychologist || Data Scientist</h3>
+<p>Last updated: 2023-06-04</p>
 <hr />
-<p>Currently, I am working as a Postdoctoral Research Associate &amp; Data Scientist at the <a href="https://www.sdmlab.psychol.cam.ac.uk/staff/dr-fatih-uenal">Cambridge Social Decision-Making Lab</a> (University of Cambridge, UK). I am passionate about data-driven knowledge production with a specific focus on phenomena such as climate change, environmentalism, Islamophobia, racism, sexism, and speciesism. I am analyzing these topics from social and evolutionary psychological perspectives.</p>
+<div id="hello-and-welcome-to-my-personal-website" class="section level4">
+<h4><strong>Hello, and welcome to my personal website!</strong></h4>
+<p>Currently, I am working as a Senior Lecturer (Mâitre-assistant) &amp; Data Scientist at the <a href="https://www.unige.ch/cisa/center/members/uenal-fatih/">Swiss Center for Affective Sciences</a> (University of Geneva, Switzerland). I consider myself a cultural and political psychologist, broadly defined. Working at the intersection of a variety of fields in the cultural, social, and behavioral sciences, I adopt an integrative perspective to the study of intercultural, interspecies, and human-environment relations in which I employ methods from cultural, social, and environmental psychology, political science, and sociology—while incorporating theoretical insights from emerging perspectives in anthropology. In my research I employ qualitative as well quantitative methods. Topics of particular interest to me are social and ecological (in)equality, climate change, speciesism, pro-environmental behaviors, anthropocentrism, misinformation and conspiracy beliefs, prejudice and discrimination, well-being, and political ideologies amongst others.</p>
 <div style="margin-bottom:30px;">
 
 </div>
@@ -366,6 +371,43 @@ div.tocify {
 
 </div>
 <hr />
+</div>
+</div>
+<div id="publications" class="section level1">
+<h1>Publications</h1>
+<div id="publications-peer-reviewed" class="section level3">
+<h3>PUBLICATIONS PEER-REVIEWED</h3>
+<div id="published" class="section level4">
+<h4>Published</h4>
+<p>Uenal, F., Sidanius, J., Maertens, R., Hudson, S. K. T., Davis, G., &amp; Ghani, A. (2022). The roots of ecological dominance orientation: Assessing individual preferences for an anthropocentric and hierarchically organized world. Journal of Environmental Psychology, 81, 101783. <a href="https://doi.org/10.1016/j.jenvp.2022.101783">DOI.</a> Impact Factor: 7.65</p>
+<p>Uenal, F., Sidanius, J., &amp; van der Linden, S. (2022). Social and ecological dominance orientations: Two sides of the same coin? Social and ecological dominance orientations predicting decreased support for climate change mitigation policies. Group Processes &amp; Intergroup Relations, 25(6), 1555-1576. <a href="https://doi.org/10.1177/13684302211010923">DOI.</a> Impact Factor: 2.71</p>
+<p>Basol, M., Roozenbeek, J., Berriche, M., Uenal, F., McClanahan, W. P., &amp; Linden, S. V. D. (2021). Towards psychological herd immunity: Cross-cultural evidence for two prebunking interventions against COVID-19 misinformation. Big Data &amp; Society, 8(1). <a href="https://doi.org/10.1177/20539517211013868">DOI.</a> Impact Factor: 8.73</p>
+<p>Uenal, F., Sidanius, J., Roozenbeek, J., &amp; van der Linden, S. (2021). Climate change threats increase modern racism as a function of social dominance orientation and ingroup identification. Journal of Experimental Psychology, 97, 104228. <a href="https://doi.org/10.1016/j.jesp.2021.104228">DOI.</a> Impact Factor: 3.53</p>
+<p>Uenal, F., Bergh, R., Sidanius, J., Zick, A., Kimel, S., Kunst, J. (2020). The nature ofIslamophobia:A test of a tripartite view in five countries. Personality and Social Psychology Bulletin (Online First). <a href="https://doi.org/10.1177/0146167220922643">DOI.</a> Impact Factor: 4.56</p>
+<p>Uenal, F. (2016a). Disentangling Islamophobia: The differential effects of symbolic, realistic, and terroristic threat perceptions as mediators between social dominance orientation and Islamophobia. Journal of Social and Political Psychology, 4(1), 66–90. <a href="https://doi.org/10.5964/jspp.v4i1.463">DOI.</a> Impact Factor: 1.84</p>
+<p>Uenal, F. (2016b). The “Secret Islamization” of Europe: Exploring integrated threat theory for predicting Islamophobic conspiracy stereotypes. International Journal of Conflict and Violence, 10(1), 93–108. <a href="https://doi.org/10.4119/ijcv-3080">DOI.</a> Impact Factor: 0.58</p>
+<p>Uenal, F. (2016c). Islamophobia &amp; Anti-Semitism. Comparing the social psychological underpinnings of Anti-Semitic and Anti-Muslim Beliefs in Contemporary Germany. Islamophobia Studies Journal, 3(2), 35–55. <a href="https://www.crg.berkeley.edu/wp-content/uploads/2017/01/ISJ6_Dec2016-Final-1.pdf">DOI.</a> Impact Factor: 0.94</p>
+</div>
+<div id="revise-resubmit" class="section level4">
+<h4>Revise &amp; Resubmit</h4>
+<p>Hudson, S.K.T. &amp; Uenal, F. (2023). The connections between personality, ideology and (counter-)empathic emotions depend on the target. Journal of Personality. <a href="https://doi.org/10.31234/osf.io/t2wnp">DOI.</a> Impact Factor: 5.43</p>
+<p>Uenal, F. (2023). Die geheime Islamisierung des Abendlandes. Großgruppen Verschwörungstheorien als Nährboden von Fremdgruppen Diskriminierung und Rechtspopulismus. Journal für Psychologie. <a href="https://psyarxiv.com/4bax8">DOI.</a> Impact Factor: 1.53</p>
+</div>
+<div id="in-preparation" class="section level4">
+<h4>In preparation</h4>
+<p>Uenal, F., Pagel, L., Spampatti, T., &amp; Brosch, T. (2023). A systematic review and meta-analysis of communication interventions to promote climate change mitigation. For submission to: Nature Human Behaviour. Impact Factor: 24.25</p>
+<p>Uenal, F., Kunst, J., Hudson, S.K.T, Badloe, S., &amp; Brosch. T (2023). Predictors of climate change policy preferences: A machine learning approach. For submission to: Global Environmental Change. <a href="https://psyarxiv.com/65tx4">DOI.</a><br />
+Impact Factor: 11.16</p>
+<p>Uenal, F., Wac, K., &amp; Brosch. T (2023). Cross-cultural differences in wellbeing. Social-psychological and cultural determinants analysis using machine learning.</p>
+</div>
+</div>
+<div id="other-publications" class="section level3">
+<h3>OTHER PUBLICATIONS</h3>
+<p>Uenal, F., Pagel, L., &amp; Brosch. T (2022). How to communicate about climate change: A concise guide. A step-by-step decision chart for more effective, equitable, and fair climate change communication in the context of individual behaviour change. Geneva: Center for Affective Sciences, University of Geneva. <a href="https://scholar.harvard.edu/fatih-uenal/publications/how-communicate-about-climate-change-concise-guide-step-step-decision-chart">Link.</a></p>
+<p>Uenal, F., Pagel, L., &amp; Brosch. T (2022). Review of Climate Change Communication and Behavioural Intervention Strategies to Maximise Behavioural Impact. Geneva: Center for Affective Sciences, University of Geneva. <a href="https://scholar.harvard.edu/fatih-uenal/publications/review-climate-change-communication-and-behavioural-intervention-strategies">Link.</a></p>
+<p>Roig, E. &amp; Uenal, F. (2019). Intersektionalität in Deutschland, Chancen, Lücken und Herausforderungen. A Report by Center for Intersectional Justice e.V. and DeZIM e.V. Berlin. <a href="https://www.intersectionaljustice.org/img/2019.09.18._cij-dezim_bericht-intersektionalit%C3%A4t-deutschland_ykgll2.pdf">DOI.</a></p>
+<hr />
+</div>
 </div>
 <div id="skills" class="section level1">
 <h1>Skills</h1>
@@ -691,6 +733,7 @@ div.tocify {
 </div>
 <p><a href="https://www.coursera.org/account/accomplishments/verify/WRARSZXHTLGZ"></p>
 <p></a></p>
+<p><a href="https://fuenal.github.io/dataism/Lectures.html"> <img src="images/The%20Brain.png" width="150" /> </a></p>
 </div>
 
 
@@ -731,6 +774,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
